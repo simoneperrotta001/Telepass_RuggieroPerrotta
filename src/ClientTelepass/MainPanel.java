@@ -10,17 +10,17 @@ class MainPanel extends JPanel {
     private JLabel tipologiaVeicoloL = new JLabel("Inserisci classe del tuo veicolo (scelte possibili A,B,1,2,3): ");
     private JTextField tipologiaVeicolo = new JTextField(10);
     private JLabel nomeClienteL = new JLabel("Inserisci il tuo nome: ");
-    private JTextField nomeCliente =  new JTextField(20);
+    private JTextField nomeCliente = new JTextField(20);
     private JLabel cognomeClienteL = new JLabel("Inserisci il tuo cognome");
     private JTextField cognomeCliente = new JTextField(20);
     private JButton button = new JButton("Login");
 
     public MainPanel(final JFrame mainJFrame) {
         //tipologiaVeicoloL.setLayout(new BoxLayout(tipologiaVeicoloL, BoxLayout.PAGE_AXIS));
-        tipologiaVeicoloL.setBounds(0,0,100,50);
-        tipologiaVeicolo.setBounds(100,0,100,50);
-        nomeClienteL.setBounds(0,0,100,50);
-        nomeCliente.setBounds(100,250,100,50);
+        tipologiaVeicoloL.setBounds(0, 0, 100, 50);
+        tipologiaVeicolo.setBounds(100, 0, 100, 50);
+        nomeClienteL.setBounds(0, 0, 100, 50);
+        nomeCliente.setBounds(100, 250, 100, 50);
 
         add(tipologiaVeicoloL);
         add(tipologiaVeicolo);
@@ -37,13 +37,13 @@ class MainPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //se non è uno dei caratteri da noi stabiliti come accettabili, allora lancia un dialog di errore
-                if(!tipologiaVeicolo.getText().equals("A") && !tipologiaVeicolo.getText().equals("a") && !tipologiaVeicolo.getText().equals("B") && !tipologiaVeicolo.getText().equals("b") && !tipologiaVeicolo.getText().equals("1") && !tipologiaVeicolo.getText().equals("2") && !tipologiaVeicolo.getText().equals("3")){
+                if (!tipologiaVeicolo.getText().equals("A") && !tipologiaVeicolo.getText().equals("a") && !tipologiaVeicolo.getText().equals("B") && !tipologiaVeicolo.getText().equals("b") && !tipologiaVeicolo.getText().equals("1") && !tipologiaVeicolo.getText().equals("2") && !tipologiaVeicolo.getText().equals("3")) {
                     System.out.println("Inserimento sbagliato.");
                     JOptionPane.showMessageDialog(mainJFrame, "Inserimento sbagliato.");
                     //pulire campi e dare errore nel pannello
                 }
                 //se l'input è accettato allora proseguiamo con l'inserimento dei dati sul db
-                else{
+                else {
                     //connessione al module che inserisce dati sul db
                 }
                 //System.out.println(responseField.getText());

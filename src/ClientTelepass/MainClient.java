@@ -1,7 +1,9 @@
 package ClientTelepass;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+
 //pattern mvc (model controller view) è un pattern per la suddivisione del codice in blocchi con funzionalità distinte
 //model: si occupa della gestione dati
 //view: visualizza i dati contenuti nel model e si occupa dell'interazione con gli utenti
@@ -16,8 +18,8 @@ public class MainClient {
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//settiamo la nostra volontà di voler terminare il programma sulla chiusura dell'interfaccia
         frame.getContentPane().add(mainPanel);//aggiunge il pannello all'interfaccia
-        frame.setSize(500,500);//impacchetta tutto senza dover specificare con setbounds la posizione degli elementi
-        //frame.setLayout(null); //questo è il problema per il posizionamento dei componenti nel pannello
+        frame.setSize(500, 500);//impacchetta tutto senza dover specificare con setbounds la posizione degli elementi
+        frame.setLayout(null); //questo è il problema per il posizionamento dei componenti nel pannello
         frame.setLocationByPlatform(true);//lasciamo decidere al nativo sistema di finestre dove far apparire la finestra
         frame.setVisible(true);//lo rendiamo visibile
     }

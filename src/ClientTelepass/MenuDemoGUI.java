@@ -14,7 +14,7 @@ class MenuDemoGUI extends JPanel {
     JMenuItem m_openItem = new JMenuItem("Open"); // create new menu item
     JMenuItem m_quitItem = new JMenuItem("Quit"); // another menu item
     JMenuItem m_copyItem = new JMenuItem("Copy");
-    JMenuItem m_pasteItem= new JMenuItem("Paste");
+    JMenuItem m_pasteItem = new JMenuItem("Paste");
 
     //========================================================== constructor
     public MenuDemoGUI() {

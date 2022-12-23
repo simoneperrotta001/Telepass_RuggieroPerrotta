@@ -1,7 +1,7 @@
 package ModelTelepass;
 
 public class Model {
-    public void prova(){
+    public void prova() {
         System.out.println("ciao");
     }
 }

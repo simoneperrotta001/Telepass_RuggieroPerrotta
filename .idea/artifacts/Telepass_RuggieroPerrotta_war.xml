@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Telepass_RuggieroPerrotta:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Telepass_RuggieroPerrotta</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Telepass_RuggieroPerrotta-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Telepass_RuggieroPerrotta:war exploded" />
+    </root>
+  </artifact>
+</component>
