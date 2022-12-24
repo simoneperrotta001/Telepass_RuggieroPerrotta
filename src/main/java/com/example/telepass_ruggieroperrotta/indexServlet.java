@@ -17,10 +17,17 @@ public class indexServlet extends HttpServlet {
         prova.add("simone");
         request.setAttribute("inputServlet",prova);
         request.getRequestDispatcher("index.jsp").forward(request,response);
+
+        private static InizializzazioneClasse inizializzazioneClasse;
+        String classe = "ClasseA";
+        if(classe.equals("ClasseA") )
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
+    private static InizializzazioneClasse inizializzazioneClasse;
+    String classe = "ClasseA";
+    if(classe.equals("ClasseA") )
 }
