@@ -6,6 +6,7 @@ public abstract class InizializzazioneClasse {
         // ... other code ...
 
         Classe nuovaClasse = creaClasse();
+        nuovaClasse.paga();
     }
 
     /**

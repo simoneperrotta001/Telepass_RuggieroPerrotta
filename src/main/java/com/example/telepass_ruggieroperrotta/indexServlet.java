@@ -15,13 +15,16 @@ public class indexServlet extends HttpServlet {
         List<String> prova= new ArrayList<>();
         prova.add("ciao");
         prova.add("simone");
-        request.setAttribute("inputServlet",prova);
-        request.getRequestDispatcher("index.jsp").forward(request,response);
+        //request.setAttribute("inputServlet",prova);
+        //request.getRequestDispatcher("index.jsp").forward(request,response);
 
         InizializzazioneClasse inizializzazioneClasse;
         String classe = "ClasseA";
         if(classe.equals("ClasseA")) {
-
+            inizializzazioneClasse = new InizializzazioneClasseA();
+            inizializzazioneClasse.Inzializzazione();
+            request.setAttribute("classe",inizializzazioneClasse);
+            request.getRequestDispatcher("index.jsp").forward(request,response);
         }
     }
 

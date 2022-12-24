@@ -3,7 +3,7 @@ package com.example.telepass_ruggieroperrotta;
 public class ClasseA implements Classe{
     double costoKm;
 
-    public void ClasseA(){
+    public ClasseA(){
         costoKm = 0.07;
     }
 
