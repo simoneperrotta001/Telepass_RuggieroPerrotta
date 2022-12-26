@@ -50,5 +50,17 @@
         <jarDirectory url="file://$MODULE_DIR$/src/main/webapp/WEB-INF/lib" recursive="false" type="SOURCES" />
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$USER_HOME$/Downloads/apache-tomcat-10.0.27-windows-x64" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$USER_HOME$/Downloads/apache-tomcat-10.0.27-windows-x64/apache-tomcat-10.0.27/webapps/docs/appdev/sample/src" />
+          <root url="file://$USER_HOME$/Downloads/apache-tomcat-10.0.27-windows-x64/apache-tomcat-10.0.27/webapps/examples/WEB-INF/classes" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>
