@@ -9,61 +9,67 @@
   <link rel="stylesheet" href="css/style.css">
   <title>Telepass</title>
   <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
 </head>
-<body>
+<div>
 <nav class="navbar navbar-expand-lg bg-light"><a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px;"></a></nav>
-
-<table class="table-primary">
-  <thead>
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">First</th>
-    <th scope="col">Last</th>
-    <th scope="col">Handle</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <th scope="row">1</th>
-    <td>Mark</td>
-    <td>Otto</td>
-    <td>@mdo</td>
-  </tr>
-  <tr>
-    <th scope="row">2</th>
-    <td>Jacob</td>
-    <td>Thornton</td>
-    <td>@fat</td>
-  </tr>
-  <tr>
-    <th scope="row">3</th>
-    <td colspan="2">Larry the Bird</td>
-    <td>@twitter</td>
-  </tr>
-  </tbody>
-</table>
-
-<!-- On rows -->
-<tr class="table-primary">...</tr>
-<tr class="table-secondary">...</tr>
-<tr class="table-success">...</tr>
-<tr class="table-danger">...</tr>
-<tr class="table-warning">...</tr>
-<tr class="table-info">...</tr>
-<tr class="table-light">...</tr>
-<tr class="table-dark">...</tr>
-
-<!-- On cells (`td` or `th`) -->
-<tr>
-  <td class="table-primary">...</td>
-  <td class="table-secondary">...</td>
-  <td class="table-success">...</td>
-  <td class="table-danger">...</td>
-  <td class="table-warning">...</td>
-  <td class="table-info">...</td>
-  <td class="table-light">...</td>
-  <td class="table-dark">...</td>
-</tr>
+<center>
+  <div>
+    <div class="col-md-8">
+      <table class="table">
+        <thead style="background-color: #0d6efd; color:white">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome Utente</th>
+          <th scope="col">Email</th>
+          <th scope="col">Data Iscrizione</th>
+          <th scope="col">Scadenza Abbonamento</th>
+          <th scope="col">Status</th>
+          <th scope="col">Telepass+</th>
+          <th scope="col">Modifica</th>
+          <th scope="col">Elimina</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="table-primary">
+          <th scope="row">1</th>
+          <td>jhon</td>
+          <td>Jon@gmail.com</td>
+          <td>10/10/1995</td>
+          <td>10/10/1995</td>
+          <td><span class="badge rounded-pill text-bg-success">Attivo</span></td>
+          <td><span class="badge rounded-pill text-bg-danger">Disattivo</span></td>
+          <td><button class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></button></td>
+          <td><button class="btn btn-sm btn-danger"><i class="bi bi-trash3-fill"></i></button></td>
+        </tr>
+        <tr class="table-success">
+          <th scope="row">2</th>
+          <td>mark</td>
+          <td>mark@gmail.com</td>
+          <td>10/10/1996</td>
+          <td>10/10/1996</td>
+          <td><span class="badge rounded-pill text-bg-success">Attivo</span></td>
+          <td><span class="badge rounded-pill text-bg-success">Attivo</span></td>
+          <td><button class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></button></td>
+          <td><button class="btn btn-sm btn-danger"><i class="bi bi-trash3-fill"></i></button></td>
+        </tr>
+        <tr class="table-danger">
+          <th scope="row">3</th>
+          <td>Raj</td>
+          <td>raj@gmail.com</td>
+          <td>10/10/1997</td>
+          <td>10/10/1997</td>
+          <td><span class="badge rounded-pill text-bg-danger">Disattivo</span></td>
+          <td><span class="badge rounded-pill text-bg-danger">Disattivo</span></td>
+          <td><button class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></button></td>
+          <td><button class="btn btn-sm btn-danger"><i class="bi bi-trash3-fill"></i></button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</center>
 
 <section class="pageform">
   <!-- Footer -->
