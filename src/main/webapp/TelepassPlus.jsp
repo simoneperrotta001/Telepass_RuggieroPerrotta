@@ -11,7 +11,7 @@
 <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-light"><a class="navbar-brand" href="protected_area_utente.html"><img src="Logo_Telepass_2021.png" style="height:30px;"></a></nav>
+    <nav class="navbar navbar-expand-lg bg-light"><a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px;"></a></nav>
 
     <div id="main">
         <center>
@@ -22,7 +22,7 @@
           </p>
           <h2 class="h2div">Passa a Telepass+</h2>
             <form name="addTelepassPlus" class="rounded" style="width:100%;" method="POST" action="">
-                <a href="protected_area_utente.html"><button type="button" class="btn btn-outline-primary">Indietro</button></a>
+                <a href="protected_area_utente.jsp"><button type="button" class="btn btn-outline-primary">Indietro</button></a>
                 <button type="submit" class="btn btn-outline-primary" name="telepassPlus" id="telepassPlus" value="1">Abilita</button>
             </form>
         </div>
@@ -31,12 +31,12 @@
 
     <section class="pageform">
       <!-- Footer -->
-      <footer class="text-center text-white" style="background-color: #002752;" id="indexfooter">
+      <footer class="text-center text-white" style="background-color: #002752;" id="staticfooter">
         <!-- Grid container -->
         <div class="container p-4 pb-0">
           <!-- Section: CTA -->
           <section class="">
-            <img src="Logo_Telepass_2021.png" style="height:50px;">
+            <img src="images/Logo_Telepass_2021.png" style="height:50px;">
           </section>
           <!-- Section: CTA -->
         </div>

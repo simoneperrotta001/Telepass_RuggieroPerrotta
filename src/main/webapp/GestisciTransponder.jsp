@@ -15,7 +15,7 @@
     <div id="main">
         <div class="row" style="height: 90px;">
             <div class="row" style="height: 30px;"></div>
-            <center><a class="navbar-brand" href="protected_area_admin.html"><img src="Logo_Telepass_2021.png" style="height:40px"></a></center>
+            <center><a class="navbar-brand" href="protected_area_admin.jsp"><img src="images/Logo_Telepass_2021.png" style="height:40px"></a></center>
         </div>
         <form style="margin-top: 10px;" action="#" method="POST">
             <div class="row" style="width:100%;">
@@ -23,7 +23,7 @@
                     <center>
                         <h3 class="h2div">Assegna Transponder</h3><br>
                         <form name="addVeicolo" class="rounded" style="width:100%;" method="POST" action="">
-                            <label style="width:50%; margin-top: 10px; background-color: #0d6efd; color:white" class="input-group-text primary" for="">Utenti Senza Transponder</label>
+                            <label style="width:50%; margin-top: 10px; background-color: #0d6efd; color:white" class="input-group-text primary" for="nonabbonati">Utenti Senza Transponder</label>
                             <select style="width:50%; margin-bottom: 5px; " class="form-select" id="caselloEntrata" name="caselloEntrata">
                                 <option value="A">UTENTE1</option>
                                 <option value="B">UTENTE2</option>
@@ -40,7 +40,7 @@
                     <center>
                         <h3 class="h2div">Rimuovi Transponder</h3><br>
                         <form name="addVeicolo" class="rounded" style="width:100%;" method="POST" action="">
-                            <label style="width:50%; margin-top: 10px; background-color: #0d6efd; color:white" class="input-group-text primary" for="">Utenti Aventi Transponder</label>
+                            <label style="width:50%; margin-top: 10px; background-color: #0d6efd; color:white" class="input-group-text primary" for="abbonati">Utenti Aventi Transponder</label>
                             <select style="width:50%; margin-bottom: 5px; " class="form-select" id="caselloEntrata" name="caselloEntrata">
                                 <option value="A">UTENTE1</option>
                                 <option value="B">UTENTE2</option>
@@ -63,7 +63,7 @@
           <div class="container p-4 pb-0">
             <!-- Section: CTA -->
             <section class="">
-              <img src="Logo_Telepass_2021.png" style="height:50px;">
+              <img src="images/Logo_Telepass_2021.png" style="height:50px;">
             </section>
             <!-- Section: CTA -->
           </div>

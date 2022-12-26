@@ -11,7 +11,7 @@
 <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-light"><a class="navbar-brand" href="protected_area_utente.html"><img src="Logo_Telepass_2021.png" style="height:30px;"></a></nav>
+    <nav class="navbar navbar-expand-lg bg-light"><a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px;"></a></nav>
 
     <div class="main">
         <center>
@@ -19,56 +19,56 @@
             <div class="rounded" style="width:50%; border-style:solid; border-color:#0d6efd; border-width: 3px">
                 <div class="row">
                     <div class="col-lg-12">
-                      <div class="card mb-4">
+                      <div class="card mb-4" style="height: 100%">
                         <div class="card-body">
                           <div class="row">
-                            <div class="col-sm-3">
-                              <p class="mb-0">NomeUtente</p>
+                            <div class="col-sm-4">
+                              <p class="mb-0">Nome Utente</p>
                             </div>
-                            <div class="col-sm-9">
+                            <div class="col-sm-8">
                               <p class="text-muted mb-0">Simone Perrotta</p>
                             </div>
                           </div>
                           <hr>
                           <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-4">
                               <p class="mb-0">Email</p>
                             </div>
-                            <div class="col-sm-9">
+                            <div class="col-sm-8">
                               <p class="text-muted mb-0">simonePerrotta@gmail.com</p>
                             </div>
                           </div>
                           <hr>
                           <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-4">
                               <p class="mb-0">Data Iscrizione Telepass</p>
                             </div>
-                            <div class="col-sm-9">
+                            <div class="col-sm-8">
                               <p class="text-muted mb-0">12/01/2002</p>
                             </div>
                           </div>
                           <hr>
                           <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-4">
                               <p class="mb-0">Data Scadenza Telepass</p>
                             </div>
-                            <div class="col-sm-9">
+                            <div class="col-sm-8">
                               <p class="text-muted mb-0">12/01/2023</p>
                             </div>
                           </div>
                           <hr>
                           <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-4">
                               <p class="mb-0">Telepass+</p>
                             </div>
-                            <div class="col-sm-9">
+                            <div class="col-sm-8">
                               <p class="text-muted mb-0">NON ATTIVO</p>
                             </div>
                           </div>
                           <hr>
                           <div class="row">
                             <div class="col-sm-12">
-                                <a href="protected_area_utente.html"><button type="button" class="btn btn-outline-primary">Home</button></a>
+                                <a href="protected_area_utente.jsp"><button type="button" class="btn btn-outline-primary">Home</button></a>
                                 <button type="submit" class="btn btn-outline-danger" name="veicolonuovo" id="veicolonuovo" value="1">Disdici Abbonamento</button>
                             </div>
                           </div>
@@ -82,12 +82,12 @@
 
     <section class="pageform">
       <!-- Footer -->
-      <footer class="text-center text-white" style="background-color: #002752;" id="indexfooter">
+      <footer class="text-center text-white" style="background-color: #002752;" id="staticfooter">
         <!-- Grid container -->
         <div class="container p-4 pb-0">
           <!-- Section: CTA -->
           <section class="">
-            <img src="Logo_Telepass_2021.png" style="height:50px;">
+            <img src="images/Logo_Telepass_2021.png" style="height:50px;">
           </section>
           <!-- Section: CTA -->
         </div>

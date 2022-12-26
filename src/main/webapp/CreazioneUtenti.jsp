@@ -15,7 +15,7 @@
     <div id="main">
         <div class="row" style="height: 90px;">
             <div class="row" style="height: 30px;"></div>
-            <center><a class="navbar-brand" href="protected_area_admin.html"><img src="Logo_Telepass_2021.png" style="height:40px"></a></center>
+            <center><a class="navbar-brand" href="protected_area_admin.jsp"><img src="images/Logo_Telepass_2021.png" style="height:40px"></a></center>
         </div>
         <center><h3 class="h2div">Inserisci i dati dell'utente da creare</h3></center><br>
         <form style="margin-top: 10px;" action="#" method="POST">
@@ -48,10 +48,10 @@
                                 <label style="background-color: #0d6efd; color:white" class="input-group-text primary" for="Abbonamento" id="inptxt">Abbonamento</label>
                                 <select style=" margin-bottom: 5px; " class="form-select" id="inptxt" name="Abbonamento">
                                     <option value="1">ATTIVO</option>
-                                    <option value="0">ATTIVO</option>
+                                    <option value="0">NON ATTIVO</option>
                                 </select>
-                                <br>
-                                <label style="background-color: #0d6efd; color:white" class="input-group-text primary" for="Plus" id="inptxt">Plus</label>
+                                <br><br>
+                                <label style="background-color: #0d6efd; color:white; margin-top:16px;" class="input-group-text primary" for="Plus" id="inptxt">Plus</label>
                                 <select style=" margin-bottom: 5px; " class="form-select" id="inptxt" name="Plus">
                                     <option value="1">ATTIVO</option>
                                     <option value="0">NON ATTIVO</option>
@@ -71,7 +71,7 @@
           <div class="container p-4 pb-0">
             <!-- Section: CTA -->
             <section class="">
-              <img src="Logo_Telepass_2021.png" style="height:50px;">
+              <img src="images/Logo_Telepass_2021.png" style="height:50px;">
             </section>
             <!-- Section: CTA -->
           </div>

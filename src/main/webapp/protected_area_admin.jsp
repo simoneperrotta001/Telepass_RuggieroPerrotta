@@ -12,7 +12,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-light">
-      <a class="navbar-brand" href="protected_area_admin.html"><img src="Logo_Telepass_2021.png" style="height:30px;"></a>
+      <a class="navbar-brand" href="protected_area_admin.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px;"></a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
             <a class="nav-link disabled">Ciao, admin</a>
@@ -22,13 +22,13 @@
             Operazioni
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="CreazioneUtenti.html">Creazione Utente</a></li>
-            <li><a class="dropdown-item" href="GestisciTransponder.html">Gestisci Transponder</a></li>
-            <li><a class="dropdown-item" href="ListaUtenti.html">Lista Utenti</a></li>
+            <li><a class="dropdown-item" href="CreazioneUtenti.jsp">Creazione Utente</a></li>
+            <li><a class="dropdown-item" href="GestisciTransponder.jsp">Gestisci Transponder</a></li>
+            <li><a class="dropdown-item" href="ListaUtenti.jsp">Lista Utenti</a></li>
           </ul>
         </li>
       </ul>
-      <a href="index.html"><button type="button" class="btn btn-primary">ESCI</button></a> 
+      <a href="index.jsp"><button type="button" class="btn btn-primary">ESCI</button></a>
     </nav>
 
     <div id="carouselExampleDark" class="carousel carousel-dark slide rounded" data-bs-ride="carousel" style="height: 500px;">
@@ -39,21 +39,21 @@
         </div>
         <div class="carousel-inner rounded">
           <div class="carousel-item active" data-bs-interval="8000">
-            <img src="Autostrada.jpg" class="d-block w-100" alt="..." style="height: 500px;">
+            <img src="images/Autostrada.jpg" class="d-block w-100" alt="..." style="height: 500px;">
             <div class="carousel-caption d-none d-md-block">
               <h5>First slide label</h5>
               <p>Some representative placeholder content for the first slide.</p>
             </div>
           </div>
           <div class="carousel-item rounded" data-bs-interval="8000">
-            <img src="Autostrada.jpg" class="d-block w-100" alt="..." style="height: 500px;">
+            <img src="images/Autostrada.jpg" class="d-block w-100" alt="..." style="height: 500px;">
             <div class="carousel-caption d-none d-md-block">
               <h5>Second slide label</h5>
               <p>Some representative placeholder content for the second slide.</p>
             </div>
           </div>
           <div class="carousel-item rounded" data-bs-interval="8000">
-            <img src="Autostrada.jpg" class="d-block w-100" alt="..." style="height: 500px;">
+            <img src="images/Autostrada.jpg" class="d-block w-100" alt="..." style="height: 500px;">
             <div class="carousel-caption d-none d-md-block">
               <h5>Third slide label</h5>
               <p>Some representative placeholder content for the third slide.</p>
@@ -93,7 +93,7 @@
             da Parigi a Barcellona e Madrid</p>
                 
             <center>
-              <div><img src="telepass-bip_low.png" style="height: 250px; width: 400px;"></div>
+              <div><img src="images/telepass-bip_low.png" style="height: 250px; width: 400px;"></div>
               <div>
                 <h2 class="h2div">TRANSPONDER</h2>
                 <p id="pdiv">Il nostro mostro di satan fa questo e questo e quello<br> senza considerare questo e quello</p>
@@ -109,7 +109,7 @@
           <div class="container p-4 pb-0">
             <!-- Section: CTA -->
             <section class="">
-              <img src="Logo_Telepass_2021.png" style="height:50px;">
+              <img src="images/Logo_Telepass_2021.png" style="height:50px;">
             </section>
             <!-- Section: CTA -->
           </div>
