@@ -15,7 +15,7 @@ public class indexServlet extends HttpServlet {
         List<String> prova= new ArrayList<>();
         prova.add("ciao");
         prova.add("simone");
-        //request.setAttribute("inputServlet",prova);
+        request.setAttribute("inputServlet",prova);
         //request.getRequestDispatcher("index.jsp").forward(request,response);
 
         InizializzazioneClasse inizializzazioneClasse;
