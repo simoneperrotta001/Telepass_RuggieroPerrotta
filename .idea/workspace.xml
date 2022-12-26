@@ -10,29 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c20c4ea3-3479-436c-be5c-e80ec7a63a20" name="Changes" comment="file html trasformati in jsp">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Telepass_RuggieroPerrotta_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Telepass_RuggieroPerrotta_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ListaUtenti.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accedi.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Autostrada.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logo_Telepass_2021.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Telepass_RuggieroPerrotta.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Telepass_RuggieroPerrotta.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Accedi.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Accedi.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/AggiungiVeicolo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/AggiungiVeicolo.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/CreazioneUtenti.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/CreazioneUtenti.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/GestisciTransponder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/GestisciTransponder.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ProfiloUtente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ProfiloUtente.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/protected_area_admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/protected_area_admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/protected_area_utente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/protected_area_utente.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/telepass-bip_low.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -170,7 +161,7 @@
       <option name="presentableId" value="Default" />
       <updated>1670315376426</updated>
       <workItem from="1670315377728" duration="232000" />
-      <workItem from="1672048644055" duration="4698000" />
+      <workItem from="1672048644055" duration="5807000" />
     </task>
     <task id="LOCAL-00001" summary="gg">
       <created>1670315423649</created>
@@ -193,7 +184,21 @@
       <option name="project" value="LOCAL" />
       <updated>1672049836603</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="file html trasformati in jsp">
+      <created>1672053649631</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1672053649631</updated>
+    </task>
+    <task id="LOCAL-00005" summary="file html trasformati in jsp">
+      <created>1672053666417</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1672053666417</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
