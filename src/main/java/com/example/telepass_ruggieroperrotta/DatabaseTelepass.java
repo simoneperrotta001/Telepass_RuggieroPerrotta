@@ -9,7 +9,6 @@ package com.example.telepass_ruggieroperrotta;
     DatabaseTelepass.getInstance().doInsertUtenti("Mattia","Autiero","2022-10-22","000000000003",0,"ciao");
 */
 
-
 import java.sql.*;
 /*import java.sql.Connection;
 import java.sql.DriverManager;

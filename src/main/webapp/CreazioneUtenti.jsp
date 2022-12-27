@@ -22,21 +22,21 @@
             <div class="row" style="width:100%;">
                 <div class="col-sm-6">
                     <center>
-                            <div>  
+                            <div>
                                 <div>
-                                    <label><input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" id="inptxt"></label>
+                                    <label><input type="text" class="form-control" placeholder="Nome utente" aria-label="Nome Utente" aria-describedby="basic-addon1" name="nomeutente" id="inptxt"></label>
                                 </div>
-                                <br>                      
+                                <br>
                                 <div>
-                                    <label><input type="text" class="form-control" placeholder="Nome utente" aria-label="Username" aria-describedby="basic-addon1" id="inptxt"></label>
+                                    <label><input type="text" class="form-control" placeholder="Cognome utente" aria-label="Cognome" aria-describedby="basic-addon1" name="cognomeutente" id="inptxt"></label>
+                                </div>
+                                <br>
+                                <div>
+                                    <label><input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="username" id="inptxt"></label>
                                 </div>
                                 <br>
                                 <div>
                                     <label><input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" id="inptxt"></label>
-                                </div>
-                                <br>
-                                <div>
-                                    <label><input type="date" class="form-control" placeholder="Nascita" aria-label="Nascita" aria-describedby="basic-addon1" id="inptxt"></label>
                                 </div>
                             </div>
                     </center>
@@ -44,17 +44,23 @@
 
                 <div class="col-sm-6">
                     <center>
-                            <div>                        
-                                <label style="background-color: #0d6efd; color:white" class="input-group-text primary" for="Abbonamento" id="inptxt">Abbonamento</label>
-                                <select style=" margin-bottom: 5px; " class="form-select" id="inptxt" name="Abbonamento">
-                                    <option value="1">ATTIVO</option>
-                                    <option value="0">NON ATTIVO</option>
+                            <div>
+                                <div>
+                                    <label><input type="date" class="form-control" placeholder="Nascita" aria-label="Nascita" aria-describedby="basic-addon1" name="nascita" id="inptxt"></label>
+                                </div>
+                                <br>
+                                <div>
+                                    <label><input type="text" class="form-control" placeholder="Codice Conto Corrente" aria-label="ContoCorrente" aria-describedby="basic-addon1" name="contocorrente" id="inptxt"></label>
+                                </div>
+                                <br>
+                                <select class="form-select" id="inptxt" name="Abbonamento">
+                                    <option value="1">ABBONAMENTO ATTIVO</option>
+                                    <option value="0">ABBONAMENTO NON ATTIVO</option>
                                 </select>
-                                <br><br>
-                                <label style="background-color: #0d6efd; color:white; margin-top:16px;" class="input-group-text primary" for="Plus" id="inptxt">Plus</label>
-                                <select style=" margin-bottom: 5px; " class="form-select" id="inptxt" name="Plus">
-                                    <option value="1">ATTIVO</option>
-                                    <option value="0">NON ATTIVO</option>
+                                <br>
+                                <select class="form-select" id="inptxt" name="Plus">
+                                    <option value="1">PLUS ATTIVO</option>
+                                    <option value="0">PLUS NON ATTIVO</option>
                                 </select>
                             </div>
                     </center>
