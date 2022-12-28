@@ -52,8 +52,6 @@ public class DatabaseTelepass {
     //processo di creazione della connessione effettuato nel punto di accesso globale getInstance così da farlo una volta sola
     public void createConnection(){
         try {
-            System.out.println("connection1: "+connection);
-            Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/telepass", "ROOT", "ROOT");
 
             System.out.println("connection2: "+connection);
