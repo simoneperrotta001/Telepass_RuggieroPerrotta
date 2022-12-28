@@ -11,6 +11,8 @@
 <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
 </head>
 <body>
+    <% if ((session.getAttribute("userName") == null) || (session.getAttribute("userName") == "")) { %>
+    Welcome <%=session.getAttribute("userid")%> <a href='logout.jsp'>Log out</a>
     <nav class="navbar navbar-expand-lg bg-light">
       <a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px;"></a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -125,5 +127,9 @@
         </footer>
         <!-- Footer -->
       </section>
+    <%} else { %>
+    You are not logged in<br/> <a href="index.jsp">Please Login</a>
+
+    <% } %>
 </body>
 </html>

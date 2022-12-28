@@ -30,22 +30,22 @@
         <div class="carousel-item active" data-bs-interval="8000">
             <img src="images/Autostrada.jpg" class="d-block w-100" alt="..." style="height: 500px;">
             <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Some representative placeholder content for the first slide.</p>
+                <h5>Scegli Telepass:</h5>
+                <p>scopri il piacere di guidare senza aver timore di tardare ad appuntamenti per le lunghe code ai caselli.</p>
             </div>
         </div>
         <div class="carousel-item rounded" data-bs-interval="8000">
-            <img src="images/Autostrada.jpg" class="d-block w-100" alt="..." style="height: 500px;">
+            <img src="images/transponder_inmano.jpg" class="d-block w-100" alt="..." style="height: 500px;">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>Some representative placeholder content for the second slide.</p>
+                <h5>Scegli il nostro trasponder:</h5>
+                <p>con esso potrai essere scansionato e riconosciuto come cliente al passaggio ai caselli.</p>
             </div>
         </div>
         <div class="carousel-item rounded" data-bs-interval="8000">
-            <img src="images/Autostrada.jpg" class="d-block w-100" alt="..." style="height: 500px;">
+            <img src="images/telepass_biancoenero.jpg" class="d-block w-100" alt="..." style="height: 500px;">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Some representative placeholder content for the third slide.</p>
+                <h5>Unisciti a noi:</h5>
+                <p>diventa parte della famiglia Telepass e torna a goderti i tuoi viaggi in auto. Ti aspettiamo.</p>
             </div>
         </div>
     </div>

@@ -25,7 +25,7 @@
             <a class="navbar-brand" href="index.jsp"><img src="images/Logo_Telepass_2021.png" style="height:40px"></a>
             <br><br>
             <h4 class="h2div">INSERISCI LE TUE CREDENZIALI</h4>
-            <form action="ServletLogin" method="POST">
+            <form action="login" method="POST">
                 <div>
                     <div>
                         <label><input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="username" id="inptxt"></label>

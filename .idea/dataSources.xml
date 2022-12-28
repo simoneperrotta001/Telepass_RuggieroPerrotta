@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Telepass" uuid="4fce77cf-57be-4315-95f2-07247d7e30bf">
+    <data-source source="LOCAL" name="telepass@localhost" uuid="c23d1eac-9106-4cae-bb1e-1ea825b6ab2b">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
