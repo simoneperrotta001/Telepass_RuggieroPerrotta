@@ -11,13 +11,14 @@
 <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
 </head>
 <body>
-    <% if ((session.getAttribute("userName") == null) || (session.getAttribute("userName") == "")) { %>
-    Welcome <%=session.getAttribute("userid")%> <a href='logout.jsp'>Log out</a>
+    <% if ((session.getAttribute("username") == null) || (session.getAttribute("username") == "") && (session.getAttribute("ruolo") == null) || (session.getAttribute("ruolo") == "")) {
+        response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/Accedi.jsp");
+    }%>
     <nav class="navbar navbar-expand-lg bg-light">
       <a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px;"></a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-            <a class="nav-link disabled">Ciao, NomeUtente</a>
+            <a class="nav-link disabled">Ciao, <%=session.getAttribute("username")%></a>
           </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -26,7 +27,7 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="TelepassPlus.jsp">Passa a Telepass+</a></li>
             <li><a class="dropdown-item" href="AggiungiVeicolo.jsp">Aggiungi Veicolo</a></li>
-            <li><a class="dropdown-item" href="ProfiloUtente.jsp">Visualizza Profilo</a></li>
+            <li><a class="dropdown-item" href="/profilo">Visualizza Profilo</a></li>
             <li><a class="dropdown-item" href="SimulaPercorso.jsp">Simula Percorso</a></li>
           </ul>
         </li>
@@ -74,7 +75,7 @@
     </div>
 
     <div id="main">
-      <p id="pbody">Telepass è un marchio registrato di proprietà di Atlantia S.p.A. (di cui Telepass S.p.A. è licenziataria) atto a contraddistinguere un sistema di riscossione
+        <p id="pbody">Telepass è un marchio registrato di proprietà di Atlantia S.p.A. (di cui Telepass S.p.A. è licenziataria) atto a contraddistinguere un sistema di riscossione
             del pedaggio autostradale con l'utilizzo del telepedaggio, introdotto in Italia nel 1989 da Società Autostrade Concessioni e Costruzioni S.p.A. (oggi Telepass S.p.A.).
             <br>Inizialmente installato sulla tratta tra Calenzano - Sesto Fiorentino e Firenze nord in via sperimentale, è stato installato in un primo tempo 
             sull'Autostrada A1 nei caselli delle principali città italiane (Milano, Roma e Napoli) in occasione del Mondiale di calcio 1990, e in seguito 
@@ -127,9 +128,5 @@
         </footer>
         <!-- Footer -->
       </section>
-    <%} else { %>
-    You are not logged in<br/> <a href="index.jsp">Please Login</a>
-
-    <% } %>
 </body>
 </html>
