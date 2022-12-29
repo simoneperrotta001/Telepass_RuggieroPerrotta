@@ -52,7 +52,7 @@ public class DatabaseTelepass {
     //processo di creazione della connessione effettuato nel punto di accesso globale getInstance così da farlo una volta sola
     public void createConnection(){
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/telepass", "ROOT", "ROOT");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/telepass", "ROOT","ROOT");
 
             System.out.println("connection2: "+connection);
             statement = connection.createStatement();
@@ -120,7 +120,7 @@ public class DatabaseTelepass {
             status = rs.next();
         }
         catch (Exception e){
-            System.out.println("errore nelle credenziali");
+            System.out.println("errore nella ricerca dell utente");
         }
         finally {
             if (rs != null) {
