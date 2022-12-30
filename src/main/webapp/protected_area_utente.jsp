@@ -25,14 +25,16 @@
             Operazioni
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="TelepassPlus.jsp">Passa a Telepass+</a></li>
-            <li><a class="dropdown-item" href="AggiungiVeicolo.jsp">Aggiungi Veicolo</a></li>
-            <li><a class="dropdown-item" href="/profilo">Visualizza Profilo</a></li>
+            <%  int plus= (int) session.getAttribute("plus");
+                if (plus == 0 ) { %><li><a class="dropdown-item" href="TelepassPlus.jsp">Passa a Telepass+</a></li><% } %>
+              <%  int quanti= (int) session.getAttribute("quanti");
+                  if (quanti <2 ) { %><li><a class="dropdown-item" href="AggiungiVeicolo.jsp">Aggiungi Veicolo</a></li><% } %>
+            <li><a class="dropdown-item" href="profilo">Visualizza Profilo</a></li>
             <li><a class="dropdown-item" href="SimulaPercorso.jsp">Simula Percorso</a></li>
           </ul>
         </li>
       </ul>
-      <a href="index.jsp"><button type="button" class="btn btn-primary">ESCI</button></a>
+      <a a href="logout"><button type="button" class="btn btn-primary">ESCI</button></a>
     </nav>
 
     <div id="carouselExampleDark" class="carousel carousel-dark slide rounded" data-bs-ride="carousel" style="height: 500px;">

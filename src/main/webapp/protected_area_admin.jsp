@@ -11,11 +11,17 @@
 <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
 </head>
 <body>
+    <% if ((session.getAttribute("username") == null) || (session.getAttribute("username") == "") && (session.getAttribute("ruolo") == null) || (session.getAttribute("ruolo") == "")) {
+            response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/Accedi.jsp");
+    }
+    int ruolo= (int) session.getAttribute("ruolo");
+    if(ruolo == 0) {response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/protected_area_utente.jsp");}
+    %>
     <nav class="navbar navbar-expand-lg bg-light">
       <a class="navbar-brand" href="protected_area_admin.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px;"></a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-            <a class="nav-link disabled">Ciao, admin</a>
+            <a class="nav-link disabled">Ciao, <%=session.getAttribute("username")%></a>
           </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -28,7 +34,7 @@
           </ul>
         </li>
       </ul>
-      <a href="index.jsp"><button type="button" class="btn btn-primary">ESCI</button></a>
+      <a href="logout"><button type="button" class="btn btn-primary">ESCI</button></a>
     </nav>
 
     <div id="carouselExampleDark" class="carousel carousel-dark slide rounded" data-bs-ride="carousel" style="height: 500px;">
