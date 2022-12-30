@@ -50,13 +50,13 @@
                       <option value=<%=rs.getString("NomeCasello")%>><%=rs.getString("NomeCasello")%></option>
                               <% } %>
                   </select><br>
-                  <label style="width:50%; margin-top: 10px; background-color: #0d6efd; color:white" class="input-group-text primary" for="classe">Classe</label>
-                    <select style="width:50%; margin-bottom: 5px; " class="form-select" id="classe" name="classe">
+                  <label style="width:50%; margin-top: 10px; background-color: #0d6efd; color:white" class="input-group-text primary" for="classe">Targa Veicolo</label>
+                    <select style="width:50%; margin-bottom: 5px; " class="form-select" id="classe" name="targa">
                         <%
                             stm= connection.createStatement();
-                            rs= stm.executeQuery("SELECT ModelloVeicolo FROM VEICOLO WHERE CodiceTransponder='"+session.getAttribute("codice")+"'");
+                            rs= stm.executeQuery("SELECT TargaVeicolo, ModelloVeicolo FROM VEICOLO WHERE CodiceTransponder='"+session.getAttribute("codice")+"'");
                             while (rs.next()){%>
-                        <option value=<%=rs.getString("ModelloVeicolo")%>><%=rs.getString("ModelloVeicolo")%></option>
+                        <option value=<%=rs.getString("TargaVeicolo")%>><%=rs.getString("TargaVeicolo")%></option>
                         <% } %>
                     </select><br>
                   <a href="protected_area_utente.jsp"><button type="button" class="btn btn-outline-primary">Indietro</button></a>
@@ -70,7 +70,6 @@
     }
     catch (Exception e) {
         System.out.println("errore nella connessione");
-        System.out.println("conn:"+connection);
     }
     finally {
         if (rs != null) {

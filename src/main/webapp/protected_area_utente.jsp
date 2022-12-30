@@ -26,7 +26,8 @@
           </a>
           <ul class="dropdown-menu">
             <%  int plus= (int) session.getAttribute("plus");
-                if (plus == 0 ) { %><li><a class="dropdown-item" href="TelepassPlus.jsp">Passa a Telepass+</a></li><% } %>
+                int attivo= (int) session.getAttribute("attivo");
+                if (plus == 0 && attivo==1) { %><li><a class="dropdown-item" href="TelepassPlus.jsp">Passa a Telepass+</a></li><% } %>
               <%  int quanti= (int) session.getAttribute("quanti");
                   if (quanti <2 ) { %><li><a class="dropdown-item" href="AggiungiVeicolo.jsp">Aggiungi Veicolo</a></li><% } %>
             <li><a class="dropdown-item" href="profilo">Visualizza Profilo</a></li>

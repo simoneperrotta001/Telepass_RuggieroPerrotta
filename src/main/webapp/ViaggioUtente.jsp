@@ -22,7 +22,9 @@
 
 <div class="main">
   <center>
+
     <h2 class="h2div">Percorso stabilito</h2>
+    <form name="viaggia" class="rounded" method="POST" action="viaggia">
     <div class="rounded" style="width:50%; border-style:solid; border-color:#0d6efd; border-width: 3px">
       <div class="row">
         <div class="col-lg-12">
@@ -30,10 +32,19 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-4">
+                  <p class="mb-0">Veicolo Selezionato</p>
+                </div>
+                <div class="col-sm-8">
+                  <p class="text-muted mb-0" name="targa">${targa}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-4">
                   <p class="mb-0">Casello di entrata</p>
                 </div>
                 <div class="col-sm-8">
-                  <p class="text-muted mb-0">${casello1}</p>
+                  <p class="text-muted mb-0" name="casello1">${casello1}</p>
                 </div>
               </div>
               <hr>
@@ -42,7 +53,7 @@
                   <p class="mb-0">Casello di uscita</p>
                 </div>
                 <div class="col-sm-8">
-                  <p class="text-muted mb-0">${casello2}</p>
+                  <p class="text-muted mb-0" name="casello2">${casello2}</p>
                 </div>
               </div>
               <hr>
@@ -51,7 +62,7 @@
                   <p class="mb-0">Distanza</p>
                 </div>
                 <div class="col-sm-8">
-                  <p class="text-muted mb-0">${distanza}</p>
+                  <p class="text-muted mb-0" name="distanza">${distanza}</p>
                 </div>
               </div>
               <hr>
@@ -69,14 +80,14 @@
                   <p class="mb-0">Costo totale</p>
                 </div>
                 <div class="col-sm-8">
-                  <p class="text-muted mb-0">${costo_tot}</p>
+                  <p class="text-muted mb-0" name="tariffa">${costo_tot}</p>
                 </div>
               </div>
               <hr>
               <div class="row">
                 <div class="col-sm-12">
                   <a href="SimulaPercorso.jsp"><button type="button" class="btn btn-outline-primary">Cambia Percorso</button></a>
-                  <a href="viaggia"><button type="submit" class="btn btn-outline-success" name="viaggia" id="viaggia" >Viaggia</button></a>
+                  <button type="submit" class="btn btn-outline-success" name="viaggia" id="viaggia" >Viaggia</button>
                 </div>
               </div>
             </div>
@@ -84,6 +95,7 @@
         </div>
       </div>
     </div>
+    </form>
   </center>
 </div>
 

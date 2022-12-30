@@ -16,16 +16,22 @@ public class ServletCalcolaPrezzo extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String casello1=request.getParameter("caselloEntrata");
         String casello2=request.getParameter("caselloUscita");
+        String targa=request.getParameter("targa");
+        String classe =null;
         if(casello1.equals(casello2)) {
             response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/SimulaPercorso.jsp");
         }
-        String classe=request.getParameter("classe");
         Connection connection=null;
         Statement stm=null;
         ResultSet rs = null;
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/telepass", "ROOT","ROOT");
+            stm= connection.createStatement();
+            rs=stm.executeQuery("SELECT ModelloVeicolo FROM VEICOLO WHERE TargaVeicolo='"+targa+"'");
+            if(rs.next()) {
+                classe= rs.getString("ModelloVeicolo");
+            }
             stm= connection.createStatement();
             rs=stm.executeQuery("SELECT Distanza " +
                     "FROM DISTA " +
@@ -40,7 +46,6 @@ public class ServletCalcolaPrezzo extends HttpServlet {
                 }
                 else if (classe.equals("B")) {
                     ClasseB tipo = new ClasseB();
-                    System.out.println("yep:" +tipo.costoKm);
                     costo_Tot= tipo.pagamento(distanza);
                     request.setAttribute("costokm", tipo.costoKm);
                 }
@@ -62,6 +67,7 @@ public class ServletCalcolaPrezzo extends HttpServlet {
                 }
                 request.setAttribute("casello1", casello1);
                 request.setAttribute("casello2", casello2);
+                request.setAttribute("targa", targa);
                 request.setAttribute("distanza", distanza);
                 request.setAttribute("costo_tot", costo_Tot);
                 request.getRequestDispatcher("ViaggioUtente.jsp").forward(request, response);

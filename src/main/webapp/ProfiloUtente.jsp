@@ -75,12 +75,14 @@
                           <hr>
                           <div class="row">
                             <div class="col-sm-12">
+                              <form name="gestisci" class="rounded" method="POST" action="gestisciAbbonamento">
                               <a href="protected_area_utente.jsp"><button type="button" class="btn btn-outline-primary">Home</button></a>
                               <%if(request.getAttribute("attivo").equals("ATTIVO")){%>
-                              <a href="gesticiAbbonamento"><button type="submit" class="btn btn-outline-danger" name="disdici" id="disdici" >Disdici Abbonamento</button></a>
+                              <button type="submit" class="btn btn-outline-danger" name="gestisci"  value="0">Disdici Abbonamento</button></a>
                               <%} else{%>
-                              <a href="gestisciAbbonamento"><button type="submit" class="btn btn-outline-success" name="abbona" id="abbona">Abbonati</button></a>
+                              <button type="submit" class="btn btn-outline-success" name="gestisci" value="1">Abbonati</button></a>
                               <%}%>
+                              </form>
                             </div>
                           </div>
                         </div>
