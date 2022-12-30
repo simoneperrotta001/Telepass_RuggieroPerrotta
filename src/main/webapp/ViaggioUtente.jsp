@@ -35,7 +35,7 @@
                   <p class="mb-0">Veicolo Selezionato</p>
                 </div>
                 <div class="col-sm-8">
-                  <p class="text-muted mb-0" name="targa">${targa}</p>
+                  <p class="text-muted mb-0">${targa}</p>
                 </div>
               </div>
               <hr>
@@ -44,7 +44,7 @@
                   <p class="mb-0">Casello di entrata</p>
                 </div>
                 <div class="col-sm-8">
-                  <p class="text-muted mb-0" name="casello1">${casello1}</p>
+                  <p class="text-muted mb-0" >${casello1}</p>
                 </div>
               </div>
               <hr>
@@ -53,7 +53,7 @@
                   <p class="mb-0">Casello di uscita</p>
                 </div>
                 <div class="col-sm-8">
-                  <p class="text-muted mb-0" name="casello2">${casello2}</p>
+                  <p class="text-muted mb-0">${casello2}</p>
                 </div>
               </div>
               <hr>
@@ -62,7 +62,7 @@
                   <p class="mb-0">Distanza</p>
                 </div>
                 <div class="col-sm-8">
-                  <p class="text-muted mb-0" name="distanza">${distanza}</p>
+                  <p class="text-muted mb-0" >${distanza}</p>
                 </div>
               </div>
               <hr>
@@ -80,11 +80,15 @@
                   <p class="mb-0">Costo totale</p>
                 </div>
                 <div class="col-sm-8">
-                  <p class="text-muted mb-0" name="tariffa">${costo_tot}</p>
+                  <p class="text-muted mb-0" >${costo_tot}</p>
                 </div>
               </div>
               <hr>
               <div class="row">
+                <input type="hidden" name="casello1" value=${casello1}>
+                <input type="hidden" name="casello2" value=${casello2}>
+                <input type="hidden" name="targa" value=${targa}>
+                <input type="hidden" name="tariffa" value=${costo_tot}>
                 <div class="col-sm-12">
                   <a href="SimulaPercorso.jsp"><button type="button" class="btn btn-outline-primary">Cambia Percorso</button></a>
                   <button type="submit" class="btn btn-outline-success" name="viaggia" id="viaggia" >Viaggia</button>

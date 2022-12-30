@@ -77,6 +77,7 @@
                             <div class="col-sm-12">
                               <form name="gestisci" class="rounded" method="POST" action="gestisciAbbonamento">
                               <a href="protected_area_utente.jsp"><button type="button" class="btn btn-outline-primary">Home</button></a>
+                              <a href="cambiausername.jsp"><button type="button" class="btn btn-outline-primary">Modifica Username</button></a>
                               <%if(request.getAttribute("attivo").equals("ATTIVO")){%>
                               <button type="submit" class="btn btn-outline-danger" name="gestisci"  value="0">Disdici Abbonamento</button></a>
                               <%} else{%>

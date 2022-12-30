@@ -59,7 +59,6 @@ public class ServletLogin extends HttpServlet {
         }
         catch (Exception e) {
             System.out.println("errore nella connessione");
-            System.out.println("conn:"+connection);
         }
         finally {
             if (rs != null) {
