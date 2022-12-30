@@ -19,7 +19,6 @@ public class ServletLogin extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username=request.getParameter("username");
         String password=request.getParameter("password");
-        System.out.println("-------\nusername: "+ username +" passw: "+password );
 
         Connection connection=null;
         Statement stm=null;
@@ -44,6 +43,7 @@ public class ServletLogin extends HttpServlet {
                 session.setAttribute("attivo", Attivo);
                 session.setAttribute("plus", Plus);
                 session.setAttribute("quanti", Quanti);
+                session.setAttribute("codice", Codice);
                 if(ruolo==1){
                     response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/protected_area_admin.jsp");
                 }

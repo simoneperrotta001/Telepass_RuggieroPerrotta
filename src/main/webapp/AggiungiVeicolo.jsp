@@ -23,7 +23,7 @@
         <center>
             <div style="width:50%;">
                 <center><h2 class="h2div">Inserisci i dati del veicolo</h2></center>
-                <form name="addVeicolo" class="rounded" style="width:100%;" method="POST" action="">
+                <form name="addVeicolo" class="rounded" style="width:100%;" method="POST" action="aggiungiVeicolo">
                     <label style="width:50%; margin-top: 10px; background-color: #0d6efd; color:white" class="input-group-text" for="targa">Inserisci Targa</label>
                     <input style="width:50%; margin-bottom: 5px; " type="text" class="form-control" id="targa" name="targa" value="" placeholder="AA111AA"><br>
                     <label style="width:50%; margin-top: 10px; background-color: #0d6efd; color:white" class="input-group-text primary" for="classe">Classe</label>
@@ -35,7 +35,7 @@
                         <option value="3">3</option>
                     </select><br>
                     <a href="protected_area_utente.jsp"><button type="button" class="btn btn-outline-primary">Indietro</button></a>
-                    <button type="submit" class="btn btn-outline-primary" name="veicolonuovo" id="veicolonuovo" value="1">Aggiungi</button>
+                    <button type="submit" class="btn btn-outline-primary" name="veicolonuovo" id="veicolonuovo">Aggiungi</button>
                 </form>
             </div>
         </center>
