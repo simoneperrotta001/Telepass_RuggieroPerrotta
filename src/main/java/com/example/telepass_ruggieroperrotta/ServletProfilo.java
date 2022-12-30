@@ -18,12 +18,15 @@ import java.sql.Statement;
 public class ServletProfilo extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Connection connection=null;
+        Statement stm=null;
+        ResultSet rs=null;
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/telepass", "ROOT","ROOT");
-            Statement stm= connection.createStatement();
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/telepass", "ROOT","ROOT");
+            stm= connection.createStatement();
             HttpSession session = request.getSession(false);
-            ResultSet rs=stm.executeQuery("SELECT * FROM CLIENTE WHERE Username='"+session.getAttribute("username")+"'");
+            rs=stm.executeQuery("SELECT * FROM CLIENTE WHERE Username='"+session.getAttribute("username")+"'");
             if(rs.next()){
                 String Nome= rs.getString("NomeCliente");
                 String Cognome= rs.getString("CognomeCliente");
@@ -52,6 +55,23 @@ public class ServletProfilo extends HttpServlet {
         }
         catch (Exception e) {
             System.out.println("errore nella connessione");
+        }
+        finally {
+            if (rs != null) {
+                try {
+                    rs.close();
+                } catch (Exception e) {System.out.println("rs non chiuso");}
+            }
+            if (stm != null) {
+                try {
+                    stm.close();
+                } catch (Exception e) { System.out.println("stm non chiuso");}
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (Exception e) { System.out.println("connection non chiuso");}
+            }
         }
     }
 

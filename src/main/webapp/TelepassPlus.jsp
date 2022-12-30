@@ -11,6 +11,12 @@
 <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
 </head>
 <body>
+<% if ((session.getAttribute("username") == null) || (session.getAttribute("username") == "") && (session.getAttribute("ruolo") == null) || (session.getAttribute("ruolo") == "")) {
+    response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/Accedi.jsp");
+}
+    int plus= (int) session.getAttribute("plus");
+    if(plus == 1) {response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/protected_area_utente.jsp");}
+%>
     <nav class="navbar navbar-expand-lg bg-light"><a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px;"></a></nav>
 
     <div id="main">
@@ -23,7 +29,7 @@
           <h2 class="h2div">Passa a Telepass+</h2>
             <form name="addTelepassPlus" class="rounded" style="width:100%;" method="POST" action="">
                 <a href="protected_area_utente.jsp"><button type="button" class="btn btn-outline-primary">Indietro</button></a>
-                <button type="submit" class="btn btn-outline-primary" name="telepassPlus" id="telepassPlus" value="1">Abilita</button>
+                <a href="abilitaplus"><button type="button" class="btn btn-outline-primary" name="telepassPlus" id="telepassPlus">Abilita</button></a>
             </form>
         </div>
         </center>

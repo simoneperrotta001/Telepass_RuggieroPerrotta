@@ -9,14 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c20c4ea3-3479-436c-be5c-e80ec7a63a20" name="Changes" comment="problema al db fixato, aggiungere varie chiamate al db">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletLogout.java" afterDir="false" />
+    <list default="true" id="c20c4ea3-3479-436c-be5c-e80ec7a63a20" name="Changes" comment="logout aggiunto e varie modifiche">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletAbilitaPlus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletLogin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletProfilo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletProfilo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ProfiloUtente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ProfiloUtente.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/protected_area_admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/protected_area_admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/protected_area_utente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/protected_area_utente.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/AggiungiVeicolo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/AggiungiVeicolo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/TelepassPlus.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/TelepassPlus.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +184,7 @@
       <workItem from="1672311524108" duration="3507000" />
       <workItem from="1672315086116" duration="4943000" />
       <workItem from="1672320609172" duration="8684000" />
-      <workItem from="1672401358078" duration="11158000" />
+      <workItem from="1672401358078" duration="12578000" />
     </task>
     <task id="LOCAL-00001" summary="gg">
       <created>1670315423649</created>
@@ -279,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672329327626</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="logout aggiunto e varie modifiche">
+      <created>1672413563890</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1672413563890</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,7 +307,8 @@
     <MESSAGE value="login servlet iniziata" />
     <MESSAGE value="probloma al db non risolto" />
     <MESSAGE value="problema al db fixato, aggiungere varie chiamate al db" />
-    <option name="LAST_COMMIT_MESSAGE" value="problema al db fixato, aggiungere varie chiamate al db" />
+    <MESSAGE value="logout aggiunto e varie modifiche" />
+    <option name="LAST_COMMIT_MESSAGE" value="logout aggiunto e varie modifiche" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
