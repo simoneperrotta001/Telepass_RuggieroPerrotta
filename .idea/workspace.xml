@@ -9,12 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c20c4ea3-3479-436c-be5c-e80ec7a63a20" name="Changes" comment="aggiunta servlet per passare a plus">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletAggiungiVeicolo.java" afterDir="false" />
+    <list default="true" id="c20c4ea3-3479-436c-be5c-e80ec7a63a20" name="Changes" comment="aggiunta servlet per aggiungere veicoli">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletCalcolaPrezzo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletAbilitaPlus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletAbilitaPlus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/AggiungiVeicolo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/AggiungiVeicolo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/Classe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/Classe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/Classe1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/Classe1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/Classe2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/Classe2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/Classe3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/Classe3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ClasseA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ClasseA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ClasseB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ClasseB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ProfiloUtente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ProfiloUtente.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/SimulaPercorso.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/SimulaPercorso.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +189,7 @@
       <workItem from="1672311524108" duration="3507000" />
       <workItem from="1672315086116" duration="4943000" />
       <workItem from="1672320609172" duration="8684000" />
-      <workItem from="1672401358078" duration="13866000" />
+      <workItem from="1672401358078" duration="19606000" />
     </task>
     <task id="LOCAL-00001" summary="gg">
       <created>1670315423649</created>
@@ -291,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672415131128</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="aggiunta servlet per aggiungere veicoli">
+      <created>1672416437505</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1672416437505</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,7 +328,8 @@
     <MESSAGE value="problema al db fixato, aggiungere varie chiamate al db" />
     <MESSAGE value="logout aggiunto e varie modifiche" />
     <MESSAGE value="aggiunta servlet per passare a plus" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiunta servlet per passare a plus" />
+    <MESSAGE value="aggiunta servlet per aggiungere veicoli" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiunta servlet per aggiungere veicoli" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

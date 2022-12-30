@@ -3,13 +3,18 @@ package com.example.telepass_ruggieroperrotta;
 public class ClasseB implements Classe{
     double costoKm;
 
-    public void ClasseB(){
+    public ClasseB(){
         costoKm = 0.08;
     }
 
     @Override
     public void paga() {
         System.out.println("paga: " + costoKm + " * quantikm");
+    }
+    public double pagamento(double quantikm) {
+        double costoTotale = costoKm*quantikm;
+        costoTotale= Math.floor(costoTotale * 100) / 100;
+        return costoTotale;
     }
 
     @Override

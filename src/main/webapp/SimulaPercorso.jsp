@@ -1,3 +1,7 @@
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.DriverManager" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
@@ -11,36 +15,49 @@
 <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
 </head>
 <body>
+<% if ((session.getAttribute("username") == null) || (session.getAttribute("username") == "") && (session.getAttribute("ruolo") == null) || (session.getAttribute("ruolo") == "")) {
+    response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/Accedi.jsp");
+}%>
     <nav class="navbar navbar-expand-lg bg-light"><a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px;"></a></nav>
 
     <div class="main">
         <center>
             <div style="width:50%;">
                 <center><h2 class="h2div">Inserisci il Percorso e la classe dell'auto</h2></center>
-                <form name="addVeicolo" class="rounded" style="width:100%;" method="POST" action="">
-                  <label style="width:50%; margin-top: 10px; background-color: #0d6efd; color:white" class="input-group-text primary" for="">Casello di Entrata</label>
+                <form name="calcola" class="rounded" style="width:100%;" method="POST" action="calcolaprezzo">
+                  <label style="width:50%; margin-top: 10px; background-color: #0d6efd; color:white" class="input-group-text primary" for="entrata">Casello di Entrata</label>
                   <select style="width:50%; margin-bottom: 5px; " class="form-select" id="caselloEntrata" name="caselloEntrata">
-                      <option value="A">Napoli</option>
-                      <option value="B">Milano</option>
-                      <option value="1">Bologna</option>
-                      <option value="2">Bari</option>
-                      <option value="3">Roma</option>
+                  <%
+                      Connection connection=null;
+                      Statement stm=null;
+                      ResultSet rs=null;
+                      try{
+                          Class.forName("com.mysql.cj.jdbc.Driver");
+                          connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/telepass", "ROOT","ROOT");
+                          stm= connection.createStatement();
+                          rs= stm.executeQuery("SELECT NomeCasello FROM CASELLO ORDER BY NomeCasello");
+                          while (rs.next()){
+                  %>
+                      <option value=<%=rs.getString("NomeCasello")%>><%=rs.getString("NomeCasello")%></option>
+                          <% } %>
                   </select><br>
                   <label style="width:50%; margin-top: 10px; background-color: #0d6efd; color:white" class="input-group-text primary" for="classe">Casello di Uscita</label>
                   <select style="width:50%; margin-bottom: 5px; " class="form-select" id="caselloUscita" name="caselloUscita">
-                      <option value="A">Napoli</option>
-                      <option value="B">Milano</option>
-                      <option value="1">Bologna</option>
-                      <option value="2">Bari</option>
-                      <option value="3">Roma</option>
+                      <%
+                          stm= connection.createStatement();
+                          rs= stm.executeQuery("SELECT NomeCasello FROM CASELLO ORDER BY NomeCasello");
+                          while (rs.next()){%>
+                      <option value=<%=rs.getString("NomeCasello")%>><%=rs.getString("NomeCasello")%></option>
+                              <% } %>
                   </select><br>
                   <label style="width:50%; margin-top: 10px; background-color: #0d6efd; color:white" class="input-group-text primary" for="classe">Classe</label>
                     <select style="width:50%; margin-bottom: 5px; " class="form-select" id="classe" name="classe">
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
+                        <%
+                            stm= connection.createStatement();
+                            rs= stm.executeQuery("SELECT ModelloVeicolo FROM VEICOLO WHERE CodiceTransponder='"+session.getAttribute("codice")+"'");
+                            while (rs.next()){%>
+                        <option value=<%=rs.getString("ModelloVeicolo")%>><%=rs.getString("ModelloVeicolo")%></option>
+                        <% } %>
                     </select><br>
                   <a href="protected_area_utente.jsp"><button type="button" class="btn btn-outline-primary">Indietro</button></a>
                   <button type="submit" class="btn btn-outline-primary" name="calcolaCosti" id="calcolaCosti" value="">Calcola Costi</button>
@@ -49,6 +66,29 @@
         </center>
     </div>
 
+<%
+    }
+    catch (Exception e) {
+        System.out.println("errore nella connessione");
+        System.out.println("conn:"+connection);
+    }
+    finally {
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (Exception e) {System.out.println("rs non chiuso");}
+        }
+        if (stm != null) {
+            try {
+                stm.close();
+            } catch (Exception e) { System.out.println("stm non chiuso");}
+        }
+        if (connection != null) {
+            try {
+                connection.close();
+            } catch (Exception e) { System.out.println("connection non chiuso");}
+        }
+    }%>
     <section class="pageform">
       <!-- Footer -->
       <footer class="text-center text-white" style="background-color: #002752;" id="staticfooter">
