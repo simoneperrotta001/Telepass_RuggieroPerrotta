@@ -75,8 +75,12 @@
                           <hr>
                           <div class="row">
                             <div class="col-sm-12">
-                                <a href="protected_area_utente.jsp"><button type="button" class="btn btn-outline-primary">Home</button></a>
-                                <button type="submit" class="btn btn-outline-danger" name="veicolonuovo" id="veicolonuovo" value="1">Disdici Abbonamento</button>
+                              <a href="protected_area_utente.jsp"><button type="button" class="btn btn-outline-primary">Home</button></a>
+                              <%if(request.getAttribute("attivo").equals("ATTIVO")){%>
+                              <a href="gesticiAbbonamento"><button type="submit" class="btn btn-outline-danger" name="disdici" id="disdici" >Disdici Abbonamento</button></a>
+                              <%} else{%>
+                              <a href="gestisciAbbonamento"><button type="submit" class="btn btn-outline-success" name="abbona" id="abbona">Abbonati</button></a>
+                              <%}%>
                             </div>
                           </div>
                         </div>
