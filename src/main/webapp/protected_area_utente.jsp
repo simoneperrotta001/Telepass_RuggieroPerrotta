@@ -34,8 +34,8 @@
           <ul class="dropdown-menu">
             <%  int plus= (int) session.getAttribute("plus");
                 int attivo= (int) session.getAttribute("attivo");
-                if (plus == 0 && attivo==1) { %><li><a class="dropdown-item" href="TelepassPlus.jsp">Passa a Telepass+</a></li><% } %>
-              <%  Connection connection=null;
+                if (plus == 0 && attivo==1) { %><li><a class="dropdown-item" href="TelepassPlus.jsp">Passa a Telepass+</a></li><% }
+                    Connection connection=null;
                   Statement stm=null;
                   ResultSet rs=null;
                   try{
@@ -47,29 +47,30 @@
                           int quanti=rs.getInt("QUANTI");
                           if (quanti <2 ) { %><li><a class="dropdown-item" href="AggiungiVeicolo.jsp">Aggiungi Veicolo</a></li><% }
                       }
-                  }
+                  %>
+            <li><a class="dropdown-item" href="profilo">Visualizza Profilo</a></li>
+              <% if (attivo==1){%><li><a class="dropdown-item" href="SimulaPercorso.jsp">Simula Percorso</a></li><%}%>
+              <%}
                   catch (Exception e) {
-                      System.out.println("errore nella connessione");
+                  System.out.println("errore nella connessione");
                   }
                   finally {
                       if (rs != null) {
-                          try {
-                              rs.close();
-                          } catch (Exception e) {System.out.println("rs non chiuso");}
+                      try {
+                      rs.close();
+                      } catch (Exception e) {System.out.println("rs non chiuso");}
                       }
                       if (stm != null) {
-                          try {
-                              stm.close();
-                          } catch (Exception e) { System.out.println("stm non chiuso");}
+                      try {
+                      stm.close();
+                      } catch (Exception e) { System.out.println("stm non chiuso");}
                       }
                       if (connection != null) {
-                          try {
-                              connection.close();
-                          } catch (Exception e) { System.out.println("connection non chiuso");}
+                      try {
+                      connection.close();
+                      } catch (Exception e) { System.out.println("connection non chiuso");}
                       }
                   }%>
-            <li><a class="dropdown-item" href="profilo">Visualizza Profilo</a></li>
-            <li><a class="dropdown-item" href="SimulaPercorso.jsp">Simula Percorso</a></li>
           </ul>
         </li>
       </ul>

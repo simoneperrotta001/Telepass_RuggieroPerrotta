@@ -21,16 +21,19 @@
 
     <div id="main">
         <center>
-        <div style="width:50%">
-            <p>Telepass+ ti offre questi vantaggi bla bla bla<br>
-              Inoltre bla bla<br>
-            Servizio assistenza 24/7 per tutto l'anno blabla
-          </p>
-          <h2 class="h2div">Passa a Telepass+</h2>
+            <br><br><br><br>
+        <div class="rounded" style="width:70%; border-style: solid; border-color: #0d6efd; border-width: 3px;">
+            <h2 class="h2div">Passa a Telepass+</h2>
+            <h5>Telepass Plus è l’offerta che ti permette di avere tutti i servizi base (pedaggio, parcheggi convenzionati, Area C di Milano e
+                il traghetto per lo stretto di Messina) più tutti i servizi per occuparti del tuo veicolo (ricarica elettrica, carburante, bollo e
+                revisione) e per muoverti in Italia e in città con la mobilità condivisa (monopattino, treni, taxi, mezzi pubblici).<br>
+                <strong>Inoltre offriamo il servizio assistenza 24/7 per tutto l'anno.</strong>
+          </h5>
             <form name="addTelepassPlus" class="rounded" style="width:100%;" method="POST" action="">
                 <a href="protected_area_utente.jsp"><button type="button" class="btn btn-outline-primary">Indietro</button></a>
-                <a href="abilitaplus"><button type="button" class="btn btn-outline-primary" name="telepassPlus" id="telepassPlus">Abilita</button></a>
+                <a href="abilitaplus"><button type="button" class="btn btn-outline-success" name="telepassPlus" id="telepassPlus">Abilita</button></a>
             </form>
+            <br>
         </div>
         </center>
     </div>

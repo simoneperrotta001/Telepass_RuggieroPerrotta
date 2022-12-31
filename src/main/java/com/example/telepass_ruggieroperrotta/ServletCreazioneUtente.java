@@ -23,6 +23,7 @@ public class ServletCreazioneUtente extends HttpServlet {
         String password=request.getParameter("password");
         String username=request.getParameter("username");
         int transponderattivo= Integer.parseInt(request.getParameter("abbonamento"));
+        int ruolo=0;
 
         Connection connection=null;
         PreparedStatement stm=null;
@@ -33,8 +34,7 @@ public class ServletCreazioneUtente extends HttpServlet {
             stm.setString(1,nome);
             stm.setString(2,cognome);
             stm.setDate(3, nascita);
-            if(codiceContoCorrente.length()==12)
-                stm.setString(4,codiceContoCorrente);
+            if(codiceContoCorrente.length()==12){stm.setString(4,codiceContoCorrente);}
             else{
                 System.out.println("Le cifre che descrivono un codice di conto corrente sono 12.");
                 throw new Exception();
@@ -43,11 +43,11 @@ public class ServletCreazioneUtente extends HttpServlet {
             stm.setString(6, password);
             stm.setString(7, username);
             stm.setInt(8, transponderattivo);
-            stm.setInt(9, 0);
+            stm.setInt(9, ruolo);
             stm.execute();
-            connection.commit();
-            request.setAttribute("successMessage", "Utente Inserito correttamente");
+            request.setAttribute("messaggioUtente", "Utente Inserito correttamente");
             request.getRequestDispatcher("/protected_area_admin.jsp").forward(request, response);
+
         }
         catch (Exception e) {
             System.out.println("errore nella connessione");
@@ -60,6 +60,7 @@ public class ServletCreazioneUtente extends HttpServlet {
             }
             if (connection != null) {
                 try {
+                    connection.commit();
                     connection.close();
                 } catch (Exception e) { System.out.println("connection non chiuso");}
             }

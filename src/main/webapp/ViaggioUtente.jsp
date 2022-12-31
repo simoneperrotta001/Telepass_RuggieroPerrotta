@@ -62,7 +62,7 @@
                   <p class="mb-0">Distanza</p>
                 </div>
                 <div class="col-sm-8">
-                  <p class="text-muted mb-0" >${distanza}</p>
+                  <p class="text-muted mb-0" >${distanza} Km</p>
                 </div>
               </div>
               <hr>
@@ -71,7 +71,7 @@
                   <p class="mb-0">Costo al chilometro</p>
                 </div>
                 <div class="col-sm-8">
-                  <p class="text-muted mb-0">${costokm}</p>
+                  <p class="text-muted mb-0">${costokm}€</p>
                 </div>
               </div>
               <hr>
@@ -80,7 +80,7 @@
                   <p class="mb-0">Costo totale</p>
                 </div>
                 <div class="col-sm-8">
-                  <p class="text-muted mb-0" >${costo_tot}</p>
+                  <p class="text-muted mb-0" >${costo_tot}€</p>
                 </div>
               </div>
               <hr>
