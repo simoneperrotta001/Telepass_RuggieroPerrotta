@@ -24,7 +24,7 @@
             <center><a class="navbar-brand" href="protected_area_admin.jsp"><img src="images/Logo_Telepass_2021.png" style="height:40px"></a></center>
         </div>
         <center><h3 class="h2div">Inserisci i dati dell'utente da creare</h3></center><br>
-        <form style="margin-top: 10px;" action="#" method="POST">
+        <form style="margin-top: 10px;" action="creazioneutente" method="POST">
             <div class="row" style="width:100%;">
                 <div class="col-sm-6">
                     <center>
@@ -42,7 +42,7 @@
                                 </div>
                                 <br>
                                 <div>
-                                    <label><input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" id="inptxt"></label>
+                                    <label><input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" name="password" id="inptxt"></label>
                                 </div>
                             </div>
                     </center>
@@ -59,12 +59,12 @@
                                     <label><input type="text" class="form-control" placeholder="Codice Conto Corrente" aria-label="ContoCorrente" aria-describedby="basic-addon1" name="contocorrente" id="inptxt"></label>
                                 </div>
                                 <br>
-                                <select class="form-select" id="inptxt" name="Abbonamento">
+                                <select class="form-select" id="inptxt" name="abbonamento">
                                     <option value="1">ABBONAMENTO ATTIVO</option>
                                     <option value="0">ABBONAMENTO NON ATTIVO</option>
                                 </select>
                                 <br>
-                                <select class="form-select" id="inptxt" name="Plus">
+                                <select class="form-select" id="inptxt" name="plus">
                                     <option value="1">PLUS ATTIVO</option>
                                     <option value="0">PLUS NON ATTIVO</option>
                                 </select>

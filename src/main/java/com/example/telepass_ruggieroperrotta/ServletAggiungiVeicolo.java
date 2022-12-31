@@ -22,7 +22,6 @@ public class ServletAggiungiVeicolo extends HttpServlet {
             connection.setAutoCommit(false);
 
             int cod = (int) session.getAttribute("codice");
-            int add = (int) session.getAttribute("quanti");
             stm = connection.prepareStatement("INSERT INTO VEICOLO VALUES (?,?,?)");
             if(targa.length()==7)
                 stm.setString(1,targa);
@@ -33,9 +32,8 @@ public class ServletAggiungiVeicolo extends HttpServlet {
             stm.setInt(2,cod);
             stm.setString(3,classe);
             stm.execute();
-            add = add+1;
-            session.setAttribute("quanti", add);
             connection.commit();
+            request.setAttribute("successMessage", "Veicolo Inserito correttamente");
             request.getRequestDispatcher("/protected_area_utente.jsp").forward(request, response);
         }
         catch (Exception e) {

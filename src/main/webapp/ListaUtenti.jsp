@@ -1,3 +1,4 @@
+<%@ page import="java.sql.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
@@ -20,58 +21,88 @@
   if(ruolo == 0) {response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/protected_area_utente.jsp");}
 %>
 <div>
-<nav class="navbar navbar-expand-lg bg-light"><a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px;"></a></nav>
+<nav class="navbar navbar-expand-lg bg-light"><a class="navbar-brand" href="protected_area_admin.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px;"></a></nav>
 <center>
   <div>
     <div class="col-md-8">
-      <table class="table">
+      <table class="table" style="border-width: 3px; border-color:#0d6efd; border-style: solid ">
         <thead style="background-color: #0d6efd; color:white">
         <tr>
-          <th scope="col">#</th>
           <th scope="col">Nome Utente</th>
-          <th scope="col">Email</th>
-          <th scope="col">Data Iscrizione</th>
-          <th scope="col">Scadenza Abbonamento</th>
-          <th scope="col">Status</th>
+          <th scope="col">Cognome Utente</th>
+          <th scope="col">Nascita Cliente</th>
+          <th scope="col">Codice Transponder</th>
+          <th scope="col">Username</th>
+          <th scope="col">Codice Conto Corrente</th>
+          <th scope="col">Abbonamento</th>
           <th scope="col">Telepass+</th>
           <th scope="col">Modifica</th>
           <th scope="col">Elimina</th>
         </tr>
         </thead>
         <tbody>
-        <tr class="table-primary">
-          <th scope="row">1</th>
-          <td>jhon</td>
-          <td>Jon@gmail.com</td>
-          <td>10/10/1995</td>
-          <td>10/10/1995</td>
-          <td><span class="badge rounded-pill text-bg-success">Attivo</span></td>
-          <td><span class="badge rounded-pill text-bg-danger">Disattivo</span></td>
-          <td><button class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></button></td>
-          <td><button class="btn btn-sm btn-danger"><i class="bi bi-trash3-fill"></i></button></td>
-        </tr>
-        <tr class="table-success">
-          <th scope="row">2</th>
-          <td>mark</td>
-          <td>mark@gmail.com</td>
-          <td>10/10/1996</td>
-          <td>10/10/1996</td>
-          <td><span class="badge rounded-pill text-bg-success">Attivo</span></td>
-          <td><span class="badge rounded-pill text-bg-success">Attivo</span></td>
-          <td><button class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></button></td>
-          <td><button class="btn btn-sm btn-danger"><i class="bi bi-trash3-fill"></i></button></td>
-        </tr>
-        <tr class="table-danger">
-          <th scope="row">3</th>
-          <td>Raj</td>
-          <td>raj@gmail.com</td>
-          <td>10/10/1997</td>
-          <td>10/10/1997</td>
-          <td><span class="badge rounded-pill text-bg-danger">Disattivo</span></td>
-          <td><span class="badge rounded-pill text-bg-danger">Disattivo</span></td>
-          <td><button class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></button></td>
-          <td><button class="btn btn-sm btn-danger"><i class="bi bi-trash3-fill"></i></button></td>
-        </tr>
+        <%
+          int abbonamento, plus;
+          Connection connection=null;
+          Statement stm=null;
+          ResultSet rs=null;
+          try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/telepass", "ROOT","ROOT");
+            stm= connection.createStatement();
+            rs= stm.executeQuery("SELECT * FROM CLIENTE");
+            while(rs.next()){
+              abbonamento = rs.getInt("TransponderAttivo");
+              plus = rs.getInt("Plus");
+              if(abbonamento == 1 && plus == 1){%>
+                  <tr class="table-success">
+              <%}
+              else if (abbonamento ==1 && plus==0) {%>
+                  <tr class="table-primary">
+              <%}
+              else {%>
+                  <tr class="table-danger">
+              <%}%>
+                  <td><%=rs.getString("NomeCliente")%></td>
+                  <td><%=rs.getString("CognomeCliente")%></td>
+                  <td><%=rs.getString("NascitaCliente")%></td>
+                  <td><%=rs.getString("CodiceTransponder")%></td>
+                  <td><%=rs.getString("Username")%></td>
+                  <td><%=rs.getString("CodiceContoCorrente")%></td>
+                  <%if(abbonamento == 1){%>
+                    <td><span class="badge rounded-pill text-bg-success">Attivo</span></td>
+                  <% }else {%>
+                    <td><span class="badge rounded-pill text-bg-danger">Disattivo</span></td><% }%>
+                  <%if(plus == 1){%>
+                    <td><span class="badge rounded-pill text-bg-success">Attivo</span></td>
+                  <% }else {%>
+                    <td><span class="badge rounded-pill text-bg-danger">Disattivo</span></td><% }%>
+                  <td><a href="GestisciTransponder.jsp"><button class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></button></a></td>
+                  <td><button class="btn btn-sm btn-danger"><i class="bi bi-trash3-fill"></i></button></td>
+                  </tr>
+        <%  }
+          }
+          catch (Exception e) {
+            System.out.println("errore nella connessione");
+          }
+          finally {
+            if (rs != null) {
+              try {
+                rs.close();
+              } catch (Exception e) {System.out.println("rs non chiuso");}
+            }
+            if (stm != null) {
+              try {
+                stm.close();
+              } catch (Exception e) { System.out.println("stm non chiuso");}
+            }
+            if (connection != null) {
+              try {
+                connection.close();
+              } catch (Exception e) { System.out.println("connection non chiuso");}
+            }
+          }
+        %>
         </tbody>
       </table>
     </div>

@@ -20,7 +20,7 @@ public class ServletGestisciAbbonamento extends HttpServlet {
         Statement stm=null;
         ResultSet rs = null;
         if(azione.equals("0")){
-            if(utente.equals(null))
+            if(utente == null)
             {
                 try{
                     Class.forName("com.mysql.cj.jdbc.Driver");
@@ -79,7 +79,7 @@ public class ServletGestisciAbbonamento extends HttpServlet {
 
         }
         else{
-            if(utente.equals(null)){
+            if(utente == null){
                 try{
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/telepass", "ROOT","ROOT");

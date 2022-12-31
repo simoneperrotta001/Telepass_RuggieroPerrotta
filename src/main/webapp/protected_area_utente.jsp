@@ -1,3 +1,7 @@
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.DriverManager" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
@@ -31,8 +35,39 @@
             <%  int plus= (int) session.getAttribute("plus");
                 int attivo= (int) session.getAttribute("attivo");
                 if (plus == 0 && attivo==1) { %><li><a class="dropdown-item" href="TelepassPlus.jsp">Passa a Telepass+</a></li><% } %>
-              <%  int quanti= (int) session.getAttribute("quanti");
-                  if (quanti <2 ) { %><li><a class="dropdown-item" href="AggiungiVeicolo.jsp">Aggiungi Veicolo</a></li><% } %>
+              <%  Connection connection=null;
+                  Statement stm=null;
+                  ResultSet rs=null;
+                  try{
+                      Class.forName("com.mysql.cj.jdbc.Driver");
+                      connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/telepass", "ROOT","ROOT");
+                      stm= connection.createStatement();
+                      rs= stm.executeQuery("SELECT COUNT(*) AS QUANTI FROM VEICOLO WHERE CodiceTransponder='"+session.getAttribute("codice")+"'");
+                      if (rs.next()){
+                          int quanti=rs.getInt("QUANTI");
+                          if (quanti <2 ) { %><li><a class="dropdown-item" href="AggiungiVeicolo.jsp">Aggiungi Veicolo</a></li><% }
+                      }
+                  }
+                  catch (Exception e) {
+                      System.out.println("errore nella connessione");
+                  }
+                  finally {
+                      if (rs != null) {
+                          try {
+                              rs.close();
+                          } catch (Exception e) {System.out.println("rs non chiuso");}
+                      }
+                      if (stm != null) {
+                          try {
+                              stm.close();
+                          } catch (Exception e) { System.out.println("stm non chiuso");}
+                      }
+                      if (connection != null) {
+                          try {
+                              connection.close();
+                          } catch (Exception e) { System.out.println("connection non chiuso");}
+                      }
+                  }%>
             <li><a class="dropdown-item" href="profilo">Visualizza Profilo</a></li>
             <li><a class="dropdown-item" href="SimulaPercorso.jsp">Simula Percorso</a></li>
           </ul>
