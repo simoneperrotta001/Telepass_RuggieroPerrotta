@@ -1,3 +1,7 @@
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.DriverManager" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
@@ -12,26 +16,39 @@
     <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
     </head>
 <body>
+<% if ((session.getAttribute("username") == null) || (session.getAttribute("username") == "") && (session.getAttribute("ruolo") == null) || (session.getAttribute("ruolo") == "")) {
+    response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/Accedi.jsp");
+}
+    int ruolo= (int) session.getAttribute("ruolo");
+    if(ruolo == 0) {response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/protected_area_utente.jsp");}
+%>
     <div id="main">
         <div class="row" style="height: 90px;">
             <div class="row" style="height: 30px;"></div>
             <center><a class="navbar-brand" href="protected_area_admin.jsp"><img src="images/Logo_Telepass_2021.png" style="height:40px"></a></center>
         </div>
-        <form style="margin-top: 10px;" action="#" method="POST">
             <div class="row" style="width:100%;">
                 <div class="col-sm-6">
                     <center>
                         <h3 class="h2div">Assegna Transponder</h3><br>
-                        <form name="addVeicolo" class="rounded" style="width:100%;" method="POST" action="">
+                        <form name="gestisci" class="rounded" style="width:100%;" method="POST" action="gestisciAbbonamento">
                             <label style="width:50%; margin-top: 10px; background-color: #0d6efd; color:white" class="input-group-text primary" for="nonabbonati">Utenti Senza Transponder</label>
-                            <select style="width:50%; margin-bottom: 5px; " class="form-select" id="caselloEntrata" name="caselloEntrata">
-                                <option value="A">UTENTE1</option>
-                                <option value="B">UTENTE2</option>
-                                <option value="1">UTENTE3</option>
-                                <option value="2">UTENTE4</option>
-                                <option value="3">UTENTE5</option>
+                            <select style="width:50%; margin-bottom: 5px; " class="form-select" id="username" name="username">
+                                <%
+                                    Connection connection=null;
+                                    Statement stm=null;
+                                    ResultSet rs=null;
+                                    try{
+                                        Class.forName("com.mysql.cj.jdbc.Driver");
+                                        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/telepass", "ROOT","ROOT");
+                                        stm= connection.createStatement();
+                                        rs= stm.executeQuery("SELECT Username FROM CLIENTE WHERE Amministratore=0 AND TransponderAttivo=0");
+                                        while (rs.next()){
+                                %>
+                                <option value=<%=rs.getString("Username")%>><%=rs.getString("Username")%></option>
+                                <% } %>
                             </select><br>
-                            <button type="submit" class="btn btn-outline-primary" name="calcolaCosti" id="calcolaCosti" value="">ASSEGNA</button>
+                            <button type="submit" class="btn btn-outline-primary" name="gestisci" value="1">ASSEGNA</button>
                         </form> 
                     </center>
                 </div>
@@ -39,22 +56,45 @@
                 <div class="col-sm-6">
                     <center>
                         <h3 class="h2div">Rimuovi Transponder</h3><br>
-                        <form name="addVeicolo" class="rounded" style="width:100%;" method="POST" action="">
+                        <form name="gestisci" class="rounded" style="width:100%;" method="POST" action="gestisciAbbonamento">
                             <label style="width:50%; margin-top: 10px; background-color: #0d6efd; color:white" class="input-group-text primary" for="abbonati">Utenti Aventi Transponder</label>
-                            <select style="width:50%; margin-bottom: 5px; " class="form-select" id="caselloEntrata" name="caselloEntrata">
-                                <option value="A">UTENTE1</option>
-                                <option value="B">UTENTE2</option>
-                                <option value="1">UTENTE3</option>
-                                <option value="2">UTENTE4</option>
-                                <option value="3">UTENTE5</option>
+                            <select style="width:50%; margin-bottom: 5px; " class="form-select" id="username" name="username">
+                                <%
+                                    stm= connection.createStatement();
+                                    rs= stm.executeQuery("SELECT Username FROM CLIENTE WHERE Amministratore=0 AND TransponderAttivo=1");
+                                    while (rs.next()){
+                                %>
+                                <option value=<%=rs.getString("Username")%>><%=rs.getString("Username")%></option>
+                                <% } %>
                             </select><br>
-                            <button type="submit" class="btn btn-outline-primary" name="calcolaCosti" id="calcolaCosti" value="">RIMUOVI</button>
+                            <button type="submit" class="btn btn-outline-primary" name="gestisci" value="0">RIMUOVI</button>
                         </form> 
                     </center>
                 </div>
             </div>
-        </form>
     </div>
+<%
+    }
+    catch (Exception e) {
+        System.out.println("errore nella connessione");
+    }
+    finally {
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (Exception e) {System.out.println("rs non chiuso");}
+        }
+        if (stm != null) {
+            try {
+                stm.close();
+            } catch (Exception e) { System.out.println("stm non chiuso");}
+        }
+        if (connection != null) {
+            try {
+                connection.close();
+            } catch (Exception e) { System.out.println("connection non chiuso");}
+        }
+    }%>
 
     <section class="">
         <!-- Footer -->
