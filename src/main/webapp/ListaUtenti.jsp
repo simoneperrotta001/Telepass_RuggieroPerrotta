@@ -20,7 +20,6 @@
   int ruolo= (int) session.getAttribute("ruolo");
   if(ruolo == 0) {response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/protected_area_utente.jsp");}
 %>
-<div>
 <nav class="navbar navbar-expand-lg bg-light"><a class="navbar-brand" href="protected_area_admin.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px;"></a></nav>
 <center>
   <div>
