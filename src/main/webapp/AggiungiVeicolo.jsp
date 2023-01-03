@@ -1,7 +1,4 @@
-<%@ page import="java.sql.Connection" %>
-<%@ page import="java.sql.Statement" %>
-<%@ page import="java.sql.ResultSet" %>
-<%@ page import="java.sql.DriverManager" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
@@ -15,51 +12,18 @@
 <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
 </head>
 <body>
-<jsp:forward page="/ServletPrivilegi"></jsp:forward>
-<%
-    /*if ((session.getAttribute("username") == null) || (session.getAttribute("username") == "") && (session.getAttribute("ruolo") == null) || (session.getAttribute("ruolo") == "")) {
-        response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/Accedi.jsp");
-    }
-    else if (session.getAttribute("ruolo") == "1") {
-        response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/protected_area_admin.jsp");
-    }*/
+<sql:setDataSource var="snapshot" driver="com.mysql.cj.jdbc.Driver"
+                   url="jdbc:mysql://localhost:3306/telepass"
+                   user="ROOT"  password="ROOT"/>
 
-    Connection connection=null;
-    Statement stm=null;
-    ResultSet rs=null;
-    try{
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/telepass", "ROOT","ROOT");
-        stm= connection.createStatement();
-        rs= stm.executeQuery("SELECT COUNT(*) AS QUANTI FROM VEICOLO WHERE CodiceTransponder='"+session.getAttribute("codice")+"'");
-        if (rs.next()){
-            int quanti = rs.getInt("QUANTI");
-            if (quanti == 2 ) {
-                response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/protected_area_utente.jsp");
-            }
-        }
-    }
-    catch (Exception e) {
-        System.out.println("errore nella connessione");
-    }
-    finally {
-        if (rs != null) {
-            try {
-                rs.close();
-            } catch (Exception e) {System.out.println("rs non chiuso");}
-        }
-        if (stm != null) {
-            try {
-                stm.close();
-            } catch (Exception e) { System.out.println("stm non chiuso");}
-        }
-        if (connection != null) {
-            try {
-                connection.close();
-            } catch (Exception e) { System.out.println("connection non chiuso");}
-        }
-    }
-%>
+<sql:query dataSource="${snapshot}" var="result">
+    SELECT COUNT(*) AS QUANTI FROM VEICOLO WHERE CodiceTransponder=${sessionScope.codice}
+</sql:query>
+<c:forEach var="row" items="${result.rows}">
+    <c:if test="${row.QUANTI==2}">
+        <c:redirect url="http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/protected_area_utente.jsp"/>
+    </c:if>
+</c:forEach>
     <nav class="navbar navbar-expand-lg bg-light"><a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px;"></a></nav>
 
     <div class="main">

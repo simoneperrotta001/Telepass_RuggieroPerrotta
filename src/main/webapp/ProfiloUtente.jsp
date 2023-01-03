@@ -44,7 +44,7 @@
                               <p class="mb-0">Username</p>
                             </div>
                             <div class="col-sm-8">
-                              <p class="text-muted mb-0"><%=session.getAttribute("username")%></p>
+                              <p class="text-muted mb-0">${sessionScope.username}</p>
                             </div>
                           </div>
                           <hr>
@@ -53,7 +53,7 @@
                               <p class="mb-0">Codice Transponder</p>
                             </div>
                             <div class="col-sm-8">
-                              <p class="text-muted mb-0"><%= request.getAttribute("codiceTransponder") %></p>
+                              <p class="text-muted mb-0">${codiceTransponder}</p>
                             </div>
                           </div>
                           <hr>
@@ -62,7 +62,7 @@
                               <p class="mb-0">Transponder</p>
                             </div>
                             <div class="col-sm-8">
-                              <p class="text-muted mb-0"><%= request.getAttribute("attivo") %></p>
+                              <p class="text-muted mb-0">${attivo}</p>
                             </div>
                           </div>
                           <hr>
@@ -71,7 +71,7 @@
                               <p class="mb-0">Telepass+</p>
                             </div>
                             <div class="col-sm-8">
-                              <p class="text-muted mb-0"><%= request.getAttribute("plus") %></p>
+                              <p class="text-muted mb-0">${plus}</p>
                             </div>
                           </div>
                           <hr>
@@ -80,11 +80,22 @@
                               <form name="gestisci" class="rounded" method="POST" action="gestisciAbbonamento">
                               <a href="protected_area_utente.jsp"><button type="button" class="btn btn-outline-primary">Home</button></a>
                               <a href="cambiausername.jsp"><button type="button" class="btn btn-outline-primary">Modifica Username</button></a>
-                              <%if(request.getAttribute("attivo").equals("ATTIVO")){%>
-                              <button type="submit" class="btn btn-outline-danger" name="gestisci"  value="0">Disdici Abbonamento</button></a>
-                              <%} else{%>
-                              <button type="submit" class="btn btn-outline-success" name="gestisci" value="1">Abbonati</button></a>
-                              <%}%>
+                                <c:choose>
+                                  <c:when test="${attivo=='ATTIVO' && plus=='ATTIVO'}">
+                                    <button type="submit" class="btn btn-outline-danger" name="gestisci"  value="0">Disdici Abbonamento</button></a>
+                                    <button type="submit" class="btn btn-outline-danger" name="gestisci"  value="2">Disdici Plus</button></a>
+                                  </c:when>
+
+                                  <c:when test="${attivo=='ATTIVO' && plus=='NON ATTIVO'}">
+                                    <button type="submit" class="btn btn-outline-danger" name="gestisci"  value="0">Disdici Abbonamento</button></a>
+                                    <button type="submit" class="btn btn-outline-success" name="gestisci" value="3">Abbonati a Plus</button></a>
+                                  </c:when>
+
+                                  <c:otherwise>
+                                    <button type="submit" class="btn btn-outline-success" name="gestisci" value="1">Abbonati</button></a>
+                                  </c:otherwise>
+
+                                </c:choose>
                               </form>
                             </div>
                           </div>

@@ -1,7 +1,4 @@
-<%@ page import="java.sql.Connection" %>
-<%@ page import="java.sql.Statement" %>
-<%@ page import="java.sql.ResultSet" %>
-<%@ page import="java.sql.DriverManager" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
@@ -25,52 +22,34 @@
       <a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px;"></a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-            <a class="nav-link disabled">Ciao, <%=session.getAttribute("username")%></a>
+            <a class="nav-link disabled">Ciao, ${sessionScope.username}</a>
           </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Operazioni
           </a>
           <ul class="dropdown-menu">
-            <%  int plus= (int) session.getAttribute("plus");
-                int attivo= (int) session.getAttribute("attivo");
-                if (plus == 0 && attivo==1) { %><li><a class="dropdown-item" href="TelepassPlus.jsp">Passa a Telepass+</a></li><% }
-                    Connection connection=null;
-                  Statement stm=null;
-                  ResultSet rs=null;
-                  try{
-                      Class.forName("com.mysql.cj.jdbc.Driver");
-                      connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/telepass", "ROOT","ROOT");
-                      stm= connection.createStatement();
-                      rs= stm.executeQuery("SELECT COUNT(*) AS QUANTI FROM VEICOLO WHERE CodiceTransponder='"+session.getAttribute("codice")+"'");
-                      if (rs.next()){
-                          int quanti=rs.getInt("QUANTI");
-                          if (quanti <2 ) { %><li><a class="dropdown-item" href="AggiungiVeicolo.jsp">Aggiungi Veicolo</a></li><% }
-                      }
-                  %>
-            <li><a class="dropdown-item" href="profilo">Visualizza Profilo</a></li>
-              <% if (attivo==1){%><li><a class="dropdown-item" href="SimulaPercorso.jsp">Simula Percorso</a></li><%}%>
-              <%}
-                  catch (Exception e) {
-                  System.out.println("errore nella connessione");
-                  }
-                  finally {
-                      if (rs != null) {
-                      try {
-                      rs.close();
-                      } catch (Exception e) {System.out.println("rs non chiuso");}
-                      }
-                      if (stm != null) {
-                      try {
-                      stm.close();
-                      } catch (Exception e) { System.out.println("stm non chiuso");}
-                      }
-                      if (connection != null) {
-                      try {
-                      connection.close();
-                      } catch (Exception e) { System.out.println("connection non chiuso");}
-                      }
-                  }%>
+
+              <c:if test="${sessionScope.plus==0 && sessionScope.attivo==1}">
+                <li><a class="dropdown-item" href="TelepassPlus.jsp">Passa a Telepass+</a></li>
+              </c:if>
+
+              <sql:setDataSource var="snapshot" driver="com.mysql.cj.jdbc.Driver"
+                                 url="jdbc:mysql://localhost:3306/telepass"
+                                 user="ROOT"  password="ROOT"/>
+
+              <sql:query dataSource="${snapshot}" var="result">
+                  SELECT COUNT(*) AS QUANTI FROM VEICOLO WHERE CodiceTransponder=${sessionScope.codice}
+              </sql:query>
+              <c:forEach var="row" items="${result.rows}">
+                  <c:if test="${row.QUANTI<2}">
+                      <li><a class="dropdown-item" href="AggiungiVeicolo.jsp">Aggiungi Veicolo</a></li>
+                  </c:if>
+              </c:forEach>
+              <li><a class="dropdown-item" href="profilo">Visualizza Profilo</a></li>
+              <c:if test="${sessionScope.attivo==1}">
+                  <li><a class="dropdown-item" href="SimulaPercorso.jsp">Simula Percorso</a></li>
+              </c:if>
           </ul>
         </li>
       </ul>

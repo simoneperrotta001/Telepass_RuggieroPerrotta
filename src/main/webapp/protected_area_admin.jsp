@@ -22,7 +22,7 @@
       <a class="navbar-brand" href="protected_area_admin.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px;"></a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-            <a class="nav-link disabled">Ciao, <%=session.getAttribute("username")%></a>
+            <a class="nav-link disabled">Ciao, ${sessionScope.username}</a>
           </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -15,9 +15,6 @@
     if ((session.getAttribute("username") == null) || (session.getAttribute("username") == "") && (session.getAttribute("ruolo") == null) || (session.getAttribute("ruolo") == "")) {
         response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/Accedi.jsp");
     }
-    else if ((session.getAttribute("username") != null) || (session.getAttribute("username") != "") && (session.getAttribute("ruolo") == null) || (session.getAttribute("ruolo") == "")) {
-        response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/protected_area_utente.jsp");
-    }
 %>
     <nav class="navbar navbar-expand-lg bg-light"><a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px;"></a></nav>
 
@@ -30,10 +27,10 @@
                 il traghetto per lo stretto di Messina) più tutti i servizi per occuparti del tuo veicolo (ricarica elettrica, carburante, bollo e
                 revisione) e per muoverti in Italia e in città con la mobilità condivisa (monopattino, treni, taxi, mezzi pubblici).<br>
                 <strong>Inoltre offriamo il servizio assistenza 24/7 per tutto l'anno.</strong>
-          </h5>
-            <form name="addTelepassPlus" class="rounded" style="width:100%;" method="POST" action="">
+            </h5>
+            <form name="TelepassPlus" class="rounded" style="width:100%;" method="POST" action="gestisciAbbonamento">
                 <a href="protected_area_utente.jsp"><button type="button" class="btn btn-outline-primary">Indietro</button></a>
-                <a href="abilitaplus"><button type="button" class="btn btn-outline-success" name="telepassPlus" id="telepassPlus">Abilita</button></a>
+                <button type="submit" class="btn btn-outline-success" name="gestisci" value="3">Abbonati a Plus</button></a>
             </form>
             <br>
         </div>

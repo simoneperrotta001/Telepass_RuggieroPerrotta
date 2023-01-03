@@ -1,6 +1,6 @@
-<%@ page import="java.sql.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
 <html>
 <head>
   <!-- CSS only -->
@@ -41,68 +41,56 @@
         </tr>
         </thead>
         <tbody>
-        <%
-          int abbonamento, plus;
-          Connection connection=null;
-          Statement stm=null;
-          ResultSet rs=null;
-          try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/telepass", "ROOT","ROOT");
-            stm= connection.createStatement();
-            rs= stm.executeQuery("SELECT * FROM CLIENTE");
-            while(rs.next()){
-              abbonamento = rs.getInt("TransponderAttivo");
-              plus = rs.getInt("Plus");
-              if(abbonamento == 1 && plus == 1){%>
-                  <tr class="table-success">
-              <%}
-              else if (abbonamento ==1 && plus==0) {%>
-                  <tr class="table-primary">
-              <%}
-              else {%>
-                  <tr class="table-danger">
-              <%}%>
-                  <td><%=rs.getString("NomeCliente")%></td>
-                  <td><%=rs.getString("CognomeCliente")%></td>
-                  <td><%=rs.getString("NascitaCliente")%></td>
-                  <td><%=rs.getString("CodiceTransponder")%></td>
-                  <td><%=rs.getString("Username")%></td>
-                  <td><%=rs.getString("CodiceContoCorrente")%></td>
-                  <%if(abbonamento == 1){%>
-                    <td><span class="badge rounded-pill text-bg-success">Attivo</span></td>
-                  <% }else {%>
-                    <td><span class="badge rounded-pill text-bg-danger">Disattivo</span></td><% }%>
-                  <%if(plus == 1){%>
-                    <td><span class="badge rounded-pill text-bg-success">Attivo</span></td>
-                  <% }else {%>
-                    <td><span class="badge rounded-pill text-bg-danger">Disattivo</span></td><% }%>
-                  <td><a href="GestisciTransponder.jsp"><button class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></button></a></td>
-                  <td><button class="btn btn-sm btn-danger"><i class="bi bi-trash3-fill"></i></button></td>
-                  </tr>
-        <%  }
-          }
-          catch (Exception e) {
-            System.out.println("errore nella connessione");
-          }
-          finally {
-            if (rs != null) {
-              try {
-                rs.close();
-              } catch (Exception e) {System.out.println("rs non chiuso");}
-            }
-            if (stm != null) {
-              try {
-                stm.close();
-              } catch (Exception e) { System.out.println("stm non chiuso");}
-            }
-            if (connection != null) {
-              try {
-                connection.close();
-              } catch (Exception e) { System.out.println("connection non chiuso");}
-            }
-          }
-        %>
+
+        <sql:setDataSource var="snapshot" driver="com.mysql.cj.jdbc.Driver"
+                           url="jdbc:mysql://localhost:3306/telepass"
+                           user="ROOT"  password="ROOT"/>
+
+        <sql:query dataSource="${snapshot}" var="result">
+          SELECT * FROM CLIENTE;
+        </sql:query>
+        <c:forEach var="row" items="${result.rows}">
+          <c:choose>
+            <c:when test="${row.TransponderAttivo==1  && row.Plus==1}">
+                <tr class="table-success">
+            </c:when>
+
+            <c:when test="${row.TransponderAttivo==1  && row.Plus==0}">
+                <tr class="table-primary">
+            </c:when>
+            <c:otherwise>
+              <tr class="table-danger">
+            </c:otherwise>
+          </c:choose>
+
+          <td><c:out value="${row.NomeCliente}"/></td>
+          <td><c:out value="${row.CognomeCliente}"/></td>
+          <td><c:out value="${row.NascitaCliente}"/></td>
+          <td><c:out value="${row.CodiceTransponder}"/></td>
+          <td><c:out value="${row.Username}"/></td>
+          <td><c:out value="${row.CodiceContoCorrente}"/></td>
+          <c:choose>
+            <c:when test="${row.TransponderAttivo==1}">
+              <td><span class="badge rounded-pill text-bg-success">Attivo</span></td>
+            </c:when>
+            <c:otherwise>
+              <td><span class="badge rounded-pill text-bg-danger">Disattivo</span></td>
+            </c:otherwise>
+          </c:choose>
+
+          <c:choose>
+            <c:when test="${row.Plus==1}">
+              <td><span class="badge rounded-pill text-bg-success">Attivo</span></td>
+            </c:when>
+
+            <c:otherwise>
+              <td><span class="badge rounded-pill text-bg-danger">Disattivo</span></td>
+            </c:otherwise>
+          </c:choose>
+          <td><a href="GestisciTransponder.jsp"><button class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></button></a></td>
+          <td><a href="GestisciTransponder.jsp"><button class="btn btn-sm btn-danger"><i class="bi bi-trash3-fill"></i></button></a></td>
+          </tr>
+        </c:forEach>
         </tbody>
       </table>
     </div>

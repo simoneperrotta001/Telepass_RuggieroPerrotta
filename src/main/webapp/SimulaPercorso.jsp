@@ -1,7 +1,4 @@
-<%@ page import="java.sql.Connection" %>
-<%@ page import="java.sql.Statement" %>
-<%@ page import="java.sql.ResultSet" %>
-<%@ page import="java.sql.DriverManager" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
@@ -29,37 +26,34 @@
                 <form name="calcola" class="rounded" style="width:100%;" method="POST" action="calcolaprezzo">
                   <label style="width:50%; margin-top: 10px; background-color: #0d6efd; color:white" class="input-group-text primary" for="entrata">Casello di Entrata</label>
                   <select style="width:50%; margin-bottom: 5px; " class="form-select" id="caselloEntrata" name="caselloEntrata">
-                  <%
-                      Connection connection=null;
-                      Statement stm=null;
-                      ResultSet rs=null;
-                      try{
-                          Class.forName("com.mysql.cj.jdbc.Driver");
-                          connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/telepass", "ROOT","ROOT");
-                          stm= connection.createStatement();
-                          rs= stm.executeQuery("SELECT NomeCasello FROM CASELLO ORDER BY NomeCasello");
-                          while (rs.next()){
-                  %>
-                      <option value=<%=rs.getString("NomeCasello")%>><%=rs.getString("NomeCasello")%></option>
-                          <% } %>
+                  <sql:setDataSource var="snapshot" driver="com.mysql.cj.jdbc.Driver"
+                                     url="jdbc:mysql://localhost:3306/telepass"
+                                     user="ROOT"  password="ROOT"/>
+
+                  <sql:query dataSource="${snapshot}" var="result">
+                      SELECT NomeCasello FROM CASELLO ORDER BY NomeCasello
+                  </sql:query>
+                  <c:forEach var="row" items="${result.rows}">
+                      <option value=<c:out value="${row.NomeCasello}"/>><c:out value="${row.NomeCasello}"/></option>
+                  </c:forEach>
                   </select><br>
                   <label style="width:50%; margin-top: 10px; background-color: #0d6efd; color:white" class="input-group-text primary" for="classe">Casello di Uscita</label>
                   <select style="width:50%; margin-bottom: 5px; " class="form-select" id="caselloUscita" name="caselloUscita">
-                      <%
-                          stm= connection.createStatement();
-                          rs= stm.executeQuery("SELECT NomeCasello FROM CASELLO ORDER BY NomeCasello");
-                          while (rs.next()){%>
-                      <option value=<%=rs.getString("NomeCasello")%>><%=rs.getString("NomeCasello")%></option>
-                              <% } %>
+                      <sql:query dataSource="${snapshot}" var="result">
+                          SELECT NomeCasello FROM CASELLO ORDER BY NomeCasello
+                      </sql:query>
+                      <c:forEach var="row" items="${result.rows}">
+                          <option value=<c:out value="${row.NomeCasello}"/>><c:out value="${row.NomeCasello}"/></option>
+                      </c:forEach>
                   </select><br>
                   <label style="width:50%; margin-top: 10px; background-color: #0d6efd; color:white" class="input-group-text primary" for="classe">Targa Veicolo</label>
                     <select style="width:50%; margin-bottom: 5px; " class="form-select" id="classe" name="targa">
-                        <%
-                            stm= connection.createStatement();
-                            rs= stm.executeQuery("SELECT TargaVeicolo, ModelloVeicolo FROM VEICOLO WHERE CodiceTransponder='"+session.getAttribute("codice")+"'");
-                            while (rs.next()){%>
-                        <option value=<%=rs.getString("TargaVeicolo")%>><%=rs.getString("TargaVeicolo")%></option>
-                        <% } %>
+                        <sql:query dataSource="${snapshot}" var="result">
+                            SELECT TargaVeicolo, ModelloVeicolo FROM VEICOLO WHERE CodiceTransponder=${sessionScope.codice}
+                        </sql:query>
+                        <c:forEach var="row" items="${result.rows}">
+                            <option value=<c:out value="${row.TargaVeicolo}"/>><c:out value="${row.TargaVeicolo}"/></option>
+                        </c:forEach>
                     </select><br>
                   <a href="protected_area_utente.jsp"><button type="button" class="btn btn-outline-primary">Indietro</button></a>
                   <button type="submit" class="btn btn-outline-primary" name="calcolaCosti" id="calcolaCosti" value="">Calcola Costi</button>
@@ -67,29 +61,6 @@
             </div>
         </center>
     </div>
-
-<%
-    }
-    catch (Exception e) {
-        System.out.println("errore nella connessione");
-    }
-    finally {
-        if (rs != null) {
-            try {
-                rs.close();
-            } catch (Exception e) {System.out.println("rs non chiuso");}
-        }
-        if (stm != null) {
-            try {
-                stm.close();
-            } catch (Exception e) { System.out.println("stm non chiuso");}
-        }
-        if (connection != null) {
-            try {
-                connection.close();
-            } catch (Exception e) { System.out.println("connection non chiuso");}
-        }
-    }%>
     <section class="pageform">
       <!-- Footer -->
       <footer class="text-center text-white" style="background-color: #002752;" id="staticfooter">
