@@ -9,12 +9,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c20c4ea3-3479-436c-be5c-e80ec7a63a20" name="Changes" comment="web app finita, si devono inserire solo alcuni dettagli grafici e fixare un redirect">
+    <list default="true" id="04cfd674-d176-441b-890e-cc7197650b90" name="Changes" comment="new">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletPrivilegi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_12_2022_12_40_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_12_2022_12_40__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/Classe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/Classe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/Classe1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/Classe1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/Classe2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/Classe2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/Classe3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/Classe3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ClasseA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ClasseA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ClasseB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ClasseB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/HelloServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/InizializzazioneClasse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/InizializzazioneClasse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletCreazioneUtente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletCreazioneUtente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/indexServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/AggiungiVeicolo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/AggiungiVeicolo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/CreazioneUtenti.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/CreazioneUtenti.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/GestisciTransponder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/GestisciTransponder.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ListaUtenti.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ListaUtenti.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ProfiloUtente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ProfiloUtente.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/SimulaPercorso.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/SimulaPercorso.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/TelepassPlus.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/TelepassPlus.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/ViaggioUtente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ViaggioUtente.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/protected_area_utente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/protected_area_utente.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/cambiausername.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cambiausername.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/protected_area_admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/protected_area_admin.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +45,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -42,33 +64,26 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
-  <component name="ProjectId" id="2IX62raavnm0PDh19KAOKzu56kC" />
+  <component name="ProjectId" id="2JAbLmXFR8LLeQgv7DrWhr2usMf" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ruggiero/Documents/Flavio/Ruggiero_Flavio/Università/Progetto_Telepass/Telepass_RuggieroPerrotta/src/main/webapp/WEB-INF/lib/mysql-connector-j-8.0.31.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/UTENTE/OneDrive/Documenti/Java/Telepass_RuggieroPerrotta/lib&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
@@ -76,9 +91,19 @@
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\UTENTE\OneDrive\Documenti\Java\Telepass_RuggieroPerrotta" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\UTENTE\OneDrive\Documenti\Java\Telepass_RuggieroPerrotta\src\main\webapp\WEB-INF" />
+      <recent name="C:\Users\UTENTE\OneDrive\Documenti\Java\Telepass_RuggieroPerrotta" />
+      <recent name="C:\Users\UTENTE\OneDrive\Documenti\Java\Telepass_RuggieroPerrotta\src\main\webapp" />
+      <recent name="C:\Users\UTENTE\OneDrive\Documenti\Java\Telepass_RuggieroPerrotta\src\main\webapp\images" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="Tomcat 10.0.27" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.0.27" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="UPDATING_POLICY" value="restart-server" />
+    <configuration name="Tomcat 10.0.27" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.0.27" ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
         <artifact name="Telepass_RuggieroPerrotta:war exploded">
           <settings>
@@ -87,49 +112,14 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="bfe9b966-f129-4023-97ff-70885cf7a39f" />
-        <option name="DEPLOY_TOMCAT_APPS" value="true" />
-        <option name="PRESERVE_SESSIONS" value="true" />
+        <option name="BASE_DIRECTORY_NAME" value="79b63a1b-8fd5-42e8-9d74-3cc8b3113015" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="53331" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
           <option name="USE_DEFAULT" value="true" />
@@ -170,194 +160,27 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c20c4ea3-3479-436c-be5c-e80ec7a63a20" name="Changes" comment="" />
-      <created>1670315376426</created>
+      <changelist id="04cfd674-d176-441b-890e-cc7197650b90" name="Changes" comment="" />
+      <created>1671523784167</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1670315376426</updated>
-      <workItem from="1670315377728" duration="232000" />
-      <workItem from="1672048644055" duration="8456000" />
-      <workItem from="1672139117691" duration="18327000" />
-      <workItem from="1672158989153" duration="87000" />
-      <workItem from="1672223714046" duration="2707000" />
-      <workItem from="1672226476404" duration="12928000" />
-      <workItem from="1672311524108" duration="3507000" />
-      <workItem from="1672315086116" duration="4943000" />
-      <workItem from="1672320609172" duration="8684000" />
-      <workItem from="1672401358078" duration="25343000" />
-      <workItem from="1672429339324" duration="2243000" />
-      <workItem from="1672450746410" duration="8475000" />
-      <workItem from="1672485022757" duration="3273000" />
+      <updated>1671523784167</updated>
+      <workItem from="1671523787371" duration="6317000" />
+      <workItem from="1671538007439" duration="148000" />
+      <workItem from="1671713563711" duration="11105000" />
+      <workItem from="1671786766385" duration="227000" />
+      <workItem from="1671889257374" duration="3735000" />
+      <workItem from="1671902860091" duration="2234000" />
+      <workItem from="1672741011917" duration="6051000" />
     </task>
-    <task id="LOCAL-00001" summary="gg">
-      <created>1670315423649</created>
+    <task id="LOCAL-00001" summary="new">
+      <created>1671786988130</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1670315423649</updated>
+      <updated>1671786988130</updated>
     </task>
-    <task id="LOCAL-00002" summary="file html trasformati in jsp">
-      <created>1672049743097</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1672049743097</updated>
-    </task>
-    <task id="LOCAL-00003" summary="file html trasformati in jsp">
-      <created>1672049836603</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1672049836603</updated>
-    </task>
-    <task id="LOCAL-00004" summary="file html trasformati in jsp">
-      <created>1672053649631</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1672053649631</updated>
-    </task>
-    <task id="LOCAL-00005" summary="file html trasformati in jsp">
-      <created>1672053666417</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1672053666417</updated>
-    </task>
-    <task id="LOCAL-00006" summary="file html trasformati in jsp">
-      <created>1672054768722</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1672054768722</updated>
-    </task>
-    <task id="LOCAL-00007" summary="file html trasformati in jsp">
-      <created>1672054779074</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1672054779074</updated>
-    </task>
-    <task id="LOCAL-00008" summary="file html trasformati in jsp">
-      <created>1672057181384</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1672057181384</updated>
-    </task>
-    <task id="LOCAL-00009" summary="login servlet iniziata">
-      <created>1672145246378</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1672145246378</updated>
-    </task>
-    <task id="LOCAL-00010" summary="probloma al db non risolto">
-      <created>1672239239585</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1672239239585</updated>
-    </task>
-    <task id="LOCAL-00011" summary="probloma al db non risolto">
-      <created>1672239554742</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1672239554742</updated>
-    </task>
-    <task id="LOCAL-00012" summary="probloma al db non risolto">
-      <created>1672320830188</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1672320830189</updated>
-    </task>
-    <task id="LOCAL-00013" summary="problema al db fixato, aggiungere varie chiamate al db">
-      <created>1672329327626</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1672329327626</updated>
-    </task>
-    <task id="LOCAL-00014" summary="logout aggiunto e varie modifiche">
-      <created>1672413563890</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1672413563890</updated>
-    </task>
-    <task id="LOCAL-00015" summary="aggiunta servlet per passare a plus">
-      <created>1672415131128</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1672415131128</updated>
-    </task>
-    <task id="LOCAL-00016" summary="aggiunta servlet per aggiungere veicoli">
-      <created>1672416437505</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1672416437505</updated>
-    </task>
-    <task id="LOCAL-00017" summary="aggiunta servlet per aggiungere veicoli">
-      <created>1672422184254</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1672422184254</updated>
-    </task>
-    <task id="LOCAL-00018" summary="aggiunta servlet per aggiungere veicoli">
-      <created>1672422688047</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1672422688047</updated>
-    </task>
-    <task id="LOCAL-00019" summary="non ricordo piu cosa ho inserito">
-      <created>1672427719689</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1672427719689</updated>
-    </task>
-    <task id="LOCAL-00020" summary="modifica username">
-      <created>1672431575836</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1672431575836</updated>
-    </task>
-    <task id="LOCAL-00021" summary="modifica username">
-      <created>1672431591688</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1672431591688</updated>
-    </task>
-    <task id="LOCAL-00022" summary="gestione abbonamento sia tramite admin che tramite utente">
-      <created>1672452579441</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1672452579441</updated>
-    </task>
-    <task id="LOCAL-00023" summary="web app finita, si devono inserire solo alcuni dettagli grafici e fixare un redirect">
-      <created>1672459174972</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1672459174972</updated>
-    </task>
-    <task id="LOCAL-00024" summary="web app finita, si devono inserire solo alcuni dettagli grafici e fixare un redirect">
-      <created>1672459256458</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1672459256458</updated>
-    </task>
-    <option name="localTasksCounter" value="25" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,29 +198,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="gg" />
-    <MESSAGE value="file html trasformati in jsp" />
-    <MESSAGE value="login servlet iniziata" />
-    <MESSAGE value="probloma al db non risolto" />
-    <MESSAGE value="problema al db fixato, aggiungere varie chiamate al db" />
-    <MESSAGE value="logout aggiunto e varie modifiche" />
-    <MESSAGE value="aggiunta servlet per passare a plus" />
-    <MESSAGE value="aggiunta servlet per aggiungere veicoli" />
-    <MESSAGE value="non ricordo piu cosa ho inserito" />
-    <MESSAGE value="modifica username" />
-    <MESSAGE value="gestione abbonamento sia tramite admin che tramite utente" />
-    <MESSAGE value="web app finita, si devono inserire solo alcuni dettagli grafici e fixare un redirect" />
-    <option name="LAST_COMMIT_MESSAGE" value="web app finita, si devono inserire solo alcuni dettagli grafici e fixare un redirect" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$USER_HOME$/Downloads/apache-tomcat-10.0.27-windows-x64/apache-tomcat-10.0.27/lib/servlet-api.jar!/jakarta/servlet/http/HttpServlet.class</url>
-          <line>76</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="new" />
+    <option name="LAST_COMMIT_MESSAGE" value="new" />
   </component>
 </project>

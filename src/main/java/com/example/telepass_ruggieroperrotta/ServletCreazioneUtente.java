@@ -60,7 +60,6 @@ public class ServletCreazioneUtente extends HttpServlet {
             }
             if (connection != null) {
                 try {
-                    connection.commit();
                     connection.close();
                 } catch (Exception e) { System.out.println("connection non chiuso");}
             }
