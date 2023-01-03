@@ -2,6 +2,7 @@
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.sql.DriverManager" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
@@ -34,19 +35,16 @@
                         <form name="gestisci" class="rounded" style="width:100%;" method="POST" action="gestisciAbbonamento">
                             <label style="width:50%; margin-top: 10px; background-color: #0d6efd; color:white" class="input-group-text primary" for="nonabbonati">Utenti Senza Transponder</label>
                             <select style="width:50%; margin-bottom: 5px; " class="form-select" id="username" name="username">
-                                <%
-                                    Connection connection=null;
-                                    Statement stm=null;
-                                    ResultSet rs=null;
-                                    try{
-                                        Class.forName("com.mysql.cj.jdbc.Driver");
-                                        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/telepass", "ROOT","ROOT");
-                                        stm= connection.createStatement();
-                                        rs= stm.executeQuery("SELECT Username FROM CLIENTE WHERE Amministratore=0 AND TransponderAttivo=0");
-                                        while (rs.next()){
-                                %>
-                                <option value=<%=rs.getString("Username")%>><%=rs.getString("Username")%></option>
-                                <% } %>
+                                <sql:setDataSource var="snapshot" driver="com.mysql.cj.jdbc.Driver"
+                                                   url="jdbc:mysql://localhost:3306/telepass"
+                                                   user="ROOT"  password="ROOT"/>
+
+                                <sql:query dataSource="${snapshot}" var="result">
+                                    SELECT Username FROM CLIENTE WHERE Amministratore=0 AND TransponderAttivo=0
+                                </sql:query>
+                                <c:forEach var="row" items="${result.rows}">
+                                    <option value=<c:out value="${row.Username}"/>><c:out value="${row.Username}"/></option>
+                                </c:forEach>
                             </select><br>
                             <button type="submit" class="btn btn-outline-primary" name="gestisci" value="1">ASSEGNA</button>
                         </form> 
@@ -59,13 +57,12 @@
                         <form name="gestisci" class="rounded" style="width:100%;" method="POST" action="gestisciAbbonamento">
                             <label style="width:50%; margin-top: 10px; background-color: #0d6efd; color:white" class="input-group-text primary" for="abbonati">Utenti Aventi Transponder</label>
                             <select style="width:50%; margin-bottom: 5px; " class="form-select" id="username" name="username">
-                                <%
-                                    stm= connection.createStatement();
-                                    rs= stm.executeQuery("SELECT Username FROM CLIENTE WHERE Amministratore=0 AND TransponderAttivo=1");
-                                    while (rs.next()){
-                                %>
-                                <option value=<%=rs.getString("Username")%>><%=rs.getString("Username")%></option>
-                                <% } %>
+                                <sql:query dataSource="${snapshot}" var="result">
+                                    SELECT Username FROM CLIENTE WHERE Amministratore=0 AND TransponderAttivo=1
+                                </sql:query>
+                                <c:forEach var="row" items="${result.rows}">
+                                    <option value=<c:out value="${row.Username}"/>><c:out value="${row.Username}"/></option>
+                                </c:forEach>
                             </select><br>
                             <button type="submit" class="btn btn-outline-primary" name="gestisci" value="0">RIMUOVI</button>
                         </form> 
@@ -73,29 +70,6 @@
                 </div>
             </div>
     </div>
-<%
-    }
-    catch (Exception e) {
-        System.out.println("errore nella connessione");
-    }
-    finally {
-        if (rs != null) {
-            try {
-                rs.close();
-            } catch (Exception e) {System.out.println("rs non chiuso");}
-        }
-        if (stm != null) {
-            try {
-                stm.close();
-            } catch (Exception e) { System.out.println("stm non chiuso");}
-        }
-        if (connection != null) {
-            try {
-                connection.close();
-            } catch (Exception e) { System.out.println("connection non chiuso");}
-        }
-    }%>
-
     <section class="">
         <!-- Footer -->
         <footer class="text-center text-white" style="background-color: #002752;" id="staticfooter">
