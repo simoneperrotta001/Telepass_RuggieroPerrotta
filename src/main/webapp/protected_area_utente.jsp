@@ -7,7 +7,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/mystyle.css">
 <title>Telepass</title>
 <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
 </head>
@@ -18,6 +18,67 @@
         int ruolo= (int) session.getAttribute("ruolo");
         if(ruolo == 1) {response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/protected_area_admin.jsp");}
     %>
+
+    <c:if test="${messageVeicolo != null}">
+        <div class="alert success">
+            <span class="closebtn">&times;</span>
+            <strong>${messageVeicolo}</strong>
+        </div>
+    </c:if>
+
+    <c:if test="${messageViaggio != null}">
+        <div class="alert success">
+            <span class="closebtn">&times;</span>
+            <strong>${messageViaggio}</strong>
+        </div>
+    </c:if>
+
+    <c:if test="${messageAggiungiPlus != null}">
+        <div class="alert success">
+            <span class="closebtn">&times;</span>
+            <strong>${messageAggiungiPlus}</strong>
+        </div>
+    </c:if>
+
+    <c:if test="${messageAggiungiAbbonamento != null}">
+        <div class="alert success">
+            <span class="closebtn">&times;</span>
+            <strong>${messageAggiungiAbbonamento}</strong>
+        </div>
+    </c:if>
+
+    <c:if test="${messageRimuoviPlus != null}">
+        <div class="alert info">
+            <span class="closebtn">&times;</span>
+            <strong>${messageRimuoviPlus}</strong>
+        </div>
+    </c:if>
+
+    <c:if test="${messageRimuoviAbbonamento != null}">
+        <div class="alert info">
+            <span class="closebtn">&times;</span>
+            <strong>${messageRimuoviAbbonamento}</strong>
+        </div>
+    </c:if>
+
+    <c:if test="${messageUsername != null}">
+        <div class="alert success">
+            <span class="closebtn">&times;</span>
+            <strong>${messageUsername}</strong>
+        </div>
+    </c:if>
+    <script>
+        var close = document.getElementsByClassName("closebtn");
+        var i;
+
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function(){
+                var div = this.parentElement;
+                div.style.opacity = "0";
+                setTimeout(function(){ div.style.display = "none"; }, 600);
+            }
+        }
+    </script>
     <nav class="navbar navbar-expand-lg bg-light">
       <a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px;"></a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">

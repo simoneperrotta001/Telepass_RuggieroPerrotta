@@ -14,7 +14,7 @@
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   <title>Telepass</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mystyle.css">
   <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
 </head>
 <body>
@@ -27,7 +27,7 @@
   <div class="col-sm-6">
     <center>
       <br><br><br><br>
-      <a class="navbar-brand" href="index.jsp"><img src="images/Logo_Telepass_2021.png" style="height:40px"></a>
+      <a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:40px"></a>
       <br><br>
       <h4 class="h2div">INSERISCI IL NUOVO USERNAME</h4>
       <form action="cambiausername" method="POST">

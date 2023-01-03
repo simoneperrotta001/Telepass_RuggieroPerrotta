@@ -48,9 +48,9 @@ public class ServletLogin extends HttpServlet {
                 }
             }
             else{
-                request.setAttribute("errorMessage", "Invalid Credentials!");
+                request.setAttribute("errorMessage", "Credenziali Errate");
                 System.out.println("Invalid cred");
-                response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/Accedi.jsp");
+                request.getRequestDispatcher("Accedi.jsp").forward(request, response);
             }
         }
         catch (Exception e) {

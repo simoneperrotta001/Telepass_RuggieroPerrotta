@@ -4,12 +4,11 @@ import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
-import javax.print.DocFlavor;
 import java.io.IOException;
-import java.sql.Connection;
+import java.sql.*;
 import java.sql.Date;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+import java.time.*;
+import java.util.*;
 
 @WebServlet("/creazioneutente")
 public class ServletCreazioneUtente extends HttpServlet {
@@ -27,17 +26,39 @@ public class ServletCreazioneUtente extends HttpServlet {
 
         Connection connection=null;
         PreparedStatement stm=null;
+        Statement stm1=null;
+        ResultSet rs=null;
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/telepass", "ROOT","ROOT");
             stm = connection.prepareStatement("INSERT INTO Cliente(NomeCliente, CognomeCliente, NascitaCliente, CodiceContoCorrente, Plus, Password, Username, TransponderAttivo, Amministratore) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)");
             stm.setString(1,nome);
             stm.setString(2,cognome);
-            stm.setDate(3, nascita);
-            if(codiceContoCorrente.length()==12){stm.setString(4,codiceContoCorrente);}
+            LocalDate now = LocalDate.now();
+            Period diff = Period.between(nascita.toLocalDate(), now);
+            if(diff.getYears()>=18)
+            {
+                stm.setDate(3, nascita);
+            }
             else{
-                System.out.println("Le cifre che descrivono un codice di conto corrente sono 12.");
-                throw new Exception();
+                request.setAttribute("messageData", "Data non valida");
+                request.getRequestDispatcher("/CreazioneUtenti.jsp").forward(request, response);
+            }
+
+            if(codiceContoCorrente.length()==12){
+                stm1= connection.createStatement();
+                rs= stm1.executeQuery("SELECT * FROM CLIENTE WHERE CodiceContoCorrente='"+codiceContoCorrente+"'");
+                if(rs.next()) {
+                    request.setAttribute("messageContoUsato", "Conto già utilizzato per un altro transponder");
+                    request.getRequestDispatcher("/CreazioneUtenti.jsp").forward(request, response);
+                }
+                else{
+                    stm.setString(4, codiceContoCorrente);
+                }
+            }
+            else{
+                request.setAttribute("messageConto", "Le cifre che descrivono un codice di conto corrente sono 12.");
+                request.getRequestDispatcher("/CreazioneUtenti.jsp").forward(request, response);
             }
             stm.setInt(5, plus);
             stm.setString(6, password);

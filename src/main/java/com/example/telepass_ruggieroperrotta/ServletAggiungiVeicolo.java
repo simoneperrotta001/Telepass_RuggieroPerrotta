@@ -33,7 +33,7 @@ public class ServletAggiungiVeicolo extends HttpServlet {
             stm.setString(3,classe);
             stm.execute();
             connection.commit();
-            request.setAttribute("successMessage", "Veicolo Inserito correttamente");
+            request.setAttribute("messageVeicolo", "Veicolo Inserito correttamente");
             request.getRequestDispatcher("/protected_area_utente.jsp").forward(request, response);
         }
         catch (Exception e) {

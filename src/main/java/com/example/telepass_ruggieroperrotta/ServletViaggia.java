@@ -52,7 +52,7 @@ public class ServletViaggia extends HttpServlet {
             stmesce.setString(4,tariffa);
             stmesce.execute();
             connection.commit();
-
+            request.setAttribute("messageViaggio", "Grazie per aver viaggiato con noi");
             request.getRequestDispatcher("/protected_area_utente.jsp").forward(request, response);
         }
         catch (Exception e) {

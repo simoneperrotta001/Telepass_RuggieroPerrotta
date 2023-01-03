@@ -27,6 +27,7 @@ public class ServletCambiaUsername extends HttpServlet {
             stm.executeUpdate("UPDATE CLIENTE SET Username='"+nuovo+"'WHERE Username='"+session.getAttribute("username")+"'");
             connection.commit();
             session.setAttribute("username", nuovo);
+            request.setAttribute("messageUsername", "Il tuo username è stato modificato correttamente");
             request.getRequestDispatcher("/protected_area_utente.jsp").forward(request, response);
         }
         catch (Exception e) {
