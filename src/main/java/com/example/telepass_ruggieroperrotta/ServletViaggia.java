@@ -41,12 +41,7 @@ public class ServletViaggia extends HttpServlet {
             connection.commit();
 
             stmesce = connection.prepareStatement("INSERT INTO ESCE VALUES (?,?,?,?)");
-            if(targa.length()==7)
-                stmesce.setString(1,targa);
-            else{
-                System.out.println("Le cifre che descrivono una targa sono 7.");
-                throw new Exception();
-            }
+            stmesce.setString(1,targa);
             stmesce.setString(2,casello2);
             stmesce.setTimestamp(3,oggi);
             stmesce.setString(4,tariffa);
