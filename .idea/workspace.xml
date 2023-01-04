@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c20c4ea3-3479-436c-be5c-e80ec7a63a20" name="Changes" comment="web app FINITA">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletViaggia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletViaggia.java" afterDir="false" />
-    </list>
+    <list default="true" id="c20c4ea3-3479-436c-be5c-e80ec7a63a20" name="Changes" comment="stamm nguaiat" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -191,7 +189,7 @@
       <workItem from="1672742080555" duration="977000" />
       <workItem from="1672831341114" duration="2814000" />
       <workItem from="1672847975103" duration="388000" />
-      <workItem from="1672875209223" duration="1032000" />
+      <workItem from="1672875209223" duration="669000" />
     </task>
     <task id="LOCAL-00001" summary="gg">
       <created>1670315423649</created>
@@ -410,14 +408,28 @@
       <option name="project" value="LOCAL" />
       <updated>1672848115409</updated>
     </task>
-    <task id="LOCAL-00032" summary="web app FINITA">
-      <created>1672875898663</created>
+    <task id="LOCAL-00032" summary="stamm nguaiat">
+      <created>1672876505395</created>
       <option name="number" value="00032" />
       <option name="presentableId" value="LOCAL-00032" />
       <option name="project" value="LOCAL" />
-      <updated>1672875898663</updated>
+      <updated>1672876505395</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="stamm nguaiat">
+      <created>1672876695764</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1672876695764</updated>
+    </task>
+    <task id="LOCAL-00034" summary="stamm nguaiat">
+      <created>1672876825851</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1672876825851</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +461,8 @@
     <MESSAGE value="web app finita, si devono inserire solo alcuni dettagli grafici e fixare un redirect" />
     <MESSAGE value="web app finita" />
     <MESSAGE value="web app FINITA" />
-    <option name="LAST_COMMIT_MESSAGE" value="web app FINITA" />
+    <MESSAGE value="stamm nguaiat" />
+    <option name="LAST_COMMIT_MESSAGE" value="stamm nguaiat" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
