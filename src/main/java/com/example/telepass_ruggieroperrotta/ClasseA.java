@@ -1,7 +1,7 @@
 package com.example.telepass_ruggieroperrotta;
 
 public class ClasseA implements Classe{
-    double costoKm;
+    private double costoKm;
 
     public ClasseA(){costoKm = 0.07;}
 
@@ -13,7 +13,7 @@ public class ClasseA implements Classe{
     }
 
     @Override
-    public void definisciTipologia() {
-        System.out.println("classe A");
+    public double getCostoKm(){
+        return costoKm;
     }
 }

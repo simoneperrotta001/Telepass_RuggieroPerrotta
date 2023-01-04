@@ -30,6 +30,21 @@ public class DatabaseTelepass {
 
         return instance;
     }
+    public void createConnection(){
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/telepass", "ROOT","ROOT");
+
+            System.out.println("connection2: "+connection);
+            statement = connection.createStatement();
+        }
+        catch (Exception e){
+            System.out.println("errore nell'apertura della connessione");
+        }
+        finally {
+            System.out.println("connection3: "+connection);
+        }
+    }
     public ArrayList getToolBooths(){
         ArrayList<String> toolBooths = new ArrayList<>();
 
@@ -50,20 +65,6 @@ public class DatabaseTelepass {
         return toolBooths;
     }
     //processo di creazione della connessione effettuato nel punto di accesso globale getInstance così da farlo una volta sola
-    public void createConnection(){
-        try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/telepass", "ROOT","ROOT");
-
-            System.out.println("connection2: "+connection);
-            statement = connection.createStatement();
-        }
-        catch (Exception e){
-            System.out.println("errore nell'apertura della connessione");
-        }
-        finally {
-            System.out.println("connection3: "+connection);
-        }
-    }
     public void doQuery(String sql,String Column){
         createConnection();
         try{

@@ -24,7 +24,7 @@
     <div class="row" style="height: 90px;">
         <div class="row" style="height: 30px;"></div>
         <center><a class="navbar-brand" href="protected_area_admin.jsp"><img src="images/Logo_Telepass_2021.png" style="height:40px"></a><br>
-            <h3 class="h2div">Operazioni disponibile per l'utente selezionato:${username}</h3>
+            <h3 class="h2div">Operazioni disponibile per l'utente selezionato: ${username}</h3>
         </center>
     </div>
     <br>
