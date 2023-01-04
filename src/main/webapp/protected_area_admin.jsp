@@ -38,6 +38,25 @@
       <a href="logout"><button type="button" class="btn btn-primary">ESCI</button></a>
     </nav>
 
+<c:if test="${messageUtenteInserito != null}">
+    <div class="alert success">
+        <span class="closebtn">&times;</span>
+        <strong>${messageUtenteInserito}</strong>
+    </div>
+</c:if>
+<script>
+    var close = document.getElementsByClassName("closebtn");
+    var i;
+
+    for (i = 0; i < close.length; i++) {
+        close[i].onclick = function(){
+            var div = this.parentElement;
+            div.style.opacity = "0";
+            setTimeout(function(){ div.style.display = "none"; }, 600);
+        }
+    }
+</script>
+
     <div id="carouselExampleDark" class="carousel carousel-dark slide rounded" data-bs-ride="carousel" style="height: 500px;">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>

@@ -66,7 +66,7 @@ public class ServletCreazioneUtente extends HttpServlet {
             stm.setInt(8, transponderattivo);
             stm.setInt(9, ruolo);
             stm.execute();
-            request.setAttribute("messaggioUtente", "Utente Inserito correttamente");
+            request.setAttribute("messageUtenteInserito", "Utente Inserito correttamente");
             request.getRequestDispatcher("/protected_area_admin.jsp").forward(request, response);
 
         }

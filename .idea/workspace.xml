@@ -10,10 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c20c4ea3-3479-436c-be5c-e80ec7a63a20" name="Changes" comment="web app FINITA">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletModificaUtenteSelezionato.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/modificaUtenteSingolo.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ListaUtenti.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ListaUtenti.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletCreazioneUtente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletCreazioneUtente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/protected_area_admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/protected_area_admin.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
