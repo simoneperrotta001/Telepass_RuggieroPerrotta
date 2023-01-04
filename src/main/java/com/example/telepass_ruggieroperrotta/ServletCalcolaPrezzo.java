@@ -39,31 +39,37 @@ public class ServletCalcolaPrezzo extends HttpServlet {
             if(rs.next()){
                 double distanza= rs.getDouble("Distanza");
                 double costo_Tot;
+                InizializzazioneClasse inizializzazioneClasse;
                 if(classe.equals("A")){
-                    ClasseA tipo = new ClasseA();
-                    costo_Tot= tipo.pagamento(distanza);
-                    request.setAttribute("costokm", tipo.costoKm);
+                    inizializzazioneClasse = new InizializzazioneClasseA();
+                    Classe classeVeicolo = inizializzazioneClasse.creaClasse();
+                    costo_Tot= classeVeicolo.pagamento(distanza);
+                    request.setAttribute("costokm", classeVeicolo.getCostoKm());
                 }
                 else if (classe.equals("B")) {
-                    ClasseB tipo = new ClasseB();
-                    costo_Tot= tipo.pagamento(distanza);
-                    request.setAttribute("costokm", tipo.costoKm);
+                    inizializzazioneClasse = new InizializzazioneClasseB();
+                    Classe classeVeicolo = inizializzazioneClasse.creaClasse();
+                    costo_Tot= classeVeicolo.pagamento(distanza);
+                    request.setAttribute("costokm", classeVeicolo.getCostoKm());
                 }
                 else if (classe.equals("1")) {
-                    Classe1 tipo = new Classe1();
-                    costo_Tot= tipo.pagamento(distanza);
-                    request.setAttribute("costokm", tipo.costoKm);
+                    inizializzazioneClasse = new InizializzazioneClasse1();
+                    Classe classeVeicolo = inizializzazioneClasse.creaClasse();
+                    costo_Tot= classeVeicolo.pagamento(distanza);
+                    request.setAttribute("costokm", classeVeicolo.getCostoKm());
                 }
                 else if (classe.equals("2")) {
-                    Classe2 tipo = new Classe2();
-                    costo_Tot= tipo.pagamento(distanza);
-                    request.setAttribute("costokm", tipo.costoKm);
+                    inizializzazioneClasse = new InizializzazioneClasse2();
+                    Classe classeVeicolo = inizializzazioneClasse.creaClasse();
+                    costo_Tot= classeVeicolo.pagamento(distanza);
+                    request.setAttribute("costokm", classeVeicolo.getCostoKm());
 
                 }
                 else {
-                    Classe3 tipo = new Classe3();
-                    costo_Tot= tipo.pagamento(distanza);
-                    request.setAttribute("costokm", tipo.costoKm);
+                    inizializzazioneClasse = new InizializzazioneClasse3();
+                    Classe classeVeicolo = inizializzazioneClasse.creaClasse();
+                    costo_Tot= classeVeicolo.pagamento(distanza);
+                    request.setAttribute("costokm", classeVeicolo.getCostoKm());
                 }
                 request.setAttribute("casello1", casello1);
                 request.setAttribute("casello2", casello2);

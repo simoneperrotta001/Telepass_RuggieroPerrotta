@@ -19,6 +19,9 @@ public class ServletLogin extends HttpServlet {
         String username=request.getParameter("username");
         String password=request.getParameter("password");
 
+        DatabaseTelepass databaseTelepass = DatabaseTelepass.getInstance();
+        databaseTelepass.getInstance().doQuery("SELECT Distanza FROM Dista WHERE (NomeCasello1='Milano' AND NomeCasello2='Napoli') OR (NomeCasello1='Napoli' AND NomeCasello2='Milano');", "Distanza");
+
         Connection connection=null;
         Statement stm=null;
         ResultSet rs=null;

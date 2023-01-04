@@ -43,6 +43,7 @@
             <a class="navbar-brand" href="index.jsp"><img src="images/Logo_Telepass_2021.png" style="height:40px"></a>
             <br><br>
             <h4 class="h2div">INSERISCI LE TUE CREDENZIALI</h4>
+            <!--chiamiamo la servlet (che si chiama login) sul form con la dicitura action="login"-->
             <form action="login" method="POST">
                 <div>
                     <div>
