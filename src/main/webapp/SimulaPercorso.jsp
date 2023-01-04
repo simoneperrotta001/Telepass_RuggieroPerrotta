@@ -12,13 +12,34 @@
 <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
 </head>
 <body>
-<%
-    if ((session.getAttribute("username") == null) || (session.getAttribute("username") == "") && (session.getAttribute("ruolo") == null) || (session.getAttribute("ruolo") == "")) {
-        response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/Accedi.jsp");
-    }
-%>
-    <nav class="navbar navbar-expand-lg bg-light"><a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px;"></a></nav>
+<c:if test="${sessionScope.ruolo==null} || ${sessionScope.ruolo==''}">
+    request.setAttribute("messageAccedi", "Per accedere a questa pagina devi effettuare l'accesso");
+    request.getRequestDispatcher("/Accedi.jsp").forward(request, response);
+</c:if>
 
+<c:if test="${sessionScope.ruolo==1}">
+    request.setAttribute("messagePermessi", "Non hai permessi per accedere a questa pagina");
+    request.getRequestDispatcher("/protected_area_admin.jsp").forward(request, response);
+</c:if>
+    <nav class="navbar navbar-expand-lg bg-light"><a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px;"></a></nav>
+<c:if test="${messagePercorso != null}">
+    <div class="alert warning">
+        <span class="closebtn">&times;</span>
+        <strong>${messagePercorso}</strong>
+    </div>
+</c:if>
+<script>
+    var close = document.getElementsByClassName("closebtn");
+    var i;
+
+    for (i = 0; i < close.length; i++) {
+        close[i].onclick = function(){
+            var div = this.parentElement;
+            div.style.opacity = "0";
+            setTimeout(function(){ div.style.display = "none"; }, 600);
+        }
+    }
+</script>
     <div class="main">
         <center>
             <div style="width:50%;">

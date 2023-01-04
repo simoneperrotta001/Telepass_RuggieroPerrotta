@@ -24,6 +24,24 @@
   }
 %>
 <div class="row" style="width:100%;">
+  <c:if test="${messageUsernameUsato != null}">
+    <div class="alert warning">
+      <span class="closebtn">&times;</span>
+      <strong>${messageUsernameUsato}</strong>
+    </div>
+  </c:if>
+  <script>
+    var close = document.getElementsByClassName("closebtn");
+    var i;
+
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function(){
+        var div = this.parentElement;
+        div.style.opacity = "0";
+        setTimeout(function(){ div.style.display = "none"; }, 600);
+      }
+    }
+  </script>
   <div class="col-sm-6">
     <center>
       <br><br><br><br>
@@ -33,7 +51,7 @@
       <form action="cambiausername" method="POST">
         <div>
           <div>
-            <label><input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="username" id="inptxt"></label>
+            <label><input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="username" id="inptxt" required></label>
           </div>
           <br>
           <div>

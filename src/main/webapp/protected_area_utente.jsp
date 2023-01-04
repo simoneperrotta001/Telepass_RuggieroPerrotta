@@ -19,6 +19,44 @@
         if(ruolo == 1) {response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/protected_area_admin.jsp");}
     %>
 
+    <nav class="navbar navbar-expand-lg bg-light">
+      <a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px;"></a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <a class="nav-link disabled">Ciao, ${sessionScope.username}</a>
+          </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Operazioni
+          </a>
+          <ul class="dropdown-menu">
+
+              <c:if test="${sessionScope.plus==0 && sessionScope.attivo==1}">
+                <li><a class="dropdown-item" href="TelepassPlus.jsp">Passa a Telepass+</a></li>
+              </c:if>
+
+              <sql:setDataSource var="snapshot" driver="com.mysql.cj.jdbc.Driver"
+                                 url="jdbc:mysql://localhost:3306/telepass"
+                                 user="ROOT"  password="ROOT"/>
+
+              <sql:query dataSource="${snapshot}" var="result">
+                  SELECT COUNT(*) AS QUANTI FROM VEICOLO WHERE CodiceTransponder=${sessionScope.codice}
+              </sql:query>
+              <c:forEach var="row" items="${result.rows}">
+                  <c:if test="${row.QUANTI<2}">
+                      <li><a class="dropdown-item" href="AggiungiVeicolo.jsp">Aggiungi Veicolo</a></li>
+                  </c:if>
+              </c:forEach>
+              <li><a class="dropdown-item" href="profilo">Visualizza Profilo</a></li>
+              <c:if test="${sessionScope.attivo==1}">
+                  <li><a class="dropdown-item" href="SimulaPercorso.jsp">Simula Percorso</a></li>
+              </c:if>
+          </ul>
+        </li>
+      </ul>
+      <a a href="logout"><button type="button" class="btn btn-primary">ESCI</button></a>
+    </nav>
+
     <c:if test="${messageVeicolo != null}">
         <div class="alert success">
             <span class="closebtn">&times;</span>
@@ -79,43 +117,6 @@
             }
         }
     </script>
-    <nav class="navbar navbar-expand-lg bg-light">
-      <a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px;"></a>
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-            <a class="nav-link disabled">Ciao, ${sessionScope.username}</a>
-          </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Operazioni
-          </a>
-          <ul class="dropdown-menu">
-
-              <c:if test="${sessionScope.plus==0 && sessionScope.attivo==1}">
-                <li><a class="dropdown-item" href="TelepassPlus.jsp">Passa a Telepass+</a></li>
-              </c:if>
-
-              <sql:setDataSource var="snapshot" driver="com.mysql.cj.jdbc.Driver"
-                                 url="jdbc:mysql://localhost:3306/telepass"
-                                 user="ROOT"  password="ROOT"/>
-
-              <sql:query dataSource="${snapshot}" var="result">
-                  SELECT COUNT(*) AS QUANTI FROM VEICOLO WHERE CodiceTransponder=${sessionScope.codice}
-              </sql:query>
-              <c:forEach var="row" items="${result.rows}">
-                  <c:if test="${row.QUANTI<2}">
-                      <li><a class="dropdown-item" href="AggiungiVeicolo.jsp">Aggiungi Veicolo</a></li>
-                  </c:if>
-              </c:forEach>
-              <li><a class="dropdown-item" href="profilo">Visualizza Profilo</a></li>
-              <c:if test="${sessionScope.attivo==1}">
-                  <li><a class="dropdown-item" href="SimulaPercorso.jsp">Simula Percorso</a></li>
-              </c:if>
-          </ul>
-        </li>
-      </ul>
-      <a a href="logout"><button type="button" class="btn btn-primary">ESCI</button></a>
-    </nav>
 
     <div id="carouselExampleDark" class="carousel carousel-dark slide rounded" data-bs-ride="carousel" style="height: 500px;">
       <div class="carousel-indicators">

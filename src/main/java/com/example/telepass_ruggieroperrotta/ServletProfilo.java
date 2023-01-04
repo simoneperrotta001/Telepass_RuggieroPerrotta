@@ -26,6 +26,11 @@ public class ServletProfilo extends HttpServlet {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/telepass", "ROOT","ROOT");
             stm= connection.createStatement();
             HttpSession session = request.getSession(false);
+            rs=stm.executeQuery("SELECT COUNT(*) AS QUANTI FROM contaquantiviaggi where CodiceTransponder='"+session.getAttribute("codice")+"'");
+            if(rs.next()){
+                int viaggi=rs.getInt("QUANTI");
+                request.setAttribute("viaggi",viaggi);
+            }
             rs=stm.executeQuery("SELECT * FROM CLIENTE WHERE Username='"+session.getAttribute("username")+"'");
             if(rs.next()){
                 String Nome= rs.getString("NomeCliente");

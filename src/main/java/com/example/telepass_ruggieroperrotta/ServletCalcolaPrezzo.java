@@ -19,7 +19,8 @@ public class ServletCalcolaPrezzo extends HttpServlet {
         String targa=request.getParameter("targa");
         String classe =null;
         if(casello1.equals(casello2)) {
-            response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/SimulaPercorso.jsp");
+            request.setAttribute("messagePercorso", "Assicurati di aver inserito il casello di uscita diverso da quello di entrata");
+            request.getRequestDispatcher("/SimulaPercorso.jsp").forward(request, response);
         }
         Connection connection=null;
         Statement stm=null;

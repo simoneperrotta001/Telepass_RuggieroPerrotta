@@ -10,10 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c20c4ea3-3479-436c-be5c-e80ec7a63a20" name="Changes" comment="web app FINITA">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletModificaUtenteSelezionato.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/modificaUtenteSingolo.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ListaUtenti.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ListaUtenti.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletCalcolaPrezzo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletCalcolaPrezzo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletCambiaUsername.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletCambiaUsername.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletProfilo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletProfilo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ProfiloUtente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ProfiloUtente.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/SimulaPercorso.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/SimulaPercorso.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/TelepassPlus.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/TelepassPlus.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViaggioUtente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ViaggioUtente.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/cambiausername.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cambiausername.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/protected_area_utente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/protected_area_utente.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +198,8 @@
       <workItem from="1672655866588" duration="2162000" />
       <workItem from="1672659827227" duration="3000" />
       <workItem from="1672742080555" duration="977000" />
-      <workItem from="1672831341114" duration="2814000" />
+      <workItem from="1672831341114" duration="2904000" />
+      <workItem from="1672842488178" duration="3719000" />
     </task>
     <task id="LOCAL-00001" summary="gg">
       <created>1670315423649</created>
@@ -390,7 +397,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672766175142</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="web app FINITA">
+      <created>1672834243743</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1672834243743</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
