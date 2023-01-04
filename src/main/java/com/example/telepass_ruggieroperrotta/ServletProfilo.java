@@ -29,7 +29,7 @@ public class ServletProfilo extends HttpServlet {
             rs=stm.executeQuery("SELECT COUNT(*) AS QUANTI FROM contaquantiviaggi where CodiceTransponder='"+session.getAttribute("codice")+"'");
             if(rs.next()){
                 int viaggi=rs.getInt("QUANTI");
-                request.setAttribute("viaggi",viaggi);
+                request.setAttribute("viaggi",viaggi); //quanti viaggi l'utente ha fatto con telepass
             }
             rs=stm.executeQuery("SELECT * FROM CLIENTE WHERE Username='"+session.getAttribute("username")+"'");
             if(rs.next()){

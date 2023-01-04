@@ -76,7 +76,7 @@
                               <p class="mb-0">Viaggi fatti con Telepass</p>
                             </div>
                             <div class="col-sm-8">
-                              <p class="text-muted mb-0">${viaggi}</p>
+                              <p class="text-muted mb-0">${viaggi}</p> <!-- viaggi-->
                             </div>
                           </div>
                           <hr>
