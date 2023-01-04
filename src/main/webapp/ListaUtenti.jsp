@@ -37,7 +37,6 @@
           <th scope="col">Abbonamento</th>
           <th scope="col">Telepass+</th>
           <th scope="col">Modifica</th>
-          <th scope="col">Elimina</th>
         </tr>
         </thead>
         <tbody>
@@ -87,8 +86,10 @@
               <td><span class="badge rounded-pill text-bg-danger">Disattivo</span></td>
             </c:otherwise>
           </c:choose>
-          <td><a href="GestisciTransponder.jsp"><button class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></button></a></td>
-          <td><a href="GestisciTransponder.jsp"><button class="btn btn-sm btn-danger"><i class="bi bi-trash3-fill"></i></button></a></td>
+          <form action="modificaUtenteSelezionato" method="POST">
+            <td><a href="#"><button class="btn btn-sm btn-primary" name="username" value=${row.Username}><i class="bi bi-pencil-square"></i></button></a></td>
+          </form>
+
           </tr>
         </c:forEach>
         </tbody>
