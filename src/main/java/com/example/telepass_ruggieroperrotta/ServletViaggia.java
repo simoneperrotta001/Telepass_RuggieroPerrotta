@@ -6,7 +6,7 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
@@ -18,8 +18,8 @@ public class ServletViaggia extends HttpServlet {
         String casello1=request.getParameter("casello1");
         String casello2=request.getParameter("casello2");
         String tariffa=request.getParameter("tariffa");
-        long millis=System.currentTimeMillis();
-        java.sql.Date oggi=new java.sql.Date(millis);
+        long now = System.currentTimeMillis();
+        Timestamp oggi = new Timestamp(now);
         Connection connection=null;
         PreparedStatement stmentra=null;
         PreparedStatement stmesce=null;
@@ -36,7 +36,7 @@ public class ServletViaggia extends HttpServlet {
                 throw new Exception();
             }
             stmentra.setString(2,casello1);
-            stmentra.setDate(3,oggi);
+            stmentra.setTimestamp(3,oggi);
             stmentra.execute();
             connection.commit();
 
@@ -48,7 +48,7 @@ public class ServletViaggia extends HttpServlet {
                 throw new Exception();
             }
             stmesce.setString(2,casello2);
-            stmesce.setDate(3,oggi);
+            stmesce.setTimestamp(3,oggi);
             stmesce.setString(4,tariffa);
             stmesce.execute();
             connection.commit();
