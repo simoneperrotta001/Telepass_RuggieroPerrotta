@@ -19,7 +19,7 @@
     if(ruolo == 0) {response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/protected_area_utente.jsp");}
 %>
     <nav class="navbar navbar-expand-lg bg-light">
-      <a class="navbar-brand" href="protected_area_admin.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px;"></a>
+      <a class="navbar-brand" href="protected_area_admin.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px; margin-left: 5px"></a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
             <a class="nav-link disabled">Ciao, ${sessionScope.username}</a>
@@ -35,7 +35,7 @@
           </ul>
         </li>
       </ul>
-      <a href="logout"><button type="button" class="btn btn-primary">ESCI</button></a>
+      <a href="logout" style="margin-right: 5px;"><button type="button" class="btn btn-primary">ESCI</button></a>
     </nav>
 
 <c:if test="${messageUtenteInserito != null}">
@@ -72,14 +72,14 @@
             </div>
           </div>
           <div class="carousel-item rounded" data-bs-interval="8000">
-            <img src="images/Autostrada.jpg" class="d-block w-100" alt="..." style="height: 500px;">
+            <img src="images/transponder_inmano.jpg" class="d-block w-100" alt="..." style="height: 500px;">
             <div class="carousel-caption d-none d-md-block">
               <h5>Second slide label</h5>
               <p>Some representative placeholder content for the second slide.</p>
             </div>
           </div>
           <div class="carousel-item rounded" data-bs-interval="8000">
-            <img src="images/Autostrada.jpg" class="d-block w-100" alt="..." style="height: 500px;">
+            <img src="images/telepass_biancoenero.jpg" class="d-block w-100" alt="..." style="height: 500px;">
             <div class="carousel-caption d-none d-md-block">
               <h5>Third slide label</h5>
               <p>Some representative placeholder content for the third slide.</p>

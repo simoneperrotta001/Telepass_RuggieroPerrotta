@@ -24,7 +24,7 @@
         <c:redirect url="http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/protected_area_utente.jsp"/>
     </c:if>
 </c:forEach>
-    <nav class="navbar navbar-expand-lg bg-light"><a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px;"></a></nav>
+    <nav class="navbar navbar-expand-lg bg-light"><a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px; margin-left: 5px;"></a></nav>
 
     <div class="main">
         <center>

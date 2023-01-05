@@ -12,10 +12,10 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-light">
-    <a class="navbar-brand" href="index.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px;"></a>
+    <a class="navbar-brand" href="index.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px; margin-left: 5px;"></a>
     <div class="pagination justify-content-end" style="width:100%; height:100%">
         <div class="mydiv">
-            <a href="Accedi.jsp"><button type="button" class="btn btn-primary">ACCEDI</button></a>
+            <a href="Accedi.jsp" style="margin-right: 5px;"><button type="button" class="btn btn-primary">ACCEDI</button></a>
         </div>
     </div>
 </nav>
