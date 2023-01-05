@@ -1,17 +1,10 @@
-package com.example.telepass_ruggieroperrotta;
+package com.example.Controller;
 
 import ModelTelepass.DatabaseTelepass;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @WebServlet("/calcolaprezzo")

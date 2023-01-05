@@ -1,4 +1,4 @@
-package com.example.telepass_ruggieroperrotta;
+package com.example.Controller;
 
 import ModelTelepass.DatabaseTelepass;
 import jakarta.servlet.*;

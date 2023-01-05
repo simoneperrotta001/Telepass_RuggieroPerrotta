@@ -1,9 +1,8 @@
-package com.example.telepass_ruggieroperrotta;
+package com.example.Controller;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-
 import java.io.IOException;
 
 @WebServlet("/logout")

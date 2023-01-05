@@ -28,25 +28,17 @@
     </div>
     <div class="carousel-inner rounded">
         <div class="carousel-item active" data-bs-interval="8000">
-            <img src="images/Autostrada.jpg" class="d-block w-100" alt="..." style="height: 500px;">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Scegli Telepass:</h5>
-                <p>scopri il piacere di guidare senza aver timore di tardare ad appuntamenti per le lunghe code ai caselli.</p>
-            </div>
-        </div>
-        <div class="carousel-item rounded" data-bs-interval="8000">
-            <img src="images/transponder_inmano.jpg" class="d-block w-100" alt="..." style="height: 500px;">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Scegli il nostro trasponder:</h5>
-                <p>con esso potrai essere scansionato e riconosciuto come cliente al passaggio ai caselli.</p>
-            </div>
-        </div>
-        <div class="carousel-item rounded" data-bs-interval="8000">
             <img src="images/telepass_biancoenero.jpg" class="d-block w-100" alt="..." style="height: 500px;">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Unisciti a noi:</h5>
                 <p>diventa parte della famiglia Telepass e torna a goderti i tuoi viaggi in auto. Ti aspettiamo.</p>
             </div>
+        </div>
+        <div class="carousel-item rounded" data-bs-interval="8000">
+            <img src="images/transponder_inmano.jpg" class="d-block w-100" alt="..." style="height: 500px;">
+        </div>
+        <div class="carousel-item rounded" data-bs-interval="8000">
+            <img src="images/Autostrada.jpg" class="d-block w-100" alt="..." style="height: 500px;">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
@@ -85,7 +77,7 @@
         <div><img src="images/telepass-bip_low.png" style="height: 250px; width: 400px;"></div>
         <div>
             <h2 class="h2div">TRANSPONDER</h2>
-            <p id="pdiv">Il nostro mostro di satan fa questo e questo e quello<br> senza considerare questo e quello</p>
+            <p id="pdiv">Il nostro transponder ti permette di essere riconosciuto in tutt'italia come nostro cliente, <br> velocizzando il tuo passaggio ai caselli rendendo il tuo viaggio in auto più comfortevole.</p>
         </div>
     </center>
 

@@ -1,9 +1,11 @@
-package com.example.telepass_ruggieroperrotta;
+package com.example.Controller;
 
-public class ClasseA implements Classe{
+public class Classe1 implements Classe{
     private double costoKm;
 
-    public ClasseA(){costoKm = 0.07;}
+    public Classe1(){
+        costoKm = 0.09;
+    }
 
     @Override
     public double pagamento(double quantikm) {
@@ -12,7 +14,6 @@ public class ClasseA implements Classe{
         return costoTotale;
     }
 
-    @Override
     public double getCostoKm(){
         return costoKm;
     }

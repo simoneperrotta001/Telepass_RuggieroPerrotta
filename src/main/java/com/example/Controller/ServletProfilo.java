@@ -1,4 +1,4 @@
-package com.example.telepass_ruggieroperrotta;
+package com.example.Controller;
 
 import ModelTelepass.DatabaseTelepass;
 import jakarta.servlet.http.*;
@@ -43,7 +43,6 @@ public class ServletProfilo extends HttpServlet {
                     request.setAttribute("plus", "NON ATTIVO");
                 }
                 int transponder= (int) parametri.get(4);
-                //System.out.println(transponder);
                 request.setAttribute("codiceTransponder", transponder);
 
                 request.getRequestDispatcher("/ProfiloUtente.jsp").forward(request, response);

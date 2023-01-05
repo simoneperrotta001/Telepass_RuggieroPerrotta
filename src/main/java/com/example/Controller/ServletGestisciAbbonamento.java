@@ -1,11 +1,8 @@
-package com.example.telepass_ruggieroperrotta;
+package com.example.Controller;
 
-import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import ModelTelepass.DatabaseTelepass;
-import java.io.IOException;
-import java.sql.DriverManager;
 
 @WebServlet("/gestisciAbbonamento")
 public class ServletGestisciAbbonamento extends HttpServlet {
@@ -27,7 +24,7 @@ public class ServletGestisciAbbonamento extends HttpServlet {
                     request.getRequestDispatcher("/protected_area_utente.jsp").forward(request, response);
                 }
                 catch (Exception e) {
-                    System.out.println("errore nella connessione");
+                    System.out.println("errore nella connessione per la disdetta dell'abbonamento del cliente");
                 }
             }
             else{ //se lo fa l'admin
@@ -42,7 +39,7 @@ public class ServletGestisciAbbonamento extends HttpServlet {
                     request.getRequestDispatcher("/GestisciTransponder.jsp").forward(request, response);
                 }
                 catch (Exception e) {
-                    System.out.println("errore nella connessione");
+                    System.out.println("errore nella connessione per la disdetta dell'abbonamento del cliente");
                 }
             }
         }
@@ -55,7 +52,7 @@ public class ServletGestisciAbbonamento extends HttpServlet {
                     request.getRequestDispatcher("/protected_area_utente.jsp").forward(request, response);
                 }
                 catch (Exception e) {
-                    System.out.println("errore nella connessione");
+                    System.out.println("errore nella connessione per l'aggiunta dell'abbonamento al cliente");
                 }
             }
             else{ //se lo fa l'admin
@@ -70,7 +67,7 @@ public class ServletGestisciAbbonamento extends HttpServlet {
                     request.getRequestDispatcher("/GestisciTransponder.jsp").forward(request, response);
                 }
                 catch (Exception e) {
-                    System.out.println("errore nella connessione");
+                    System.out.println("errore nella connessione per l'aggiunta dell'abbonamento al cliente");
                 }
             }
         } else if (azione.equals("2")) { //se si vuole rimuovere il plus
@@ -83,7 +80,7 @@ public class ServletGestisciAbbonamento extends HttpServlet {
                     request.getRequestDispatcher("/protected_area_utente.jsp").forward(request, response);
                 }
                 catch (Exception e) {
-                    System.out.println("errore nella connessione");
+                    System.out.println("errore nella connessione nella rimozione del plus al cliente");
                 }
             }
             else{ //se lo fa l'admin
@@ -98,7 +95,7 @@ public class ServletGestisciAbbonamento extends HttpServlet {
                     request.getRequestDispatcher("/GestisciTransponder.jsp").forward(request, response);
                 }
                 catch (Exception e) {
-                    System.out.println("errore nella connessione");
+                    System.out.println("errore nella connessione nella rimozione del plus al cliente");
                 }
             }
         }
@@ -111,7 +108,7 @@ public class ServletGestisciAbbonamento extends HttpServlet {
                     request.getRequestDispatcher("/protected_area_utente.jsp").forward(request, response);
                 }
                 catch (Exception e) {
-                    System.out.println("errore nella connessione");
+                    System.out.println("errore nella connessione per l'aggiunta del plus al cliente");
                 }
             }
             else{ //se lo fa l'admin
@@ -126,7 +123,7 @@ public class ServletGestisciAbbonamento extends HttpServlet {
                     request.getRequestDispatcher("/GestisciTransponder.jsp").forward(request, response);
                 }
                 catch (Exception e) {
-                    System.out.println("errore nella connessione");
+                    System.out.println("errore nella connessione per l'aggiunta del plus al cliente");
                 }
             }
         }

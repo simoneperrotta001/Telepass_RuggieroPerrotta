@@ -121,15 +121,6 @@
             per il traghettamento sullo stretto di Messina.
             <br>Dal 2018 è attivo il servizio Telepass europeo per le auto, valido in Italia, Francia, Spagna e Portogallo ed anche nei parcheggi delle principali città, 
             da Parigi a Barcellona e Madrid</p>
-                
-            <center>
-              <div><img src="images/telepass-bip_low.png" style="height: 250px; width: 400px;"></div>
-              <div>
-                <h2 class="h2div">TRANSPONDER</h2>
-                <p id="pdiv">Il nostro mostro di satan fa questo e questo e quello<br> senza considerare questo e quello</p>
-              </div>
-            </center> 
-
     </div>
 
     <section class="">

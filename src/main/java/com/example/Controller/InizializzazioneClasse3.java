@@ -1,4 +1,4 @@
-package com.example.telepass_ruggieroperrotta;
+package com.example.Controller;
 
 public class InizializzazioneClasse3 extends InizializzazioneClasse{
     @Override

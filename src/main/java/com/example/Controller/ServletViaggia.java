@@ -1,17 +1,14 @@
-package com.example.telepass_ruggieroperrotta;
+package com.example.Controller;
 
 import ModelTelepass.DatabaseTelepass;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-import java.io.IOException;
 import java.sql.Timestamp;
-
 
 @WebServlet("/viaggia")
 public class ServletViaggia extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response){
         String targa=request.getParameter("targa");
         String casello1=request.getParameter("casello1");
         String casello2=request.getParameter("casello2");

@@ -1,10 +1,10 @@
-package com.example.telepass_ruggieroperrotta;
+package com.example.Controller;
 
-public class Classe1 implements Classe{
+public class ClasseB implements Classe{
     private double costoKm;
 
-    public Classe1(){
-        costoKm = 0.09;
+    public ClasseB(){
+        costoKm = 0.08;
     }
 
     @Override

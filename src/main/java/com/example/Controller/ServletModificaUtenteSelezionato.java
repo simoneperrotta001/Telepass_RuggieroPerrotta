@@ -1,4 +1,4 @@
-package com.example.telepass_ruggieroperrotta;
+package com.example.Controller;
 
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
