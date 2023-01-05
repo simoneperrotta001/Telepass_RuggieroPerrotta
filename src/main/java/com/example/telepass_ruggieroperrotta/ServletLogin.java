@@ -1,5 +1,6 @@
 package com.example.telepass_ruggieroperrotta;
 
+import ModelTelepass.DatabaseTelepass;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -11,71 +12,35 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet("/login")
 public class ServletLogin extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-        String username=request.getParameter("username");
-        String password=request.getParameter("password");
-
-        DatabaseTelepass databaseTelepass = DatabaseTelepass.getInstance();
-        databaseTelepass.getInstance().doQuery("SELECT Distanza FROM Dista WHERE (NomeCasello1='Milano' AND NomeCasello2='Napoli') OR (NomeCasello1='Napoli' AND NomeCasello2='Milano');", "Distanza");
-
-        Connection connection=null;
-        Statement stm=null;
-        ResultSet rs=null;
         try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/telepass", "ROOT","ROOT");
-            stm= connection.createStatement();
-            rs= stm.executeQuery("SELECT Amministratore, CodiceTransponder, TransponderAttivo, Plus FROM CLIENTE WHERE Username='"+username+"' AND Password='"+password+"'");
-            if(rs.next()){
-                int ruolo= rs.getInt("Amministratore");
-                int Codice = rs.getInt("CodiceTransponder");
-                int Attivo = rs.getInt("TransponderAttivo");
-                int Plus = rs.getInt("Plus");
-                HttpSession session = request.getSession(true);
-                session.setAttribute("username", username);
-                session.setAttribute("ruolo", ruolo);
-                session.setAttribute("attivo", Attivo);
-                session.setAttribute("plus", Plus);
-                session.setAttribute("codice", Codice);
-                if(ruolo==1){
-                    request.setAttribute("successMessage", "Credenziali corrette");
-                    request.getRequestDispatcher("protected_area_admin.jsp").forward(request, response);
-                }
-                else{
-                    request.setAttribute("successMessage", "Credenziali corrette");
-                    request.getRequestDispatcher("protected_area_utente.jsp").forward(request, response);
-                }
+            List parametri = DatabaseTelepass.getInstance().doLogin("SELECT Amministratore, CodiceTransponder, TransponderAttivo, Plus FROM CLIENTE WHERE Username='"+request.getParameter("username")+"' AND Password='"+request.getParameter("password")+"'");
+
+            int ruolo = (int) parametri.get(0);
+            HttpSession session = request.getSession(true);
+            session.setAttribute("username", request.getParameter("username"));
+            session.setAttribute("ruolo", parametri.get(0));
+            session.setAttribute("codice", parametri.get(1));
+            session.setAttribute("attivo", parametri.get(2));
+            session.setAttribute("plus", parametri.get(3));
+
+            if(ruolo==1){
+                request.setAttribute("successMessage", "Credenziali corrette");
+                request.getRequestDispatcher("protected_area_admin.jsp").forward(request, response);
             }
             else{
-                request.setAttribute("errorMessage", "Credenziali Errate");
-                System.out.println("Invalid cred");
-                request.getRequestDispatcher("Accedi.jsp").forward(request, response);
+                request.setAttribute("successMessage", "Credenziali corrette");
+                request.getRequestDispatcher("protected_area_utente.jsp").forward(request, response);
             }
         }
         catch (Exception e) {
             System.out.println("errore nella connessione");
         }
-        finally {
-            if (rs != null) {
-                try {
-                    rs.close();
-                } catch (Exception e) {System.out.println("rs non chiuso");}
-            }
-            if (stm != null) {
-                try {
-                    stm.close();
-                } catch (Exception e) { System.out.println("stm non chiuso");}
-            }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (Exception e) { System.out.println("connection non chiuso");}
-            }
-        }
-
     }
 }
