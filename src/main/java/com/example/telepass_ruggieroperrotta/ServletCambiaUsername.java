@@ -1,21 +1,14 @@
 package com.example.telepass_ruggieroperrotta;
 
 import ModelTelepass.DatabaseTelepass;
-import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.List;
 
 @WebServlet("/cambiausername")
 public class ServletCambiaUsername extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response){
         String nuovo=request.getParameter("username");
         HttpSession session = request.getSession(false);
 

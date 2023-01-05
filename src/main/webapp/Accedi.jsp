@@ -18,10 +18,10 @@
     <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
 </head>
 <body>
-<c:if test="${errorMessage != null}">
+<c:if test="${messageUtenteNonEsistente != null}">
     <div class="alert warning">
         <span class="closebtn">&times;</span>
-        <strong>${errorMessage}</strong>
+        <strong>${messageUtenteNonEsistente}</strong>
     </div>
 </c:if>
 <script>

@@ -14,6 +14,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;//incorporati tutti in java.sql.*
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -85,6 +87,7 @@ public class DatabaseTelepass {
                 parametri.add(resultSet.getInt("Plus"));
             }
             else{
+                parametri.add(null);
                 System.out.println("quest'utente non esiste");
             }
         }
@@ -99,31 +102,25 @@ public class DatabaseTelepass {
             catch (Exception e){
                 System.out.println("errore nella chiusura del risultato della query");
             }
-
             closeStatement();
             closeConnection();
 
             return parametri;
         }
     }
-    public void doInsertUtenti(String nomeCliente, String cognomeCliente, String nascitaCliente, String codiceContoCorrente, int plus, String password, int codicetransponder, String username, int transponderattivo) throws SQLException {
+    public void doInsertUtenti(String nomeCliente, String cognomeCliente, Date nascitaCliente, String codiceContoCorrente, int plus, String username, String password, int transponderattivo) throws SQLException {
         createConnection();
         try{
-            preparedStatement = connection.prepareStatement("INSERT INTO Cliente(NomeCliente, CognomeCliente, NascitaCliente, CodiceContoCorrente, Plus, Password, CodiceTransponder, Username, TransponderAttivo, Amministratore) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,0)");
+            System.out.println(nascitaCliente);
+            preparedStatement = connection.prepareStatement("INSERT INTO Cliente(NomeCliente, CognomeCliente, NascitaCliente, CodiceContoCorrente, Plus, Password, Username, TransponderAttivo, Amministratore) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 0)");
             preparedStatement.setString(1,nomeCliente);
             preparedStatement.setString(2,cognomeCliente);
-            preparedStatement.setDate(3, Date.valueOf(nascitaCliente));
-            if(codiceContoCorrente.length()==12)
-                preparedStatement.setString(4,codiceContoCorrente);
-            else{
-                System.out.println("Le cifre che descrivono un codice di conto corrente sono 12");
-                throw new Exception();
-            }
+            preparedStatement.setDate(3, nascitaCliente);
+            preparedStatement.setString(4,codiceContoCorrente);
             preparedStatement.setInt(5, plus);
             preparedStatement.setString(6, password);
-            preparedStatement.setInt(7, codicetransponder);
-            preparedStatement.setString(8, username);
-            preparedStatement.setInt(9, transponderattivo);
+            preparedStatement.setString(7, username);
+            preparedStatement.setInt(8, transponderattivo);
             preparedStatement.execute();
         }
         catch (Exception e){
@@ -133,6 +130,16 @@ public class DatabaseTelepass {
             preparedStatement.close();
             closeConnection();
         }
+    }
+    public boolean checkData(Date nascita) {
+        LocalDate now = LocalDate.now();
+        Period diff = Period.between(nascita.toLocalDate(), now);
+        if(diff.getYears()>=18)
+        {
+            return true;
+        }
+        else
+            return false;
     }
     public void doInsertVeicoli(String targa, int cod, String classe) throws SQLException {
         createConnection();
@@ -153,6 +160,57 @@ public class DatabaseTelepass {
             closeConnection();
         }
     }
+    public void doInsertEntra(String targa, String casello1, Timestamp oggi) throws SQLException {
+        createConnection();
+        try{
+            preparedStatement = connection.prepareStatement("INSERT INTO entra() VALUES (?, ?, ?)");
+            preparedStatement.setString(1,targa);
+            preparedStatement.setString(2,casello1);
+            preparedStatement.setTimestamp(3,oggi);
+
+            preparedStatement.execute();
+        }
+        catch (Exception e){
+            System.out.println("errore nell'entrata del veicolo nel casello");
+        }
+        finally {
+            preparedStatement.close();
+            closeConnection();
+        }
+    }
+    public void doInsertEsci(String targa, String casello2, Timestamp oggi, double tariffa) throws SQLException {
+        createConnection();
+        try{
+            preparedStatement = connection.prepareStatement("INSERT INTO esce() VALUES (?, ?, ?, ?)");
+            preparedStatement.setString(1,targa);
+            preparedStatement.setString(2,casello2);
+            preparedStatement.setTimestamp(3,oggi);
+            preparedStatement.setDouble(4,tariffa);
+
+            preparedStatement.execute();
+        }
+        catch (Exception e){
+            System.out.println("errore nell'uscita del veicolo dal casello");
+        }
+        finally {
+            preparedStatement.close();
+            closeConnection();
+        }
+    }
+    public void doUpdate(String sql){
+        createConnection();
+        createStatement();
+        try{
+            statement.executeUpdate(sql);
+        }
+        catch (Exception e){
+            System.out.println("errore nell'esecuzione della query");
+        }
+        finally {
+            closeStatement();
+            closeConnection();
+        }
+    }
     public List getSingoloValore(String sql, String campo){
         List risultati = new ArrayList();
         createConnection();
@@ -163,7 +221,8 @@ public class DatabaseTelepass {
                 risultati.add(resultSet.getString(campo));
             }
             else{
-                System.out.println("non hai veicolo associati");
+                risultati.add(null);
+                System.out.println("non ci sono risultati");
             }
         }
         catch (Exception e){
@@ -183,18 +242,71 @@ public class DatabaseTelepass {
             return risultati;
         }
     }
-    public void doUpdate(String sql){
+    public List getDoppioValore(String sql, String campo1, String campo2) {
+        List risultati = new ArrayList();
         createConnection();
         createStatement();
         try{
             resultSet = statement.executeQuery(sql);
+            if(resultSet.next()) {
+                risultati.add(resultSet.getString(campo1));
+                risultati.add(resultSet.getString(campo2));
+            }
+            else{
+                risultati.add(null);
+                System.out.println("non ci sono risultati");
+            }
         }
         catch (Exception e){
             System.out.println("errore nell'esecuzione della query");
         }
         finally {
+            try{
+                if(resultSet!=null)
+                    resultSet.close();
+            }
+            catch (Exception e){
+                System.out.println("errore nella chiusura del risultato della query");
+            }
             closeStatement();
             closeConnection();
+
+            return risultati;
+        }
+    }
+    public List getUtente(String sql) {
+        List risultati = new ArrayList();
+        createConnection();
+        createStatement();
+        try{
+            resultSet = statement.executeQuery(sql);
+            if(resultSet.next()) {
+                risultati.add(resultSet.getString("NomeCliente"));
+                risultati.add(resultSet.getString("CognomeCliente"));
+                risultati.add(resultSet.getInt("TransponderAttivo"));
+                risultati.add(resultSet.getInt("Plus"));
+                risultati.add(resultSet.getInt("CodiceTransponder"));
+            }
+            else{
+                risultati.add(null);
+                System.out.println("non ci sono risultati");
+            }
+        }
+        catch (Exception e){
+            System.out.println("errore nell'esecuzione della query");
+        }
+        finally {
+            try{
+                if(resultSet!=null)
+                    resultSet.close();
+            }
+            catch (Exception e){
+                System.out.println("errore nella chiusura del risultato della query");
+            }
+            closeStatement();
+            closeConnection();
+
+            return risultati;
         }
     }
     public void closeConnection(){
@@ -219,4 +331,3 @@ public class DatabaseTelepass {
 
 
 }
-
