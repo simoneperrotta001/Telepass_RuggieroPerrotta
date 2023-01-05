@@ -21,11 +21,11 @@
     <div class="main">
         <center>
             <h2 class="h2div">Informazioni sul tuo profilo</h2>
-            <div class="rounded" style="width:50%; border-style:solid; border-color:#0d6efd; border-width: 3px">
-                <div class="row">
+            <div class="rounded" style="width:50%; height:500px; border-style:solid; border-color:#0d6efd; border-width: 3px">
+                <div class="row" style="height:500px;">
                     <div class="col-lg-12">
-                      <div class="card mb-4" style="height: 100%">
-                        <div class="card-body">
+                      <div class="card mb-4" style="height:97%">
+                        <div class="card-body" style="height:500px;">
                           <div class="row">
                             <div class="col-sm-4">
                               <p class="mb-0">Nome Utente</p>
@@ -77,6 +77,15 @@
                             </div>
                             <div class="col-sm-8">
                               <p class="text-muted mb-0">${viaggi}</p> <!-- viaggi-->
+                            </div>
+                          </div>
+                          <hr>
+                          <div class="row">
+                            <div class="col-sm-4">
+                              <p class="mb-0">Veicoli Registrati</p>
+                            </div>
+                            <div class="col-sm-8">
+                              <p class="text-muted mb-0">${veicoli}</p> <!-- viaggi-->
                             </div>
                           </div>
                           <hr>

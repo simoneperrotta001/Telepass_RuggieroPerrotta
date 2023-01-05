@@ -31,6 +31,11 @@ public class ServletProfilo extends HttpServlet {
                 int viaggi=rs.getInt("QUANTI");
                 request.setAttribute("viaggi",viaggi); //quanti viaggi l'utente ha fatto con telepass
             }
+            rs= stm.executeQuery("SELECT COUNT(TargaVeicolo) AS VEICOLI FROM CLIENTE C JOIN VEICOLO V ON C.CodiceTransponder=V.CodiceTransponder WHERE C.CodiceTransponder='"+session.getAttribute("codice")+"'");
+            if(rs.next()){
+                int veicoli=rs.getInt("VEICOLI");
+                request.setAttribute("veicoli",veicoli); //quanti veicoli ha l'utente
+            }
             rs=stm.executeQuery("SELECT * FROM CLIENTE WHERE Username='"+session.getAttribute("username")+"'");
             if(rs.next()){
                 String Nome= rs.getString("NomeCliente");
