@@ -42,6 +42,7 @@
               <sql:query dataSource="${snapshot}" var="result">
                   SELECT COUNT(*) AS QUANTI FROM VEICOLO WHERE CodiceTransponder=${sessionScope.codice}
               </sql:query>
+
               <c:forEach var="row" items="${result.rows}">
                   <c:if test="${row.QUANTI<2}">
                       <li><a class="dropdown-item" href="AggiungiVeicolo.jsp">Aggiungi Veicolo</a></li>
