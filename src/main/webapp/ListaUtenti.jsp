@@ -28,15 +28,15 @@
       <table class="table" style="border-width: 3px; border-color:#0d6efd; border-style: solid ">
         <thead style="background-color: #0d6efd; color:white">
         <tr>
-          <th scope="col">Nome Utente</th>
-          <th scope="col">Cognome Utente</th>
-          <th scope="col">Nascita Cliente</th>
-          <th scope="col">Codice Transponder</th>
-          <th scope="col">Username</th>
-          <th scope="col">Codice Conto Corrente</th>
-          <th scope="col">Abbonamento</th>
-          <th scope="col">Telepass+</th>
-          <th scope="col">Modifica</th>
+          <th scope="col" style="text-align: center;">Nome Utente</th>
+          <th scope="col" style="text-align: center;">Cognome Utente</th>
+          <th scope="col" style="text-align: center;">Nascita Cliente</th>
+          <th scope="col" style="text-align: center;">Codice Transponder</th>
+          <th scope="col" style="text-align: center;">Username</th>
+          <th scope="col" style="text-align: center;">Codice Conto Corrente</th>
+          <th scope="col" style="text-align: center;">Abbonamento</th>
+          <th scope="col" style="text-align: center;">Telepass+</th>
+          <th scope="col" style="text-align: center;">Modifica</th>
         </tr>
         </thead>
         <tbody>
@@ -62,32 +62,32 @@
             </c:otherwise>
           </c:choose>
 
-          <td><c:out value="${row.NomeCliente}"/></td>
-          <td><c:out value="${row.CognomeCliente}"/></td>
-          <td><c:out value="${row.NascitaCliente}"/></td>
-          <td><c:out value="${row.CodiceTransponder}"/></td>
-          <td><c:out value="${row.Username}"/></td>
-          <td><c:out value="${row.CodiceContoCorrente}"/></td>
+          <td style="text-align: center;"><c:out value="${row.NomeCliente}"/></td>
+          <td style="text-align: center;"><c:out value="${row.CognomeCliente}"/></td>
+          <td style="text-align: center;"><c:out value="${row.NascitaCliente}"/></td>
+          <td style="text-align: center;"><c:out value="${row.CodiceTransponder}"/></td>
+          <td style="text-align: center;"><c:out value="${row.Username}"/></td>
+          <td style="text-align: center;"><c:out value="${row.CodiceContoCorrente}"/></td>
           <c:choose>
             <c:when test="${row.TransponderAttivo==1}">
-              <td><span class="badge rounded-pill text-bg-success">Attivo</span></td>
+              <td style="text-align: center;"><span class="badge rounded-pill text-bg-success">Attivo</span></td>
             </c:when>
             <c:otherwise>
-              <td><span class="badge rounded-pill text-bg-danger">Disattivo</span></td>
+              <td style="text-align: center;"><span class="badge rounded-pill text-bg-danger">Disattivo</span></td>
             </c:otherwise>
           </c:choose>
 
           <c:choose>
             <c:when test="${row.Plus==1}">
-              <td><span class="badge rounded-pill text-bg-success">Attivo</span></td>
+              <td style="text-align: center;"><span class="badge rounded-pill text-bg-success">Attivo</span></td>
             </c:when>
 
             <c:otherwise>
-              <td><span class="badge rounded-pill text-bg-danger">Disattivo</span></td>
+              <td style="text-align: center;"><span class="badge rounded-pill text-bg-danger">Disattivo</span></td>
             </c:otherwise>
           </c:choose>
           <form action="modificaUtenteSelezionato" method="POST">
-            <td><a href="#"><button class="btn btn-sm btn-primary" name="username" value=${row.Username}><i class="bi bi-pencil-square"></i></button></a></td>
+            <td style="text-align: center;"><a href="#"><button class="btn btn-sm btn-primary" name="username" value=${row.Username}><i class="bi bi-pencil-square"></i></button></a></td>
           </form>
 
           </tr>

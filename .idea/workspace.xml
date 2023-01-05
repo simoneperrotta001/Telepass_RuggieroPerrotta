@@ -10,10 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c20c4ea3-3479-436c-be5c-e80ec7a63a20" name="Changes" comment="web app FINITA">
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletProfilo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/telepass_ruggieroperrotta/ServletProfilo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ProfiloUtente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ProfiloUtente.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ListaUtenti.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ListaUtenti.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/protected_area_admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/protected_area_admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/protected_area_utente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/protected_area_utente.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +31,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -435,7 +434,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672877149566</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="web app FINITA">
+      <created>1672917314741</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1672917314741</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

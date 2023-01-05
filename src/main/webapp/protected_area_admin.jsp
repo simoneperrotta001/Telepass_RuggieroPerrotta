@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
 <html>
 <head>
     <!-- CSS only -->
@@ -57,46 +58,49 @@
     }
 </script>
 
-    <div id="carouselExampleDark" class="carousel carousel-dark slide rounded" data-bs-ride="carousel" style="height: 500px;">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner rounded">
-          <div class="carousel-item active" data-bs-interval="8000">
-            <img src="images/Autostrada.jpg" class="d-block w-100" alt="..." style="height: 500px;">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Some representative placeholder content for the first slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item rounded" data-bs-interval="8000">
-            <img src="images/transponder_inmano.jpg" class="d-block w-100" alt="..." style="height: 500px;">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Some representative placeholder content for the second slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item rounded" data-bs-interval="8000">
-            <img src="images/telepass_biancoenero.jpg" class="d-block w-100" alt="..." style="height: 500px;">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-
     <div id="main">
+
+        <div class="row">
+            <center>
+                <br><h3 class="h2div">Classifica utenti con più viaggi</h3>
+                <div class="col-sm-9">
+                    <table class="table" style="border-width: 3px; border-color:#0d6efd; border-style: solid ">
+                        <thead style="background-color: #0d6efd; color:white">
+                        <tr>
+                            <th scope="col" style="text-align: center;">Nome Utente</th>
+                            <th scope="col" style="text-align: center;">Cognome Utente</th>
+                            <th scope="col" style="text-align: center;">Codice Transponder</th>
+                            <th scope="col" style="text-align: center;">Username</th>
+                            <th scope="col" style="text-align: center;">Viaggi fatti con Telepass</th>
+                        </tr>
+                        </thead>
+                        <c>
+
+                            <sql:setDataSource var="snapshot" driver="com.mysql.cj.jdbc.Driver"
+                                               url="jdbc:mysql://localhost:3306/telepass"
+                                               user="ROOT"  password="ROOT"/>
+
+                            <sql:query dataSource="${snapshot}" var="result">
+                            SELECT COUNT(*) AS QUANTI, C.CodiceTransponder, V.Username, V.NomeCliente, V.CognomeCliente
+                            FROM contaquantiviaggi c join cliente v on c.CodiceTransponder=v.CodiceTransponder
+                            GROUP BY C.CodiceTransponder
+                            ORDER BY QUANTI DESC
+                            </sql:query>
+                            <c:forEach var="row" items="${result.rows}">
+                            <tr class="table">
+                                <td style="text-align: center;"><c:out value="${row.NomeCliente}"/></td>
+                                <td style="text-align: center;"><c:out value="${row.CognomeCliente}"/></td>
+                                <td style="text-align: center;"><c:out value="${row.CodiceTransponder}"/></td>
+                                <td style="text-align: center;"><c:out value="${row.Username}"/></td>
+                                <td style="text-align: center;"><c:out value="${row.QUANTI}"/></td>
+                            </tr>
+                            </c:forEach>
+                            </tbody>
+                    </table>
+                </div>
+            </center>
+        </div>
+
       <p id="pbody">Telepass è un marchio registrato di proprietà di Atlantia S.p.A. (di cui Telepass S.p.A. è licenziataria) atto a contraddistinguere un sistema di riscossione
             del pedaggio autostradale con l'utilizzo del telepedaggio, introdotto in Italia nel 1989 da Società Autostrade Concessioni e Costruzioni S.p.A. (oggi Telepass S.p.A.).
             <br>Inizialmente installato sulla tratta tra Calenzano - Sesto Fiorentino e Firenze nord in via sperimentale, è stato installato in un primo tempo 
