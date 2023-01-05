@@ -9,12 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c20c4ea3-3479-436c-be5c-e80ec7a63a20" name="Changes" comment="web app FINITA">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ListaUtenti.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ListaUtenti.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/protected_area_admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/protected_area_admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/protected_area_utente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/protected_area_utente.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="c20c4ea3-3479-436c-be5c-e80ec7a63a20" name="Changes" comment="web app FINITA" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -441,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672917314741</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="web app FINITA">
+      <created>1672921963847</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1672921963847</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

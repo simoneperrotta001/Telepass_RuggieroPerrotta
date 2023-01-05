@@ -20,7 +20,7 @@
 
     <div class="main">
         <center>
-            <h2 class="h2div">Informazioni sul tuo profilo</h2>
+            <h2 class="h2div">Informazioni sul tuo profilo ${sessionScope.username}</h2>
             <div class="rounded" style="width:50%; height:500px; border-style:solid; border-color:#0d6efd; border-width: 3px">
                 <div class="row" style="height:500px;">
                     <div class="col-lg-12">
