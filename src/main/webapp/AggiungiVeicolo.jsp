@@ -12,6 +12,8 @@
 <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
 </head>
 <body>
+<jsp:forward page="PrivilegiAggiungiVeicolo"></jsp:forward>
+
 <sql:setDataSource var="snapshot" driver="com.mysql.cj.jdbc.Driver"
                    url="jdbc:mysql://localhost:3306/telepass"
                    user="ROOT"  password="ROOT"/>
