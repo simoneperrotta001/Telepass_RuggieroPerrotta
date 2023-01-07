@@ -9,22 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c20c4ea3-3479-436c-be5c-e80ec7a63a20" name="Changes" comment="web app stamm accis">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletPrivilegiAdmin.java" afterDir="false" />
+    <list default="true" id="c20c4ea3-3479-436c-be5c-e80ec7a63a20" name="Changes" comment="footer relative nella pagina di profilo">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletPrivilegiUtentePlus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletPrivilegiUtenteVeicoli.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletPrivilegiAggiungiVeicolo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletPrivilegiUtente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Accedi.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Accedi.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/AggiungiVeicolo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/AggiungiVeicolo.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/CreazioneUtenti.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/CreazioneUtenti.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/GestisciTransponder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/GestisciTransponder.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ListaUtenti.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ListaUtenti.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ProfiloUtente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ProfiloUtente.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/SimulaPercorso.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/SimulaPercorso.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/TelepassPlus.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/TelepassPlus.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViaggioUtente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ViaggioUtente.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/cambiausername.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cambiausername.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/modificaUtenteSingolo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/modificaUtenteSingolo.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/protected_area_admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/protected_area_admin.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/protected_area_utente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/protected_area_utente.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -460,7 +450,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672937779726</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="footer relative nella pagina di profilo">
+      <created>1673092213576</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1673092213576</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -493,7 +490,8 @@
     <MESSAGE value="web app finita" />
     <MESSAGE value="web app FINITA" />
     <MESSAGE value="web app stamm accis" />
-    <option name="LAST_COMMIT_MESSAGE" value="web app stamm accis" />
+    <MESSAGE value="footer relative nella pagina di profilo" />
+    <option name="LAST_COMMIT_MESSAGE" value="footer relative nella pagina di profilo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

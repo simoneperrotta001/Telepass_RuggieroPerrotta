@@ -11,7 +11,7 @@
 <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
 </head>
 <body>
-<jsp:include page="PrivilegiUtente"></jsp:include>
+<jsp:include page="PrivilegiUtentePlus"></jsp:include>
 
     <nav class="navbar navbar-expand-lg bg-light"><a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px; margin-left: 5px"></a></nav>
 

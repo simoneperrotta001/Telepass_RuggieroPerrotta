@@ -53,13 +53,6 @@
       <a a href="logout" style="margin-right: 5px;"><button type="button" class="btn btn-primary">ESCI</button></a>
     </nav>
 
-    <c:if test="${messageVeicolo != null}">
-        <div class="alert success">
-            <span class="closebtn">&times;</span>
-            <strong>${messageVeicolo}</strong>
-        </div>
-    </c:if>
-
     <c:if test="${messageViaggio != null}">
         <div class="alert success">
             <span class="closebtn">&times;</span>
@@ -106,6 +99,20 @@
         <div class="alert success">
             <span class="closebtn">&times;</span>
             <strong>${messageUsername}</strong>
+        </div>
+    </c:if>
+
+    <c:if test="${messageVeicoli != null}">
+        <div class="alert info">
+            <span class="closebtn">&times;</span>
+            <strong>${messageVeicoli}</strong>
+        </div>
+    </c:if>
+
+    <c:if test="${messagePlus != null}">
+        <div class="alert info">
+            <span class="closebtn">&times;</span>
+            <strong>${messagePlus}</strong>
         </div>
     </c:if>
     <script>
