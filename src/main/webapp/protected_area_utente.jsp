@@ -12,14 +12,9 @@
 <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
 </head>
 <body>
-    <% if ((session.getAttribute("username") == null) || (session.getAttribute("username") == "") && (session.getAttribute("ruolo") == null) || (session.getAttribute("ruolo") == "")) {
-        response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/Accedi.jsp");
-    }
-        int ruolo= (int) session.getAttribute("ruolo");
-        if(ruolo == 1) {response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/protected_area_admin.jsp");}
-    %>
+<jsp:include page="PrivilegiUtente"></jsp:include>
 
-    <nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg bg-light">
       <a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px; margin-left: 5px;"></a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -86,6 +81,13 @@
         </div>
     </c:if>
 
+    <c:if test="${messageUtente != null}">
+        <div class="alert warning">
+            <span class="closebtn">&times;</span>
+            <strong>${messageUtente}</strong>
+        </div>
+    </c:if>
+
     <c:if test="${messageRimuoviPlus != null}">
         <div class="alert info">
             <span class="closebtn">&times;</span>
@@ -110,11 +112,12 @@
         var close = document.getElementsByClassName("closebtn");
         var i;
 
+        console.log(close.length);
         for (i = 0; i < close.length; i++) {
             close[i].onclick = function(){
                 var div = this.parentElement;
                 div.style.opacity = "0";
-                setTimeout(function(){ div.style.display = "none"; }, 600);
+                setTimeout(function(){ div.style.display = "none"; }, 0);
             }
         }
     </script>

@@ -18,11 +18,8 @@
   <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
 </head>
 <body>
-<%
-  if ((session.getAttribute("username") == null) || (session.getAttribute("username") == "") && (session.getAttribute("ruolo") == null) || (session.getAttribute("ruolo") == "")) {
-    response.sendRedirect("http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/Accedi.jsp");
-  }
-%>
+<jsp:include page="PrivilegiUtente"></jsp:include>
+
 <div class="row" style="width:100%;">
   <c:if test="${messageUsernameUsato != null}">
     <div class="alert warning">

@@ -45,6 +45,12 @@
         <strong>${messageUtenteInserito}</strong>
     </div>
 </c:if>
+<c:if test="${messageAdmin != null}">
+    <div class="alert warning">
+        <span class="closebtn">&times;</span>
+        <strong>${messageAdmin}</strong>
+    </div>
+</c:if>
 <script>
     var close = document.getElementsByClassName("closebtn");
     var i;

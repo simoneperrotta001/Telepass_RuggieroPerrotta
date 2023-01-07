@@ -12,7 +12,7 @@
 <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
 </head>
 <body>
-<jsp:include page="PrivilegiAggiungiVeicolo"></jsp:include>
+<jsp:include page="PrivilegiUtente"></jsp:include>
 
 <sql:setDataSource var="snapshot" driver="com.mysql.cj.jdbc.Driver"
                    url="jdbc:mysql://localhost:3306/telepass"

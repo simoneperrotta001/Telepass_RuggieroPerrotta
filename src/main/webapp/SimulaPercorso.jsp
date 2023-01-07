@@ -12,15 +12,8 @@
 <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
 </head>
 <body>
-<c:if test="${sessionScope.ruolo==null} || ${sessionScope.ruolo==''}">
-    request.setAttribute("messageAccedi", "Per accedere a questa pagina devi effettuare l'accesso");
-    request.getRequestDispatcher("/Accedi.jsp").forward(request, response);
-</c:if>
+<jsp:include page="PrivilegiUtente"></jsp:include>
 
-<c:if test="${sessionScope.ruolo==1}">
-    request.setAttribute("messagePermessi", "Non hai permessi per accedere a questa pagina");
-    request.getRequestDispatcher("/protected_area_admin.jsp").forward(request, response);
-</c:if>
     <nav class="navbar navbar-expand-lg bg-light"><a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px; margin-left: 5px"></a></nav>
 <c:if test="${messagePercorso != null}">
     <div class="alert warning">
