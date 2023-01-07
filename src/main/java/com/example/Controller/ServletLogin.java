@@ -35,7 +35,7 @@ public class ServletLogin extends HttpServlet {
             }
             else{
                 request.setAttribute("messageUtenteNonEsistente", "L'utente inserito non esiste");
-                request.getRequestDispatcher("/Accedi.jsp").forward(request, response);
+                request.getRequestDispatcher("Accedi.jsp").forward(request, response);
             }
         }
         catch (Exception e) {

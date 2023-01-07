@@ -29,6 +29,20 @@
             </div>
         </c:if>
 
+        <c:if test="${messageUsernameUsato != null}">
+            <div class="alert info">
+                <span class="closebtn">&times;</span>
+                <strong>${messageUsernameUsato}</strong>
+            </div>
+        </c:if>
+
+        <c:if test="${messageUsernameCorto != null}">
+            <div class="alert info">
+                <span class="closebtn">&times;</span>
+                <strong>${messageUsernameCorto}</strong>
+            </div>
+        </c:if>
+
         <c:if test="${messageData != null}">
             <div class="alert info">
                 <span class="closebtn">&times;</span>

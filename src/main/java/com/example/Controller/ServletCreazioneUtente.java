@@ -31,9 +31,23 @@ public class ServletCreazioneUtente extends HttpServlet {
                         request.getRequestDispatcher("/CreazioneUtenti.jsp").forward(request, response);
                     }
                     else{
-                        DatabaseTelepass.getInstance().doInsertUtenti(nome, cognome, nascita, codiceContoCorrente, plus, username, password, transponderAttivo);
-                        request.setAttribute("messageUtenteInserito", "Utente Inserito correttamente");
-                        request.getRequestDispatcher("/protected_area_admin.jsp").forward(request, response);
+                        if(username.length() > 4)
+                        {
+                            risultato = DatabaseTelepass.getInstance().getSingoloValore("SELECT Username FROM CLIENTE WHERE Username='"+username+"'", "Username");
+                            if (risultato.get(0) != null){
+                                request.setAttribute("messageUsernameUsato", "Username già utilizzato. Inseriscine un altro");
+                                request.getRequestDispatcher("/CreazioneUtenti.jsp").forward(request, response);
+                            }
+                            else{
+                                DatabaseTelepass.getInstance().doInsertUtenti(nome, cognome, nascita, codiceContoCorrente, plus, username, password, transponderAttivo);
+                                request.setAttribute("messageUtenteInserito", "Utente Inserito correttamente");
+                                request.getRequestDispatcher("/protected_area_admin.jsp").forward(request, response);
+                            }
+                        }
+                        else{
+                            request.setAttribute("messageUsernameCorto", "Username troppo corto per essere inserito");
+                            request.getRequestDispatcher("/CreazioneUtenti.jsp").forward(request, response);
+                        }
                     }
                 }
                 else {
