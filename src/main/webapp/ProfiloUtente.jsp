@@ -21,11 +21,11 @@
     <div class="main">
         <center>
             <h2 class="h2div">Informazioni sul tuo profilo ${sessionScope.username}</h2>
-            <div class="rounded" style="width:50%; height:500px; border-style:solid; border-color:#0d6efd; border-width: 3px">
-                <div class="row" style="height:500px;">
+            <div class="rounded" style="width:50%; border-style:solid; border-color:#0d6efd; border-width: 3px">
+                <div class="row">
                     <div class="col-lg-12">
-                      <div class="card mb-4" style="height:97%">
-                        <div class="card-body" style="height:500px;">
+                      <div class="card mb-4" style="height:100%;">
+                        <div class="card-body" style="height:100%;">
                           <div class="row">
                             <div class="col-sm-4">
                               <p class="mb-0">Nome Utente</p>
@@ -123,7 +123,7 @@
 
     <section class="pageform">
       <!-- Footer -->
-      <footer class="text-center text-white" style="background-color: #002752;" id="staticfooter">
+      <footer class="text-center text-white" style="background-color: #002752;" id="indexfooter">
         <!-- Grid container -->
         <div class="container p-4 pb-0">
           <!-- Section: CTA -->
