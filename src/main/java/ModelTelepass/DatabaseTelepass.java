@@ -62,6 +62,7 @@ public class DatabaseTelepass {
             resultSet = statement.executeQuery(sql);//esegue la query passata come parametro
             //se ci sono risultati dall'esecuzione della query
             if(resultSet.next()) {
+                //aggiunge tutto alla lista che verrà data in output
                 parametri.add(resultSet.getInt("Amministratore"));//setta il ruolo come int
                 parametri.add(resultSet.getInt("CodiceTransponder"));//setta il codice transponder
                 parametri.add(resultSet.getInt("TransponderAttivo"));//setta se il transponder è attivo o meno con un int
@@ -109,7 +110,7 @@ public class DatabaseTelepass {
             preparedStatement.setString(6, password);//setta la password
             preparedStatement.setString(7, username);//setta lo username
             preparedStatement.setInt(8, transponderattivo);//setta se il transponder è attivo o meno
-            preparedStatement.execute();//esegue lo statement
+            preparedStatement.execute();//esegue il preparedstatement per l'insert
         }
         //se c'è stato un errore nella creazione del preparedStatement
         catch (Exception e){
@@ -122,180 +123,237 @@ public class DatabaseTelepass {
             closeConnection();//chiusura della connessione
         }
     }
-    public boolean checkData(Date nascita) {
-        LocalDate now = LocalDate.now();
-        Period diff = Period.between(nascita.toLocalDate(), now);
-        if(diff.getYears()>=18)
-        {
-            return true;
-        }
-        else
-            return false;
-    }
+    /*Questo metodo si occupa di inserire i veicoli all'interno del db
+    Vengono passati come parametri tutti i campi da inserire nella tabella del db "veicoli"*/
     public void doInsertVeicoli(String targa, int cod, String classe) throws SQLException {
-        createConnection();
+        createConnection();//crea la connessione
         try{
+            //prepara il preparedStatement per l'inserimento di tutti i campi passati come parametri
             preparedStatement = connection.prepareStatement("INSERT INTO Veicolo() VALUES (?, ?, ?)");
             if(targa.length()==7)
-                preparedStatement.setString(1,targa);
-            preparedStatement.setInt(2,cod);
-            preparedStatement.setString(3,classe);
+                preparedStatement.setString(1,targa);//setta la targa
+            preparedStatement.setInt(2,cod);//setta codice trasponder
+            preparedStatement.setString(3,classe);//setta la classe del veicolo
 
-            preparedStatement.execute();
+            preparedStatement.execute();//esegue il preparedstatement per l'insert
         }
+        //se c'è stato un errore nella creazione del preparedStatement
         catch (Exception e){
+            //lanciamo un messaggio di errore in output
             System.out.println("errore nell'inserimento del veicolo");
         }
+        //a prescindere se ci sono stati errori o meno
         finally {
-            preparedStatement.close();
-            closeConnection();
+            preparedStatement.close();//chiudiamo il preparedStatement
+            closeConnection();//chiusura della connessione
         }
     }
+    /*Questo metodo si occupa di inserire le entrate dei veicoli ai caselli.
+    Vengono passati come parametri tutti i campi da inserire nella tabella del db "entra"*/
     public void doInsertEntra(String targa, String casello1, Timestamp oggi) throws SQLException {
-        createConnection();
+        createConnection();//crea la connessione
         try{
+            //prepara il preparedStatement per l'inserimento di tutti i campi passati come parametri
             preparedStatement = connection.prepareStatement("INSERT INTO entra() VALUES (?, ?, ?)");
-            preparedStatement.setString(1,targa);
-            preparedStatement.setString(2,casello1);
-            preparedStatement.setTimestamp(3,oggi);
+            preparedStatement.setString(1,targa);//setta la targa
+            preparedStatement.setString(2,casello1);//setta il casello di entrata
+            preparedStatement.setTimestamp(3,oggi);//setta la data corrente fittizia come data di entrata
 
-            preparedStatement.execute();
+            preparedStatement.execute();//esegue il preparedstatement per l'insert
         }
+        //se c'è stato un errore nella creazione del preparedStatement
         catch (Exception e){
+            //lanciamo un messaggio di errore in output
             System.out.println("errore nell'entrata del veicolo nel casello");
         }
+        //a prescindere se ci sono stati errori o meno
         finally {
-            preparedStatement.close();
-            closeConnection();
+            preparedStatement.close();//chiudiamo il preparedStatement
+            closeConnection();//chiusura della connessione
         }
     }
+    /*Questo metodo si occupa di inserire le uscite dei veicoli dai caselli.
+    Vengono passati come parametri tutti i campi da inserire nella tabella del db "esci"*/
     public void doInsertEsci(String targa, String casello2, Timestamp oggi, double tariffa) throws SQLException {
-        createConnection();
+        createConnection();//crea la connessione
         try{
+            //prepara il preparedStatement per l'inserimento di tutti i campi passati come parametri
             preparedStatement = connection.prepareStatement("INSERT INTO esce() VALUES (?, ?, ?, ?)");
-            preparedStatement.setString(1,targa);
-            preparedStatement.setString(2,casello2);
-            preparedStatement.setTimestamp(3,oggi);
-            preparedStatement.setDouble(4,tariffa);
+            preparedStatement.setString(1,targa);//setta la targa
+            preparedStatement.setString(2,casello2);//setta il casello di uscita
+            preparedStatement.setTimestamp(3,oggi);//setta la data di uscita calcolata nella servlet
+            preparedStatement.setDouble(4,tariffa);//setta la tariffa
 
-            preparedStatement.execute();
+            preparedStatement.execute();//esegue il preparedstatement per l'insert
         }
+        //se c'è stato un errore nella creazione del preparedStatement
         catch (Exception e){
-            System.out.println("errore nell'uscita del veicolo dal casello");
+            //lanciamo un messaggio di errore in output
+            System.out.println("errore nell'entrata del veicolo nel casello");
         }
+        //a prescindere se ci sono stati errori o meno
         finally {
-            preparedStatement.close();
-            closeConnection();
+            preparedStatement.close();//chiudiamo il preparedStatement
+            closeConnection();//chiusura della connessione
         }
     }
+    /*Questo metodo si occupa di eseguire degli update sul db*/
     public void doUpdate(String sql){
-        createConnection();
-        createStatement();
+        createConnection();//crea la connessione
+        createStatement();//crea lo statement
         try{
+            //prova ad eseguire la query passata come parametro
             statement.executeUpdate(sql);
         }
+        //se c'è stato un errore durante l'update
         catch (Exception e){
+            //lanciamo un messaggio di errore in output
             System.out.println("errore nell'esecuzione della query");
         }
+        //a prescindere se l'update viene fatto oppure no
         finally {
-            closeStatement();
-            closeConnection();
+            closeStatement();//chiusura dello statement
+            closeConnection();//chiusura della connessione
         }
     }
-    public List getSingoloValore(String sql, String campo){
-        List risultati = new ArrayList();
-        createConnection();
-        createStatement();
+    /*Questo metodo si occupa di eseguire una query che debba ritornare valori da un solo campo.
+    Es: SELECT NomeCliente FROM Cliente. Questo metodo però prenderà solo il primo valore che restituirà la query,
+    restituendolo sottoforma di tipo generico; perchè questo metodo viene utilizzato solo per controllare se ci
+    siano valori già esistenti nel db (es: username già presente, codice conto corrente già presente, ecc).
+    Quindi a noi non interessa quanti utenti risulteranno dalla query, ci interessa sapere se c'è n'è anche solo uno.
+    Ritorna quindi un tipo generico rappresentato da risultato.*/
+    public <T> T getSingoloValore(String sql, String campo){
+        T risultato = null;//prepariamo la lista che conterrà i risultati della query
+        createConnection();//crea la connessione
+        createStatement();//crea lo statement
         try{
+            //prova ad eseguire la query
             resultSet = statement.executeQuery(sql);
+            //se ci sono risultati
             if(resultSet.next()) {
-                risultati.add(resultSet.getString(campo));
+                //se ci sono risultati dalla query, lo prende
+                risultato = (T) resultSet.getString(campo);
             }
+            //se non ci sono risultati dalla query
             else{
-                risultati.add(null);
+                //mette a null risultato
+                risultato = null;
                 System.out.println("non ci sono risultati");
             }
         }
+        //se c'è stato un errore durante la query
         catch (Exception e){
+            //lanciamo un messaggio di errore in output
             System.out.println("errore nell'esecuzione della query");
         }
+        //a prescindere se l'update viene fatto oppure no
         finally {
             try{
+                //se ci sono stati risultati
                 if(resultSet!=null)
-                    resultSet.close();
+                    resultSet.close();//chiude resultSet
             }
+            //se ci sono stati errori nel chiudere resultSet
             catch (Exception e){
+                //lanciamo un messaggio di errore in output
                 System.out.println("errore nella chiusura del risultato della query");
             }
-            closeStatement();
-            closeConnection();
+            closeStatement();//chiusura dello statement
+            closeConnection();//chiusura della connessione
 
-            return risultati;
+            return risultato;
         }
     }
+    /*Questo metodo si occupa di eseguire una query che debba ritornare valori da due soli campi.
+    Es: SELECT NomeCliente, NascitaCliente FROM Cliente. Questo metodo però prenderà solo la prima tupla che restituirà la query,
+    restituendolo sottoforma di lista.
+    Quindi a noi non interessa quanti utenti risulteranno dalla query, ci interessa sapere se c'è n'è anche solo uno.
+    Ritorna quindi una lista rappresentata da risultati con i parametri della tupla contenuti nei 2 campi.*/
     public List getDoppioValore(String sql, String campo1, String campo2) {
-        List risultati = new ArrayList();
-        createConnection();
-        createStatement();
+        List risultati = new ArrayList();//crea la lista che conterrà i risultati
+        createConnection();//crea la connessione
+        createStatement();//crea lo statement
         try{
+            //prova ad eseguire la query
             resultSet = statement.executeQuery(sql);
+            //se ci sono risultati
             if(resultSet.next()) {
-                risultati.add(resultSet.getString(campo1));
-                risultati.add(resultSet.getString(campo2));
+                risultati.add(resultSet.getString(campo1));//aggiunge il valore contenuto nel primo campo a risultati
+                risultati.add(resultSet.getString(campo2));//aggiunge il valore contenuto nel secondo campo a risultati
             }
+            //se non ci sono risultati
             else{
-                risultati.add(null);
+                risultati.add(null);//aggiunge null a risultati
                 System.out.println("non ci sono risultati");
             }
         }
+        //se c'è stato un errore durante la query
         catch (Exception e){
+            //lanciamo un messaggio di errore in output
             System.out.println("errore nell'esecuzione della query");
         }
+        //a prescindere se l'update viene fatto oppure no
         finally {
             try{
+                //se ci sono stati risultati
                 if(resultSet!=null)
-                    resultSet.close();
+                    resultSet.close();//chiude resultSet
             }
+            //se ci sono stati errori nel chiudere resultSet
             catch (Exception e){
+                //lanciamo un messaggio di errore in output
                 System.out.println("errore nella chiusura del risultato della query");
             }
-            closeStatement();
-            closeConnection();
+            closeStatement();//chiusura dello statement
+            closeConnection();//chiusura della connessione
 
             return risultati;
         }
     }
+    /*Questo metodo si occupa di eseguire una query che ritorni tutti i parametri di un utente.
+    Difatti questo metodo ritorna una Lista (risultati) che conterrà tutti i parametri di un utente passato all'interno
+    della query stessa*/
     public List getUtente(String sql) {
-        List risultati = new ArrayList();
-        createConnection();
-        createStatement();
+        List risultati = new ArrayList();//crea la lista che conterrà i risultati
+        createConnection();//crea la connessione
+        createStatement();//crea lo statement
         try{
+            //prova ad eseguire la query
             resultSet = statement.executeQuery(sql);
+            //se ci sono risultati
             if(resultSet.next()) {
-                risultati.add(resultSet.getString("NomeCliente"));
-                risultati.add(resultSet.getString("CognomeCliente"));
-                risultati.add(resultSet.getInt("TransponderAttivo"));
-                risultati.add(resultSet.getInt("Plus"));
-                risultati.add(resultSet.getInt("CodiceTransponder"));
+                //aggiunge tutto alla lista che verrà data in output
+                risultati.add(resultSet.getString("NomeCliente"));//setta il NomeCliente
+                risultati.add(resultSet.getString("CognomeCliente"));//setta il CognomeCliente
+                risultati.add(resultSet.getInt("TransponderAttivo"));//setta se il trasponder è attivo oppure no
+                risultati.add(resultSet.getInt("Plus"));//setta se il plus è attivo oppure no
+                risultati.add(resultSet.getInt("CodiceTransponder"));//setta il codice Transponder
             }
+            //se non ci sono risultati
             else{
-                risultati.add(null);
+                risultati.add(null);//aggiunge null a risultati
                 System.out.println("non ci sono risultati");
             }
         }
+        //se c'è stato un errore durante la query
         catch (Exception e){
+            //lanciamo un messaggio di errore in output
             System.out.println("errore nell'esecuzione della query");
         }
+        //a prescindere se l'update viene fatto oppure no
         finally {
             try{
+                //se ci sono stati risultati
                 if(resultSet!=null)
-                    resultSet.close();
+                    resultSet.close();//chiude resultSet
             }
+            //se ci sono stati errori nel chiudere resultSet
             catch (Exception e){
+                //lanciamo un messaggio di errore in output
                 System.out.println("errore nella chiusura del risultato della query");
             }
-            closeStatement();
-            closeConnection();
+            closeStatement();//chiusura dello statement
+            closeConnection();//chiusura della connessione
 
             return risultati;
         }

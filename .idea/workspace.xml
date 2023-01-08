@@ -12,23 +12,10 @@
     <list default="true" id="c20c4ea3-3479-436c-be5c-e80ec7a63a20" name="Changes" comment="web app stamm accis">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ModelTelepass/DatabaseTelepass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ModelTelepass/DatabaseTelepass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/Classe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/Classe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/Classe1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/Classe1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/Classe2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/Classe2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/Classe3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/Classe3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/ClasseA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/ClasseA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/ClasseB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/ClasseB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/InizializzazioneClasse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/InizializzazioneClasse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/InizializzazioneClasse1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/InizializzazioneClasse1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/InizializzazioneClasse2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/InizializzazioneClasse2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/InizializzazioneClasse3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/InizializzazioneClasse3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/InizializzazioneClasseA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/InizializzazioneClasseA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/InizializzazioneClasseB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/InizializzazioneClasseB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletAggiungiVeicolo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletAggiungiVeicolo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletViaggia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletViaggia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/AggiungiVeicolo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/AggiungiVeicolo.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViaggioUtente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ViaggioUtente.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/protected_area_utente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/protected_area_utente.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletCambiaUsername.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletCambiaUsername.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletCreazioneUtente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletCreazioneUtente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletProfilo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletProfilo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +197,7 @@
       <workItem from="1672831341114" duration="2814000" />
       <workItem from="1672847975103" duration="388000" />
       <workItem from="1672875209223" duration="1341000" />
-      <workItem from="1673175083374" duration="12307000" />
+      <workItem from="1673175083374" duration="17565000" />
     </task>
     <task id="LOCAL-00001" summary="gg">
       <created>1670315423649</created>
@@ -478,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673107347911</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="web app stamm accis">
+      <created>1673197261654</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1673197261655</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

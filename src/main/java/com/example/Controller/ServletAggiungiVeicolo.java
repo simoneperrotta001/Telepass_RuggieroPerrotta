@@ -13,12 +13,12 @@ public class ServletAggiungiVeicolo extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(false);
-        List parametri;
+        String parametri;
 
         //proviamo a inserire il veicolo prendendoci i valori dalla request (form) e dalla session dell'utente loggato
         try {
             parametri = DatabaseTelepass.getInstance().getSingoloValore("SELECT TargaVeicolo FROM Veicolo WHERE TargaVeicolo = '"+request.getParameter("targa")+"'","TargaVeicolo");
-            if(parametri.get(0) == null){
+            if(parametri == null){
                 DatabaseTelepass.getInstance().doInsertVeicoli(request.getParameter("targa"),(int) session.getAttribute("codice"),request.getParameter("classe"));
                 request.setAttribute("messageVeicolo", "Veicolo Inserito correttamente");
             }

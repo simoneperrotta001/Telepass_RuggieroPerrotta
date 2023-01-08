@@ -13,8 +13,8 @@ public class ServletCambiaUsername extends HttpServlet {
         HttpSession session = request.getSession(false);
 
         try{
-            List Username = DatabaseTelepass.getInstance().getSingoloValore("SELECT Username FROM CLIENTE WHERE Username='"+nuovo+"'","Username");
-            if(Username.get(0)!= null){
+            String Username = DatabaseTelepass.getInstance().getSingoloValore("SELECT Username FROM CLIENTE WHERE Username='"+nuovo+"'","Username");
+            if(Username != null){
                 request.setAttribute("messageUsernameUsato", "L'username scelto è gia utilizzato");
                 request.getRequestDispatcher("/cambiausername.jsp").forward(request, response);
             }
