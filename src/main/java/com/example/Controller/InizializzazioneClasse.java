@@ -1,10 +1,7 @@
 package com.example.Controller;
-//per l'interfaccia tutti i metodi sono astratti e vanno implementati, mentre per le classi astratte
-//ci potrebbero essere metodi non astratti di cui non va fatto l'override.
-public abstract class InizializzazioneClasse {
-    /**
-     * Subclasses will override this method in order to create specific button
-     * objects.
-     */
-    public abstract Classe creaClasse();
+/*Quest'interfaccia verrà utilizzata come factory per l'istanziazione delle varie classi.
+difatti ha un solo metodo creaClasse che restituisce un oggetto di tipo interfaccia Classe (quindi che istanzia
+e ritorna qualsiasi delle 5 classi esistenti) */
+public interface InizializzazioneClasse {
+    Classe creaClasse();
 }

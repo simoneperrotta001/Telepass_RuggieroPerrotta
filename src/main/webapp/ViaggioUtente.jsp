@@ -82,8 +82,10 @@
               <div class="row">
                 <input type="hidden" name="casello1" value=${casello1}>
                 <input type="hidden" name="casello2" value=${casello2}>
+                <input type="hidden" name="distanza" value=${distanza}>
                 <input type="hidden" name="targa" value=${targa}>
                 <input type="hidden" name="tariffa" value=${costo_tot}>
+
                 <div class="col-sm-12">
                   <a href="SimulaPercorso.jsp"><button type="button" class="btn btn-outline-primary">Cambia Percorso</button></a>
                   <button type="submit" class="btn btn-outline-success" name="viaggia" id="viaggia" >Viaggia</button>

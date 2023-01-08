@@ -1,6 +1,7 @@
 package com.example.Controller;
-
-public class InizializzazioneClasse2 extends InizializzazioneClasse{
+/*Implementa l'interfaccia InizializzazioneClasse. Ha di fatti l'override del metodo creaClasse.
+Questa servirà a istanziare un oggetto Classe di tipo Classe2 */
+public class InizializzazioneClasse2 implements InizializzazioneClasse{
     @Override
     public Classe creaClasse() {
         return new Classe2();

@@ -28,6 +28,12 @@
 </c:forEach>
     <nav class="navbar navbar-expand-lg bg-light"><a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px; margin-left: 5px;"></a></nav>
 
+<c:if test="${messageTargaErrata != null}">
+        <div class="alert warning">
+            <span class="closebtn">&times;</span>
+            <strong>${messageTargaErrata}</strong>
+        </div>
+    </c:if>
     <div class="main">
         <center>
             <div style="width:50%;">

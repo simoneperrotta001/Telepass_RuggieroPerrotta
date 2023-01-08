@@ -102,10 +102,10 @@
         </div>
     </c:if>
 
-    <c:if test="${messageVeicoli != null}">
-        <div class="alert info">
+    <c:if test="${messageVeicolo != null}">
+        <div class="alert success">
             <span class="closebtn">&times;</span>
-            <strong>${messageVeicoli}</strong>
+            <strong>${messageVeicolo}</strong>
         </div>
     </c:if>
 

@@ -1,134 +1,125 @@
 package ModelTelepass;
 
-/*
-    DatabaseTelepass databaseTelepass = DatabaseTelepass.getInstance();
-    System.out.println("Query 1: ");
-    DatabaseTelepass.getInstance().doQuery("SELECT Distanza FROM Dista WHERE (NomeCasello1='Milano' AND NomeCasello2='Napoli') OR (NomeCasello1='Napoli' AND NomeCasello2='Milano');", "Distanza");
-    System.out.println("Query 2: ");
-    DatabaseTelepass.getInstance().doQuery("SELECT Distanza FROM Dista WHERE NomeCasello1='Napoli' OR NomeCasello2='Napoli';", "Distanza");
-    DatabaseTelepass.getInstance().doInsertUtenti("Mattia","Autiero","2022-10-22","000000000003",0,"ciao");
-*/
-
 import java.sql.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;//incorporati tutti in java.sql.*
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
-
+/* Questa classe fa parte della sezione Model del pattern MVC. Difatti questa ci permette di comunicare con la base di dati
+esistente e di inserire, modificare, leggere e eliminare valori. Questa classe è implementata tramite il pattern Singleton
+così dà avere un'unica istanza del db nel nostro programma backend senza dichiararne di più.
+Ogni metodo di questa classe prevedrà la gestione delle eccezzioni, come eccezzioni nell'apertura delle connessioni, degli
+statement. Tutte queste eccezzioni saranno gestite con dei catch, che stamperanno qualcosa in output per notificare
+allo sviluppatore quali e dove sono gli errori qualora ci dovessero essere*/
 public class DatabaseTelepass {
-    private static DatabaseTelepass instance;
-    public static Connection connection =null;
-    private static Statement statement;
-    private static PreparedStatement preparedStatement;
-    private ResultSet resultSet;
-    private DatabaseTelepass(){
+    private static DatabaseTelepass instance;//unica istanza del db
+    public static Connection connection =null;//connessione da allocare ogni volta con il db
+    private static Statement statement;//statement da allocare ogni volta per eseguire operazioni sul db
+    private static PreparedStatement preparedStatement;//prepared statement da allocare ogni volta che serve per eseguire operazioni sul db
+    private ResultSet resultSet;//conterrà i risultati delle query fatte dai vari metodi
 
-    }
+    //come da definizione delle classi Singleton il costruttore risulta essere privato
+    private DatabaseTelepass(){}
+
+    /*punto di accesso globale all'istanza allocata per poter fare qualsiasi operazione sul db
+    Se l'istanza non è stata creata, la crea, altrimenti ritorna semplicemente l'istanza*/
     public static DatabaseTelepass getInstance(){
         if(instance == null)
             instance = new DatabaseTelepass();
 
         return instance;
     }
+    /*Questo metodo si occupa di creare la connessione con il db mysql Telepass con l'utilizzo dell'utente ROOT.
+    Ricordiamo che quest'utente va creato in separata sede dal resto della creazione del db*/
     public void createConnection(){
+        //proviamo ad aprire la connessione
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/telepass", "ROOT","ROOT");
-        }
+        }//nel caso in cui non si sia aperta lanciamo l'eccezzione con un messaggio in output
         catch (Exception e){
             System.out.println("errore nell'apertura della connessione");
         }
     }
+    //Questo metodo si occupa della creazione dello statement
     public void createStatement(){
+        //proviamo ad aprire lo statement
         try {
             statement = connection.createStatement();
-        }
+        }//nel caso in cui non si sia aperto lanciamo l'eccezzione con un messaggio in output
         catch (Exception e){
-            System.out.println("errore nell'apertura dello statemet");
+            System.out.println("errore nell'apertura dello statement");
         }
     }
-    /*non dovrebbe servire più
-    public ArrayList getToolBooths(){
-        ArrayList<String> toolBooths = new ArrayList<>();
-
-        createConnection();
-        createStatement();
+    /*Questo metodo si occupa di fare il login (unico sia per admin che per utenti) grazie alla query passata come
+    parametro stringa.
+    Restiutuisce una lista di parametri che verranno usati come parametri di sessione per l'utente loggato*/
+    public List doLogin(String sql){
+        List parametri = new ArrayList();//lista che conterrà i parametri da restituire
+        createConnection();//crea la connessione
+        createStatement();//crea lo statement
         try{
-            String sql="SELECT NomeCasello FROM Casello;";
-            resultSet = statement.executeQuery(sql);
-            while(resultSet.next()){
-                toolBooths.add(resultSet.getString("NomeCasello"));
-            }
-        }
-        catch(Exception e){
-            System.out.println("errore nel caricamento dei caselli.");
-        }
-        finally {
-            closeStatement();
-            closeConnection();
-        }
-        return toolBooths;
-    }*/
-    //processo di creazione della connessione effettuato nel punto di accesso globale getInstance così da farlo una volta sola
-    public List doLogin(String sql) throws SQLException {
-        List parametri = new ArrayList();
-        createConnection();
-        createStatement();
-        try{
-            resultSet = statement.executeQuery(sql);
+            resultSet = statement.executeQuery(sql);//esegue la query passata come parametro
+            //se ci sono risultati dall'esecuzione della query
             if(resultSet.next()) {
-                parametri.add(resultSet.getInt("Amministratore"));
-                parametri.add(resultSet.getInt("CodiceTransponder"));
-                parametri.add(resultSet.getInt("TransponderAttivo"));
-                parametri.add(resultSet.getInt("Plus"));
+                parametri.add(resultSet.getInt("Amministratore"));//setta il ruolo come int
+                parametri.add(resultSet.getInt("CodiceTransponder"));//setta il codice transponder
+                parametri.add(resultSet.getInt("TransponderAttivo"));//setta se il transponder è attivo o meno con un int
+                parametri.add(resultSet.getInt("Plus"));//setta se il plus è attivo o meno con un int
             }
+            //se non ci dovessero essere utenti corrispondenti (dati inseriti nel form errati)
             else{
+                //inseriamo come primo valore nella lista null così da inviare un "errore" alla servlet che chiamerà questo metodo
                 parametri.add(null);
                 System.out.println("quest'utente non esiste");
             }
-        }
+        }//nel caso ci fosse stato un errore nell'esecuzione della query
         catch (Exception e){
             System.out.println("errore nell'esecuzione della query");
         }
+        //a prescindere se ci sono stati errori o meno
         finally {
             try{
+                //se ci sono stati risultati all'interno del resultSet, la chiudiamo
                 if(resultSet!=null)
                     resultSet.close();
-            }
+            }//se ci sono errori nella chiusura del resultSet
             catch (Exception e){
+                //diamo un messaggio in output di errore
                 System.out.println("errore nella chiusura del risultato della query");
             }
-            closeStatement();
-            closeConnection();
+            closeStatement();//chiusura dello statement
+            closeConnection();//chiusura della connessione
 
             return parametri;
         }
     }
+    /*Questo metodo si occupa dell'inserimento degli utenti nel db.
+    Vengono passati come parametri tutti i campi da inserire nella tabella del db "clienti" (ovvero gli utenti)*/
     public void doInsertUtenti(String nomeCliente, String cognomeCliente, Date nascitaCliente, String codiceContoCorrente, int plus, String username, String password, int transponderattivo) throws SQLException {
-        createConnection();
+        createConnection();//crea la connessione
         try{
-            System.out.println(nascitaCliente);
+            //prepara il preparedStatement per l'inserimento di tutti i campi passati come parametri
             preparedStatement = connection.prepareStatement("INSERT INTO Cliente(NomeCliente, CognomeCliente, NascitaCliente, CodiceContoCorrente, Plus, Password, Username, TransponderAttivo, Amministratore) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 0)");
-            preparedStatement.setString(1,nomeCliente);
-            preparedStatement.setString(2,cognomeCliente);
-            preparedStatement.setDate(3, nascitaCliente);
-            preparedStatement.setString(4,codiceContoCorrente);
-            preparedStatement.setInt(5, plus);
-            preparedStatement.setString(6, password);
-            preparedStatement.setString(7, username);
-            preparedStatement.setInt(8, transponderattivo);
-            preparedStatement.execute();
+            preparedStatement.setString(1,nomeCliente);//setta il nomeCliente
+            preparedStatement.setString(2,cognomeCliente);//setta il cognomeCliente
+            preparedStatement.setDate(3, nascitaCliente);//setta la nascitaCliente
+            preparedStatement.setString(4,codiceContoCorrente);//setta il codiceContoCorrente
+            preparedStatement.setInt(5, plus);//setta il plus
+            preparedStatement.setString(6, password);//setta la password
+            preparedStatement.setString(7, username);//setta lo username
+            preparedStatement.setInt(8, transponderattivo);//setta se il transponder è attivo o meno
+            preparedStatement.execute();//esegue lo statement
         }
+        //se c'è stato un errore nella creazione del preparedStatement
         catch (Exception e){
+            //lanciamo un messaggio di errore in output
             System.out.println("errore nell'inserimento dell' utenti");
         }
+        //a prescindere se ci sono stati errori o meno
         finally {
-            preparedStatement.close();
-            closeConnection();
+            preparedStatement.close();//chiudiamo il preparedStatement
+            closeConnection();//chiusura della connessione
         }
     }
     public boolean checkData(Date nascita) {
@@ -309,25 +300,28 @@ public class DatabaseTelepass {
             return risultati;
         }
     }
-    public void closeConnection(){
-        try{
-            if(connection!=null)
-                connection.close();
-        }
-        catch(Exception e){
-            System.out.println("errore nella chiusura della connessione");
-        }
-    }
+    //Questo metodo si occupa della chiusura dello statement nel caso in cui fosse aperto
     public void closeStatement(){
         try{
+            //se lo statement è aperto
             if(statement!=null)
-                statement.close();
-        }
+                statement.close();//lo chiude
+        }//se ci fosse un errore nella chiusura dello statement
         catch (Exception e){
+            //diamo in output un messaggio di errore
             System.out.println("errore nella chiusura dello statement");
         }
     }
-
-
-
+    //Questo metodo si occupa della chiusura della connessione nel caso in cui fosse aperta
+    public void closeConnection(){
+        try{
+            //se la connessione è aperta
+            if(connection!=null)
+                connection.close();//la chiude
+        }//se ci fosse un errore nella chiusura della connessione
+        catch(Exception e){
+            //diamo in output un messaggio di errore
+            System.out.println("errore nella chiusura della connessione");
+        }
+    }
 }
