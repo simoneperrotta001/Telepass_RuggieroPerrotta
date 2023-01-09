@@ -24,8 +24,8 @@ public class ServletPrivilegiUtentePlus extends HttpServlet {
 
         else{
             try{
-                List risultato = DatabaseTelepass.getInstance().getSingoloValore("SELECT Plus FROM CLIENTE WHERE CodiceTransponder='"+session.getAttribute("codice")+"'", "Plus");
-                int plus = Integer.parseInt((String) risultato.get(0));
+                String risultato = DatabaseTelepass.getInstance().getSingoloValore("SELECT Plus FROM CLIENTE WHERE CodiceTransponder='"+session.getAttribute("codice")+"'", "Plus");
+                int plus = Integer.parseInt(risultato);
                 if (plus==1) {
                     request.setAttribute("messagePlus", "Hai già l'abbonamento plus");
                     request.getRequestDispatcher("protected_area_utente.jsp").forward(request, response);

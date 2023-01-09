@@ -31,16 +31,14 @@ public class ServletCalcolaPrezzo extends HttpServlet {
         try{
             //ci prendiamo la classe del veicolo con cui si vuole viaggiare e la distanza tra i due caselli inseriti
             String classe = DatabaseTelepass.getInstance().getSingoloValore("SELECT ModelloVeicolo FROM VEICOLO WHERE TargaVeicolo='"+targa+"'","ModelloVeicolo");
-            double distanza = DatabaseTelepass.getInstance().getSingoloValore("SELECT Distanza FROM DISTA WHERE (NomeCasello1='"+casello1+"' AND NomeCasello2='"+casello2+"') OR (NomeCasello1='"+casello2+"' AND NomeCasello2='"+casello1+"')","Distanza");
-            System.out.println("ciao");
+            String distanzaS = DatabaseTelepass.getInstance().getSingoloValore("SELECT Distanza FROM DISTA WHERE (NomeCasello1='"+casello1+"' AND NomeCasello2='"+casello2+"') OR (NomeCasello1='"+casello2+"' AND NomeCasello2='"+casello1+"')","Distanza");
+            double distanza = Double.parseDouble(distanzaS);
             InizializzazioneClasse inizializzazioneClasse;
             //se la classe è la A
             if(classe.equals("A")){
-
                 //istanziamo il nostro factory per la classe A
                 inizializzazioneClasse = new InizializzazioneClasseA();
                 //istanziamo la nostra Classe (generica ma in questo caso il factory creerà una classe A grazie al factory)
-
                 Classe classeVeicolo = inizializzazioneClasse.creaClasse();
                 //calcoliamo il costo da pagare in base alla distanza e alla classe
                 costo_Tot= classeVeicolo.pagamento(distanza);
