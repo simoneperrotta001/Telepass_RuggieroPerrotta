@@ -1,8 +1,6 @@
 package ModelTelepass;
 
 import java.sql.*;
-import java.time.LocalDate;
-import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 /* Questa classe fa parte della sezione Model del pattern MVC. Difatti questa ci permette di comunicare con la base di dati

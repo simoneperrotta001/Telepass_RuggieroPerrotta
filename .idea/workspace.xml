@@ -10,12 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c20c4ea3-3479-436c-be5c-e80ec7a63a20" name="Changes" comment="web app stamm accis">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/89b2ccf9-50d3-49de-843f-ba4faf715fcb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/89b2ccf9-50d3-49de-843f-ba4faf715fcb.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ModelTelepass/DatabaseTelepass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ModelTelepass/DatabaseTelepass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletAggiungiVeicolo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletAggiungiVeicolo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletCalcolaPrezzo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletCalcolaPrezzo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletCambiaUsername.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletCambiaUsername.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletCreazioneUtente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletCreazioneUtente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletProfilo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletProfilo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,6 +199,7 @@
       <workItem from="1672847975103" duration="388000" />
       <workItem from="1672875209223" duration="1341000" />
       <workItem from="1673175083374" duration="17565000" />
+      <workItem from="1673258820587" duration="7129000" />
     </task>
     <task id="LOCAL-00001" summary="gg">
       <created>1670315423649</created>
