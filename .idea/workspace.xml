@@ -9,15 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c20c4ea3-3479-436c-be5c-e80ec7a63a20" name="Changes" comment="web app stamm accis">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/89b2ccf9-50d3-49de-843f-ba4faf715fcb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/89b2ccf9-50d3-49de-843f-ba4faf715fcb.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ModelTelepass/DatabaseTelepass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ModelTelepass/DatabaseTelepass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletAggiungiVeicolo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletAggiungiVeicolo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletCalcolaPrezzo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletCalcolaPrezzo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletCambiaUsername.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletCambiaUsername.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletCreazioneUtente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletCreazioneUtente.java" afterDir="false" />
-    </list>
+    <list default="true" id="c20c4ea3-3479-436c-be5c-e80ec7a63a20" name="Changes" comment="web app stamm accis" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -199,7 +191,7 @@
       <workItem from="1672847975103" duration="388000" />
       <workItem from="1672875209223" duration="1341000" />
       <workItem from="1673175083374" duration="17565000" />
-      <workItem from="1673258820587" duration="7129000" />
+      <workItem from="1673258820587" duration="7644000" />
     </task>
     <task id="LOCAL-00001" summary="gg">
       <created>1670315423649</created>
@@ -474,7 +466,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673197261655</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="web app stamm accis">
+      <created>1673268240408</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1673268240409</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
