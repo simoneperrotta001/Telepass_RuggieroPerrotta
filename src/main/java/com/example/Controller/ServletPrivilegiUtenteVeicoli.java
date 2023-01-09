@@ -24,8 +24,8 @@ public class ServletPrivilegiUtenteVeicoli extends HttpServlet {
 
         else{
             try{
-                List risultato = DatabaseTelepass.getInstance().getSingoloValore("SELECT COUNT(*) AS QUANTI FROM VEICOLO WHERE CodiceTransponder='"+session.getAttribute("codice")+"'", "QUANTI");
-                int quanti = Integer.parseInt((String) risultato.get(0));
+                String risultato = DatabaseTelepass.getInstance().getSingoloValore("SELECT COUNT(*) AS QUANTI FROM VEICOLO WHERE CodiceTransponder='"+session.getAttribute("codice")+"'", "QUANTI");
+                int quanti = Integer.parseInt(risultato);
                 if (quanti>1) {
                     request.setAttribute("messageVeicoli", "Hai già 2 veicoli registrati");
                     request.getRequestDispatcher("protected_area_utente.jsp").forward(request, response);
@@ -35,6 +35,5 @@ public class ServletPrivilegiUtenteVeicoli extends HttpServlet {
                 System.out.println("errore nella connessione");
             }
         }
-
     }
 }
