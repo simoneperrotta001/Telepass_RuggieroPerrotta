@@ -18,6 +18,8 @@
     <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
 </head>
 <body>
+<!--JSTL che a seconda se c'è il messaggio inviato dalle varie servlet lo fa comparire
+a schermo -->
 <c:if test="${messageUtenteNonEsistente != null}">
     <div class="alert warning">
         <span class="closebtn">&times;</span>
@@ -31,6 +33,7 @@
         <strong>${messageAccedi}</strong>
     </div>
 </c:if>
+<!--Questo script serve a far comparire il div per gli alert(successo, fallimento e warning)-->
 <script>
     var close = document.getElementsByClassName("closebtn");
     var i;

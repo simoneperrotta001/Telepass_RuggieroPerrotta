@@ -12,8 +12,10 @@
     <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
     </head>
 <body>
+<!-- chiamata per controllare i privilegi di accesso dei vari utenti -->
 <jsp:include page="PrivilegiAdmin"></jsp:include>
-
+<!--JSTL che a seconda se c'è il messaggio inviato dalle varie servlet lo fa comparire
+a schermo -->
     <div id="main">
         <c:if test="${messageConto != null}">
             <div class="alert info">
@@ -50,7 +52,7 @@
             </div>
         </c:if>
 
-
+        <!--Questo script serve a far comparire il div per gli alert(successo, fallimento e warning)-->
         <script>
             var close = document.getElementsByClassName("closebtn");
             var i;

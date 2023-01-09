@@ -13,6 +13,7 @@
     <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
 </head>
 <body>
+<!-- chiamata per controllare i privilegi di accesso dei vari utenti -->
 <jsp:include page="PrivilegiAdmin"></jsp:include>
 
 <div id="main">

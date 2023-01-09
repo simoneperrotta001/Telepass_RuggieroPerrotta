@@ -12,15 +12,18 @@
 <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
 </head>
 <body>
+<!-- chiamata per controllare i privilegi di accesso dei vari utenti -->
 <jsp:include page="PrivilegiUtente"></jsp:include>
-
-    <nav class="navbar navbar-expand-lg bg-light"><a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px; margin-left: 5px"></a></nav>
+<!--JSTL che a seconda se c'è il messaggio inviato dalle varie servlet lo fa comparire
+a schermo -->
+<nav class="navbar navbar-expand-lg bg-light"><a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px; margin-left: 5px"></a></nav>
 <c:if test="${messagePercorso != null}">
     <div class="alert warning">
         <span class="closebtn">&times;</span>
         <strong>${messagePercorso}</strong>
     </div>
 </c:if>
+<!--Questo script serve a far comparire il div per gli alert(successo, fallimento e warning)-->
 <script>
     var close = document.getElementsByClassName("closebtn");
     var i;

@@ -12,6 +12,7 @@
 <link rel="shortcut icon" href="https://logo.clearbit.com/telepass.com">
 </head>
 <body>
+<!-- chiamata per controllare i privilegi di accesso dei vari utenti -->
 <jsp:include page="PrivilegiUtenteVeicoli"></jsp:include>
 
 <sql:setDataSource var="snapshot" driver="com.mysql.cj.jdbc.Driver"
@@ -27,8 +28,9 @@
     </c:if>
 </c:forEach>
     <nav class="navbar navbar-expand-lg bg-light"><a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px; margin-left: 5px;"></a></nav>
-
-<c:if test="${messageTargaErrata != null}">
+    <!--JSTL che a seconda se c'è il messaggio inviato dalle varie servlet lo fa comparire
+    a schermo -->
+    <c:if test="${messageTargaErrata != null}">
         <div class="alert warning">
             <span class="closebtn">&times;</span>
             <strong>${messageTargaErrata}</strong>
