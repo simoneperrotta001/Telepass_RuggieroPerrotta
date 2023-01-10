@@ -192,6 +192,7 @@
       <workItem from="1672875209223" duration="1341000" />
       <workItem from="1673175083374" duration="17565000" />
       <workItem from="1673258820587" duration="8530000" />
+      <workItem from="1673365359641" duration="300000" />
     </task>
     <task id="LOCAL-00001" summary="gg">
       <created>1670315423649</created>
@@ -494,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673354619110</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="monitoraggio caselli aggiunto">
+      <created>1673365624420</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1673365624420</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

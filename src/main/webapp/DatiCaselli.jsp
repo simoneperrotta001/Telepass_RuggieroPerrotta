@@ -56,7 +56,7 @@
                         <sql:query dataSource="${snapshot}" var="result">
                             SELECT NomeCasello, COUNT(NomeCasello) AS QUANTI
                             FROM entra
-                            WHERE YEAR(OrarioEntrata)=2023 AND MONTH(OrarioEntrata)=${numMese}
+                            WHERE YEAR(OrarioEntrata)=YEAR(CURRENT_DATE) AND MONTH(OrarioEntrata)=${numMese}
                             GROUP BY NomeCasello
                             ORDER BY NomeCasello
                         </sql:query>
@@ -66,7 +66,7 @@
                         <sql:query dataSource="${snapshot}" var="result">
                             SELECT NomeCasello, COUNT(NomeCasello) AS QUANTI
                             FROM esce
-                            WHERE YEAR(OrarioUscita)=2023 AND MONTH(OrarioUscita)=${numMese}
+                            WHERE YEAR(OrarioUscita)=YEAR(CURRENT_DATE) AND MONTH(OrarioUscita)=${numMese}
                             GROUP BY NomeCasello
                             ORDER BY NomeCasello
                         </sql:query>
