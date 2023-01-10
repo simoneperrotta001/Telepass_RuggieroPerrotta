@@ -116,7 +116,7 @@ a schermo -->
                                            user="ROOT"  password="ROOT"/>
 
                         <sql:query dataSource="${snapshot}" var="result">
-                            SELECT DISTINCT MONTH(OrarioEntrata) AS MESE FROM ENTRA;
+                            SELECT DISTINCT MONTH(OrarioEntrata) AS MESE FROM ENTRA WHERE YEAR(OrarioEntrata)=2023;
                         </sql:query>
                         <c:forEach var="row" items="${result.rows}">
                             <c:if test="${row.MESE == 1}">
@@ -183,7 +183,7 @@ a schermo -->
                                            user="ROOT"  password="ROOT"/>
 
                         <sql:query dataSource="${snapshot}" var="result">
-                            SELECT DISTINCT MONTH(OrarioUscita) AS MESE FROM ESCE;
+                            SELECT DISTINCT MONTH(OrarioUscita) AS MESE FROM ESCE WHERE YEAR(OrarioUscita)=2023;
                         </sql:query>
                         <c:forEach var="row" items="${result.rows}">
                             <c:if test="${row.MESE == 1}">
