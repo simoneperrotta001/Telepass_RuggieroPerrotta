@@ -78,8 +78,6 @@ a schermo -->
                             <th scope="col" style="text-align: center;">Viaggi fatti con Telepass</th>
                         </tr>
                         </thead>
-                        <c>
-
                             <sql:setDataSource var="snapshot" driver="com.mysql.cj.jdbc.Driver"
                                                url="jdbc:mysql://localhost:3306/telepass"
                                                user="ROOT"  password="ROOT"/>
@@ -89,6 +87,7 @@ a schermo -->
                             FROM contaquantiviaggi c join cliente v on c.CodiceTransponder=v.CodiceTransponder
                             GROUP BY C.CodiceTransponder
                             ORDER BY QUANTI DESC
+                            LIMIT 3
                             </sql:query>
                             <c:forEach var="row" items="${result.rows}">
                             <tr class="table">
@@ -105,31 +104,148 @@ a schermo -->
             </center>
         </div>
 
-      <p id="pbody">Telepass è un marchio registrato di proprietà di Atlantia S.p.A. (di cui Telepass S.p.A. è licenziataria) atto a contraddistinguere un sistema di riscossione
-            del pedaggio autostradale con l'utilizzo del telepedaggio, introdotto in Italia nel 1989 da Società Autostrade Concessioni e Costruzioni S.p.A. (oggi Telepass S.p.A.).
-            <br>Inizialmente installato sulla tratta tra Calenzano - Sesto Fiorentino e Firenze nord in via sperimentale, è stato installato in un primo tempo 
-            sull'Autostrada A1 nei caselli delle principali città italiane (Milano, Roma e Napoli) in occasione del Mondiale di calcio 1990, e in seguito 
-            l'implementazione si è estesa a tutti i caselli della rete autostradale nazionale. In origine vincolato al singolo veicolo e destinato all'utenza business, 
-            dal 1998 è stato esteso alla clientela privata e dal 2005 il servizio è stato abilitato anche per le motociclette.
-            <br>Secondo i dati aggiornati all'aprile 2016, circolano 8 milioni di apparecchi Telepass, per un totale di circa 2 milioni di transiti al giorno. 
-            Attualmente con il Telepass è possibile pagare anche il pedaggio per il traforo ordinario dello Zovo, per i parcheggi degli aeroporti di Napoli Capodichino, 
-            di Milano Malpensa, Linate, Pisa, Torino Caselle, Roma Fiumicino, Bologna e Catania, la fiera di Bologna, l'ospedale "Dell'Angelo" di Mestre e per la ZTL 
-            di Milano. 
-            <br>Negli ultimi anni, molti parcheggi a pagamento in diverse città italiane hanno iniziato ad accettare il Telepass, sia nel caso di autorimesse 
-            che di parcheggi su strada.
-            <br>Dal 2015 è possibile possibile utilizzare Telepass per acquistare e ritirare contestualmente i biglietti dei traghetti Caronte & Tourist sullo Stretto di Messina
-            tra Messina e Villa San Giovanni tramite piste dedicate e senza passaggio in biglietteria.
-            <br>Dal 2016 è attivo il servizio Telepass europeo per i mezzi pesanti.
-            Inizialmente abilitato in Italia, Francia, Spagna, Portogallo e Belgio, al 2022 il servizio risulta attivo in Italia, Francia, Spagna, Portogallo, Belgio, Polonia, 
-            Austria, Germania, Danimarca, Svezia, Norvegia, Ungheria, Svizzera e Bulgaria, oltre che utilizzabile per i parcheggi convenzionati in Italia, Francia e Spagna e 
-            per il traghettamento sullo stretto di Messina.
-            <br>Dal 2018 è attivo il servizio Telepass europeo per le auto, valido in Italia, Francia, Spagna e Portogallo ed anche nei parcheggi delle principali città, 
-            da Parigi a Barcellona e Madrid</p>
+
+        <div class="row" style="margin-top: 10px">
+            <div class="col-sm-6">
+                <center>
+                <h3 class="h2div">Visualizza le entrate dai caselli per mese</h3>
+                <form name="caselli" class="rounded" style="width:100%;" method="POST" action="datiCaselli">
+                    <select style="width:50%; margin-bottom: 5px; " class="form-select" id="mese" name="mese">
+                        <sql:setDataSource var="snapshot" driver="com.mysql.cj.jdbc.Driver"
+                                           url="jdbc:mysql://localhost:3306/telepass"
+                                           user="ROOT"  password="ROOT"/>
+
+                        <sql:query dataSource="${snapshot}" var="result">
+                            SELECT DISTINCT MONTH(OrarioEntrata) AS MESE FROM ENTRA;
+                        </sql:query>
+                        <c:forEach var="row" items="${result.rows}">
+                            <c:if test="${row.MESE == 1}">
+                                <option value=<c:out value="${row.MESE}"/>>Gennaio</option>
+                            </c:if>
+
+                            <c:if test="${row.MESE == 2}">
+                                <option value=<c:out value="${row.MESE}"/>>Febbraio</option>
+                            </c:if>
+
+                            <c:if test="${row.MESE == 3}">
+                                <option value=<c:out value="${row.MESE}"/>>Marzo</option>
+                            </c:if>
+
+                            <c:if test="${row.MESE == 4}">
+                                <option value=<c:out value="${row.MESE}"/>>Aprile</option>
+                            </c:if>
+
+                            <c:if test="${row.MESE == 5}">
+                                <option value=<c:out value="${row.MESE}"/>>Maggio</option>
+                            </c:if>
+
+                            <c:if test="${row.MESE == 6}">
+                                <option value=<c:out value="${row.MESE}"/>>Giugno</option>
+                            </c:if>
+
+                            <c:if test="${row.MESE == 7}">
+                                <option value=<c:out value="${row.MESE}"/>>Luglio</option>
+                            </c:if>
+
+                            <c:if test="${row.MESE == 8}">
+                                <option value=<c:out value="${row.MESE}"/>>Agosto</option>
+                            </c:if>
+
+                            <c:if test="${row.MESE == 9}">
+                                <option value=<c:out value="${row.MESE}"/>>Settembre</option>
+                            </c:if>
+
+                            <c:if test="${row.MESE == 10}">
+                                <option value=<c:out value="${row.MESE}"/>>Ottobre</option>
+                            </c:if>
+
+                            <c:if test="${row.MESE == 11}">
+                                <option value=<c:out value="${row.MESE}"/>>Novembre</option>
+                            </c:if>
+
+                            <c:if test="${row.MESE == 12}">
+                                <option value=<c:out value="${row.MESE}"/>>Dicembre</option>
+                            </c:if>
+                        </c:forEach>
+                    </select>
+                    <button name=azione value=1 type="submit" class="btn btn-outline-primary">VISUALIZZA</button>
+                </form>
+                </center>
+            </div>
+
+            <div class="col-sm-6">
+                <center>
+                <h3 class="h2div">Visualizza le uscite dai caselli per mese</h3>
+                <form name="caselli" class="rounded" style="width:100%;" method="POST" action="datiCaselli">
+                    <select style="width:50%; margin-bottom: 5px; " class="form-select" id="mese" name="mese">
+                        <sql:setDataSource var="snapshot" driver="com.mysql.cj.jdbc.Driver"
+                                           url="jdbc:mysql://localhost:3306/telepass"
+                                           user="ROOT"  password="ROOT"/>
+
+                        <sql:query dataSource="${snapshot}" var="result">
+                            SELECT DISTINCT MONTH(OrarioUscita) AS MESE FROM ESCE;
+                        </sql:query>
+                        <c:forEach var="row" items="${result.rows}">
+                            <c:if test="${row.MESE == 1}">
+                                <option value=<c:out value="${row.MESE}"/>>Gennaio</option>
+                            </c:if>
+
+                            <c:if test="${row.MESE == 2}">
+                                <option value=<c:out value="${row.MESE}"/>>Febbraio</option>
+                            </c:if>
+
+                            <c:if test="${row.MESE == 3}">
+                                <option value=<c:out value="${row.MESE}"/>>Marzo</option>
+                            </c:if>
+
+                            <c:if test="${row.MESE == 4}">
+                                <option value=<c:out value="${row.MESE}"/>>Aprile</option>
+                            </c:if>
+
+                            <c:if test="${row.MESE == 5}">
+                                <option value=<c:out value="${row.MESE}"/>>Maggio</option>
+                            </c:if>
+
+                            <c:if test="${row.MESE == 6}">
+                                <option value=<c:out value="${row.MESE}"/>>Giugno</option>
+                            </c:if>
+
+                            <c:if test="${row.MESE == 7}">
+                                <option value=<c:out value="${row.MESE}"/>>Luglio</option>
+                            </c:if>
+
+                            <c:if test="${row.MESE == 8}">
+                                <option value=<c:out value="${row.MESE}"/>>Agosto</option>
+                            </c:if>
+
+                            <c:if test="${row.MESE == 9}">
+                                <option value=<c:out value="${row.MESE}"/>>Settembre</option>
+                            </c:if>
+
+                            <c:if test="${row.MESE == 10}">
+                                <option value=<c:out value="${row.MESE}"/>>Ottobre</option>
+                            </c:if>
+
+                            <c:if test="${row.MESE == 11}">
+                                <option value=<c:out value="${row.MESE}"/>>Novembre</option>
+                            </c:if>
+
+                            <c:if test="${row.MESE == 12}">
+                                <option value=<c:out value="${row.MESE}"/>>Dicembre</option>
+                            </c:if>
+                        </c:forEach>
+                    </select>
+                    <button name=azione value=2 type="submit" class="btn btn-outline-primary">VISUALIZZA</button>
+                </form>
+                </center>
+            </div>
+
+        </div>
     </div>
 
     <section class="">
         <!-- Footer -->
-        <footer class="text-center text-white" style="background-color: #002752;" id="indexfooter">
+        <footer class="text-center text-white" style="background-color: #002752;" id="staticfooter">
           <!-- Grid container -->
           <div class="container p-4 pb-0">
             <!-- Section: CTA -->

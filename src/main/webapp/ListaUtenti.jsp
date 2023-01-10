@@ -21,6 +21,7 @@
 <center>
   <div>
     <div class="col-md-8">
+      <h2 class="h2div">Lista Utenti</h2>
       <table class="table" style="border-width: 3px; border-color:#0d6efd; border-style: solid ">
         <thead style="background-color: #0d6efd; color:white">
         <tr>

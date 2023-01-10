@@ -111,17 +111,18 @@ a schermo -->
         </div>
     </c:if>
 
-    <c:if test="${messageVeicoli != null}">
-        <div class="alert warning">
+
+    <c:if test="${messagePlusPosseduto != null}">
+        <div class="alert info">
             <span class="closebtn">&times;</span>
-            <strong>${messageVeicoli}</strong>
+            <strong>${messagePlusPosseduto}</strong>
         </div>
     </c:if>
 
-    <c:if test="${messagePlus != null}">
+    <c:if test="${messageVeicoli != null}">
         <div class="alert info">
             <span class="closebtn">&times;</span>
-            <strong>${messagePlus}</strong>
+            <strong>${messageVeicoli}</strong>
         </div>
     </c:if>
     <!--Questo script serve a far comparire il div per gli alert(successo, fallimento e warning)-->
