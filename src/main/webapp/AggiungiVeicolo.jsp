@@ -14,19 +14,6 @@
 <body>
 <!-- chiamata per controllare i privilegi di accesso dei vari utenti -->
 <jsp:include page="PrivilegiUtenteVeicoli"></jsp:include>
-
-<sql:setDataSource var="snapshot" driver="com.mysql.cj.jdbc.Driver"
-                   url="jdbc:mysql://localhost:3306/telepass"
-                   user="ROOT"  password="ROOT"/>
-
-<sql:query dataSource="${snapshot}" var="result">
-    SELECT COUNT(*) AS QUANTI FROM VEICOLO WHERE CodiceTransponder=${sessionScope.codice}
-</sql:query>
-<c:forEach var="row" items="${result.rows}">
-    <c:if test="${row.QUANTI==2}">
-        <c:redirect url="http://localhost:8080/Telepass_RuggieroPerrotta_war_exploded/protected_area_utente.jsp"/>
-    </c:if>
-</c:forEach>
     <nav class="navbar navbar-expand-lg bg-light"><a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px; margin-left: 5px;"></a></nav>
     <!--JSTL che a seconda se c'è il messaggio inviato dalle varie servlet lo fa comparire
     a schermo -->
@@ -40,7 +27,7 @@
         <center>
             <div style="width:50%;">
                 <center><h2 class="h2div">Inserisci i dati del veicolo</h2></center>
-                <form name="addVeicolo" class="rounded" style="width:100%;" method="POST" action="aggiungiVeicolo">
+                <form name="addVeicolo" class="rounded" style="width:100%;" method="POST" action="aggiungiVeicolo" onsubmit="return checkData()">
                     <label style="width:50%; margin-top: 10px; background-color: #0d6efd; color:white" class="input-group-text" for="targa">Inserisci Targa</label>
                     <input style="width:50%; margin-bottom: 5px; " type="text" class="form-control" id="targa" name="targa" value="" placeholder="AA111AA"><br>
                     <label style="width:50%; margin-top: 10px; background-color: #0d6efd; color:white" class="input-group-text primary" for="classe">Classe</label>
@@ -80,5 +67,25 @@
       </footer>
       <!-- Footer -->
     </section>
+
+    <script>
+        function checkData(){
+            if(document.getElementById("targa").length == 7)
+                return true;
+            else
+            {
+                var newdiv = document.createElement('div');
+                newdiv.style.backgroundColor = "#ff9800";
+                newdiv.style.padding = "20px";
+                newdiv.style.color = "white";
+                newdiv.style.opacity = "1";
+                newdiv.style.transition = opacity(0.6);
+                newdiv.style.marginBottom = "15px";
+
+                document.body.appendChild(newdiv);
+                return false;
+            }
+        }
+    </script>
 </body>
 </html>
