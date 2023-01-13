@@ -17,13 +17,6 @@
 <!--JSTL che a seconda se c'è il messaggio inviato dalle varie servlet lo fa comparire
 a schermo -->
     <div id="main">
-        <c:if test="${messageConto != null}">
-            <div class="alert info">
-                <span class="closebtn">&times;</span>
-                <strong>${messageConto}</strong>
-            </div>
-        </c:if>
-
         <c:if test="${messageContoUsato != null}">
             <div class="alert info">
                 <span class="closebtn">&times;</span>
@@ -35,20 +28,6 @@ a schermo -->
             <div class="alert info">
                 <span class="closebtn">&times;</span>
                 <strong>${messageUsernameUsato}</strong>
-            </div>
-        </c:if>
-
-        <c:if test="${messageUsernameCorto != null}">
-            <div class="alert info">
-                <span class="closebtn">&times;</span>
-                <strong>${messageUsernameCorto}</strong>
-            </div>
-        </c:if>
-
-        <c:if test="${messageData != null}">
-            <div class="alert info">
-                <span class="closebtn">&times;</span>
-                <strong>${messageData}</strong>
             </div>
         </c:if>
 
@@ -109,11 +88,6 @@ a schermo -->
                                     <option value="1">ABBONAMENTO ATTIVO</option>
                                     <option value="0">ABBONAMENTO NON ATTIVO</option>
                                 </select>
-                                <br>
-                                <select class="form-select" id="inptxt" name="plus" required>
-                                    <option value="1">PLUS ATTIVO</option>
-                                    <option value="0">PLUS NON ATTIVO</option>
-                                </select>
                             </div>
                     </center>
                 </div>
@@ -123,11 +97,12 @@ a schermo -->
     </div>
 
     <script>
+        //questa funzione serve a controllare che i parametri nel form siano corretti
         function checkData(){
             if(document.getElementsByName("nomeutente")[0].value.length >2) {
                 if(document.getElementsByName("cognomeutente")[0].value.length >2){
-                    if(document.getElementsByName("username")[0].value.length >=5){
-                        if(document.getElementsByName("password")[0].value.length >=5){
+                    if(document.getElementsByName("username")[0].value.length >4){
+                        if(document.getElementsByName("password")[0].value.length >4){
                             var y= document.getElementsByName("nascita")[0].value;
                             if(underAgeValidate(y)==true)
                             {
@@ -164,18 +139,11 @@ a schermo -->
                 return false;
             }
         }
-
+        //questa funzione serve a controllare che la data di nascita dell'utente sia corretta (ovvero che abbia più di 18 anni)
         function underAgeValidate(birthday){
-            // it will accept two types of format yyyy-mm-dd and yyyy/mm/dd
             var optimizedBirthday = birthday.replace(/-/g, "/");
-
-            //set date based on birthday at 01:00:00 hours GMT+0100 (CET)
             var myBirthday = new Date(optimizedBirthday);
-
-            // set current day on 01:00:00 hours GMT+0100 (CET)
             var currentDate = new Date().toJSON().slice(0,10)+' 01:00:00';
-
-            // calculate age comparing current date and borthday
             var myAge = ~~((Date.now(currentDate) - myBirthday) / (31557600000));
 
             if(myAge < 18) {
@@ -183,7 +151,6 @@ a schermo -->
             }else{
                 return true;
             }
-
         }
     </script>
 

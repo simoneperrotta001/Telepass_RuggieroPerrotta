@@ -128,8 +128,7 @@ public class DatabaseTelepass {
         try{
             //prepara il preparedStatement per l'inserimento di tutti i campi passati come parametri
             preparedStatement = connection.prepareStatement("INSERT INTO Veicolo() VALUES (?, ?, ?)");
-            if(targa.length()==7)
-                preparedStatement.setString(1,targa);//setta la targa
+            preparedStatement.setString(1,targa);//setta la targa
             preparedStatement.setInt(2,cod);//setta codice trasponder
             preparedStatement.setString(3,classe);//setta la classe del veicolo
 

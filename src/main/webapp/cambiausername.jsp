@@ -68,8 +68,9 @@ a schermo -->
 </div>
 
 <script>
+  //questa funzione serve a controllare che i parametri nel form siano corretti
   function checkData(){
-    if(document.getElementById("inptxt").value.length >=5) return true;
+    if(document.getElementById("inptxt").value.length >4) return true;
     else {
       alert("L'username deve essere almeno di 5 caratteri.");
       return false;

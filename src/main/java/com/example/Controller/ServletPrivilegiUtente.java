@@ -5,9 +5,10 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.io.IOException;
 /*Questa servlet viene invocata ogni qual volta si ha una pagina a cui possono accedere
-solo gli utenti (all'inizio di ogni pagina jsp ci sarà un invocazione a questa servlet o a quella dell'accesso admin.
+solo gli utenti (all'inizio di ogni pagina jsp ci sarà un invocazione a questa servlet o a quella dell'accesso admin).
 Questa controlla prima se si è loggati, se lo si è allora controlla se si è un admin,
-e se sì reindirizza l'admin alla sua area protetta negando l'acesso alla pagina*/
+e se sì reindirizza l'admin alla sua area protetta negando l'acesso alla pagina.
+Dopodichè controlla se l'utente ha già il plus e se sì rimanda l'utente alla sua area protetta*/
 @WebServlet(name = "PrivilegiUtente", value = "/PrivilegiUtente")
 public class ServletPrivilegiUtente extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -69,6 +69,7 @@
     </section>
 
     <script>
+        //questa funzione serve a controllare che i parametri nel form siano corretti
         function checkData(){
             if(document.getElementById("targa").value.length == 7) return true;
             else {
