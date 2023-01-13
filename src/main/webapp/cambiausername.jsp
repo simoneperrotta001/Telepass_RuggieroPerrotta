@@ -48,7 +48,7 @@ a schermo -->
       <a class="navbar-brand" href="protected_area_utente.jsp"><img src="images/Logo_Telepass_2021.png" style="height:40px"></a>
       <br><br>
       <h4 class="h2div">INSERISCI IL NUOVO USERNAME</h4>
-      <form action="cambiausername" method="POST">
+      <form action="cambiausername" method="POST" onsubmit="return checkData()">
         <div>
           <div>
             <label><input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="username" id="inptxt" required></label>
@@ -66,6 +66,16 @@ a schermo -->
     <img src="images/telepass-bip_low.png" width="100%" height="100%">
   </div>
 </div>
+
+<script>
+  function checkData(){
+    if(document.getElementById("inptxt").value.length >=5) return true;
+    else {
+      alert("L'username deve essere almeno di 5 caratteri.");
+      return false;
+    }
+  }
+</script>
 
 <section class="">
   <!-- Footer -->

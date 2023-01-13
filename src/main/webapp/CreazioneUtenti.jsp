@@ -70,7 +70,7 @@ a schermo -->
             <center><a class="navbar-brand" href="protected_area_admin.jsp"><img src="images/Logo_Telepass_2021.png" style="height:40px"></a></center>
         </div>
         <center><h3 class="h2div">Inserisci i dati dell'utente da creare</h3></center><br>
-        <form style="margin-top: 10px;" action="creazioneutente" method="POST">
+        <form style="margin-top: 10px;" action="creazioneutente" method="POST" onsubmit="return checkData()">
             <div class="row" style="width:100%;">
                 <div class="col-sm-6">
                     <center>
@@ -121,6 +121,71 @@ a schermo -->
             <center><br><button type="submit" class="btn btn-primary" style="width:175px; height:50px;">CREA UTENTE</button></center>
         </form>
     </div>
+
+    <script>
+        function checkData(){
+            if(document.getElementsByName("nomeutente")[0].value.length >2) {
+                if(document.getElementsByName("cognomeutente")[0].value.length >2){
+                    if(document.getElementsByName("username")[0].value.length >=5){
+                        if(document.getElementsByName("password")[0].value.length >=5){
+                            var y= document.getElementsByName("nascita")[0].value;
+                            if(underAgeValidate(y)==true)
+                            {
+                                if(document.getElementsByName("contocorrente")[0].value.length ==12){
+                                    return true;
+                                }
+                                else{
+                                    alert("Il codice conto corrente deve essere di 12 caratteri");
+                                    return false;
+                                }
+                            }
+                            else{
+                                alert("L'utente deve essere maggiorenne");
+                                return false;
+                            }
+                        }
+                        else{
+                            alert("La password deve essere di almeno 5 caratteri");
+                            return false;
+                        }
+                    }
+                    else{
+                        alert("L'username deve essere almeno di 5 caratteri.");
+                        return false;
+                    }
+                }
+                else {
+                    alert("Il cognome di una persona è composto da almeno 3 caratteri");
+                    return false;
+                }
+            }
+            else {
+                alert("Il nome di una persona è composto da almeno 3 caratteri");
+                return false;
+            }
+        }
+
+        function underAgeValidate(birthday){
+            // it will accept two types of format yyyy-mm-dd and yyyy/mm/dd
+            var optimizedBirthday = birthday.replace(/-/g, "/");
+
+            //set date based on birthday at 01:00:00 hours GMT+0100 (CET)
+            var myBirthday = new Date(optimizedBirthday);
+
+            // set current day on 01:00:00 hours GMT+0100 (CET)
+            var currentDate = new Date().toJSON().slice(0,10)+' 01:00:00';
+
+            // calculate age comparing current date and borthday
+            var myAge = ~~((Date.now(currentDate) - myBirthday) / (31557600000));
+
+            if(myAge < 18) {
+                return false;
+            }else{
+                return true;
+            }
+
+        }
+    </script>
 
     <section class="">
         <!-- Footer -->

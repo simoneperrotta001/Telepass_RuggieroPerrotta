@@ -70,19 +70,9 @@
 
     <script>
         function checkData(){
-            if(document.getElementById("targa").length == 7)
-                return true;
-            else
-            {
-                var newdiv = document.createElement('div');
-                newdiv.style.backgroundColor = "#ff9800";
-                newdiv.style.padding = "20px";
-                newdiv.style.color = "white";
-                newdiv.style.opacity = "1";
-                newdiv.style.transition = opacity(0.6);
-                newdiv.style.marginBottom = "15px";
-
-                document.body.appendChild(newdiv);
+            if(document.getElementById("targa").value.length == 7) return true;
+            else {
+                alert("La targa di un veicolo è composto da 7 caratteri");
                 return false;
             }
         }

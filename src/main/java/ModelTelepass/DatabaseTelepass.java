@@ -268,7 +268,6 @@ public class DatabaseTelepass {
     Quindi a noi non interessa quanti utenti risulteranno dalla query, ci interessa sapere se c'è n'è anche solo uno.
     Ritorna quindi una lista rappresentata da risultati con i parametri della tupla contenuti nei 2 campi.*/
     public List getDoppioValore(String sql, String campo1, String campo2) {
-        System.out.println(sql);
         List risultati = new ArrayList();//crea la lista che conterrà i risultati
         createConnection();//crea la connessione
         createStatement();//crea lo statement

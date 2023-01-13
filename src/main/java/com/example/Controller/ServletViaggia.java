@@ -4,6 +4,8 @@ import ModelTelepass.DatabaseTelepass;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.sql.Timestamp;
+import java.util.Date;
+
 /*Questa servlet viene invocata quando l'utente effettua un viaggio.
 Questa si occupa di prendersi la data corrente, calcolare la data presunta di arrivo al casello di uscita
 e inserire i record nella tabella entra ed esce del db.*/
@@ -22,14 +24,28 @@ public class ServletViaggia extends HttpServlet {
         Timestamp oggiUscita = aggiungiOreViaggio(oggiEntrata, dist);//data e ora di uscita calcolata per il casello2
 
         try{
-            //proviamo ad inserire il record in entra
-            DatabaseTelepass.getInstance().doInsertEntra(targa,casello1,oggiEntrata);
-            //proviamo ad inserire il record in esce
-            DatabaseTelepass.getInstance().doInsertEsci(targa,casello2,oggiUscita, tariffa);
-            //settiamo un messaggio di viaggio riuscito nella request
-            request.setAttribute("messageViaggio", "Grazie per aver viaggiato con noi");
-            //reindirizziamo l'utente alla sua area protetta
-            request.getRequestDispatcher("/protected_area_utente.jsp").forward(request, response);
+            Timestamp ultimo=java.sql.Timestamp.valueOf((String) DatabaseTelepass.getInstance().getSingoloValore("SELECT E.OrarioUscita\n" +
+                    "FROM ESCE E JOIN VEICOLO V ON E.TargaVeicolo=V.TargaVeicolo JOIN CLIENTE C ON C.CodiceTransponder=V.CodiceTransponder\n" +
+                    "WHERE V.TargaVeicolo='"+targa+"'\n" +
+                    "ORDER BY E.OrarioUscita DESC\n" +
+                    "LIMIT 1","OrarioUscita"));
+            int check = oggiEntrata.compareTo(ultimo);
+            if(check>0){
+                //proviamo ad inserire il record in entra
+                DatabaseTelepass.getInstance().doInsertEntra(targa,casello1,oggiEntrata);
+                //proviamo ad inserire il record in esce
+                DatabaseTelepass.getInstance().doInsertEsci(targa,casello2,oggiUscita, tariffa);
+                //settiamo un messaggio di viaggio riuscito nella request
+                request.setAttribute("messageViaggio", "Grazie per aver viaggiato con noi");
+                //reindirizziamo l'utente alla sua area protetta
+                request.getRequestDispatcher("/protected_area_utente.jsp").forward(request, response);
+            }
+            else{
+                request.setAttribute("messageViaggioNonPossibile", "Non puoi iniziare un nuovo viaggio se l'ultimo non è terminato.");
+                //reindirizziamo l'utente alla sua area protetta
+                request.getRequestDispatcher("/protected_area_utente.jsp").forward(request, response);
+            }
+
         }
         //se vi sono stati errori nell'esecuzione delle query
         catch (Exception e) {

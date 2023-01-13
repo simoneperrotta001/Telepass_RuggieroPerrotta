@@ -119,6 +119,13 @@ a schermo -->
         </div>
     </c:if>
 
+    <c:if test="${messageViaggioNonPossibile != null}">
+        <div class="alert info">
+            <span class="closebtn">&times;</span>
+            <strong>${messageViaggioNonPossibile}</strong>
+        </div>
+    </c:if>
+
     <c:if test="${messageVeicoli != null}">
         <div class="alert info">
             <span class="closebtn">&times;</span>
