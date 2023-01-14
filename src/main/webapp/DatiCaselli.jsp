@@ -18,10 +18,11 @@
 <jsp:include page="PrivilegiAdmin"></jsp:include>
 
 <nav class="navbar navbar-expand-lg bg-light"><a class="navbar-brand" href="protected_area_admin.jsp"><img src="images/Logo_Telepass_2021.png" style="height:30px; margin-left: 5px;"></a></nav>
+<div id="main">
 <center>
     <div class="row">
         <center>
-        <div class="col-md-8">
+        <div class="col-md-9">
             <!--JSTL che a seconda se c'è il messaggio inviato dalle varie servlet lo fa comparire
             a schermo -->
             <c:choose>
@@ -112,5 +113,6 @@
     </footer>
     <!-- Footer -->
 </section>
+</div>
 </body>
 </html>
