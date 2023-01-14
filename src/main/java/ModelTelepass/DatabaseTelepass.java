@@ -215,10 +215,9 @@ public class DatabaseTelepass {
     }
     /*Questo metodo si occupa di eseguire una query che debba ritornare valori da un solo campo.
     Es: SELECT NomeCliente FROM Cliente. Questo metodo però prenderà solo il primo valore che restituirà la query,
-    restituendolo sottoforma di tipo generico; perchè questo metodo viene utilizzato solo per controllare se ci
+    restituendolo sottoforma di stringa; perchè questo metodo viene utilizzato solo per controllare se ci
     siano valori già esistenti nel db (es: username già presente, codice conto corrente già presente, ecc).
-    Quindi a noi non interessa quanti utenti risulteranno dalla query, ci interessa sapere se c'è n'è anche solo uno.
-    Ritorna quindi un tipo generico rappresentato da risultato.*/
+    Quindi a noi non interessa quanti utenti risulteranno dalla query, ci interessa sapere se c'è n'è anche solo uno.*/
     public String getSingoloValore(String sql, String campo){
         String risultato = null;//prepariamo la lista che conterrà i risultati della query
         createConnection();//crea la connessione
