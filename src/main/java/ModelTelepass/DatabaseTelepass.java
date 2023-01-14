@@ -219,8 +219,8 @@ public class DatabaseTelepass {
     siano valori già esistenti nel db (es: username già presente, codice conto corrente già presente, ecc).
     Quindi a noi non interessa quanti utenti risulteranno dalla query, ci interessa sapere se c'è n'è anche solo uno.
     Ritorna quindi un tipo generico rappresentato da risultato.*/
-    public <T> T getSingoloValore(String sql, String campo){
-        T risultato = null;//prepariamo la lista che conterrà i risultati della query
+    public String getSingoloValore(String sql, String campo){
+        String risultato = null;//prepariamo la lista che conterrà i risultati della query
         createConnection();//crea la connessione
         createStatement();//crea lo statement
         System.out.println(sql);
@@ -230,7 +230,7 @@ public class DatabaseTelepass {
             //se ci sono risultati
             if(resultSet.next()) {
                 //se ci sono risultati dalla query, lo prende
-                risultato = (T) resultSet.getString(campo);
+                risultato =  resultSet.getString(campo);
             }
             //se non ci sono risultati dalla query
             else{
