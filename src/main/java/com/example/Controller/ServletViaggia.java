@@ -24,15 +24,16 @@ public class ServletViaggia extends HttpServlet {
         Timestamp oggiUscita = aggiungiOreViaggio(oggiEntrata, dist);//data e ora di uscita calcolata per il casello2
 
         try{
-            Timestamp ultimo=java.sql.Timestamp.valueOf((String) DatabaseTelepass.getInstance().getSingoloValore("SELECT E.OrarioUscita\n" +
-                    "FROM ESCE E JOIN VEICOLO V ON E.TargaVeicolo=V.TargaVeicolo JOIN CLIENTE C ON C.CodiceTransponder=V.CodiceTransponder\n" +
-                    "WHERE V.TargaVeicolo='"+targa+"'\n" +
-                    "ORDER BY E.OrarioUscita DESC\n" +
-                    "LIMIT 1","OrarioUscita"));
-            System.out.println(ultimo);
-            if(ultimo != null)
-            {
-                System.out.println("ciao");
+            int quantiViaggi= Integer.parseInt(DatabaseTelepass.getInstance().getSingoloValore("SELECT COUNT(*) AS QUANTI \n" +
+                    "FROM ENTRA E JOIN VEICOLO V ON E.TargaVeicolo=V.TargaVeicolo \n" +
+                    "WHERE E.TargaVeicolo='"+targa+"'","QUANTI"));
+            if(quantiViaggi >0){
+                Timestamp ultimo=java.sql.Timestamp.valueOf((String) DatabaseTelepass.getInstance().getSingoloValore("SELECT E.OrarioUscita\n" +
+                        "FROM ESCE E JOIN VEICOLO V ON E.TargaVeicolo=V.TargaVeicolo JOIN CLIENTE C ON C.CodiceTransponder=V.CodiceTransponder\n" +
+                        "WHERE V.TargaVeicolo='"+targa+"'\n" +
+                        "ORDER BY E.OrarioUscita DESC\n" +
+                        "LIMIT 1","OrarioUscita"));
+
                 int check = oggiEntrata.compareTo(ultimo);
                 if(check>0){
                     //proviamo ad inserire il record in entra
@@ -51,7 +52,6 @@ public class ServletViaggia extends HttpServlet {
                 }
             }
             else{
-                System.out.println("ciao else");
                 //proviamo ad inserire il record in entra
                 DatabaseTelepass.getInstance().doInsertEntra(targa,casello1,oggiEntrata);
                 //proviamo ad inserire il record in esce
