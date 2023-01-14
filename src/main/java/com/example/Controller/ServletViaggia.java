@@ -29,8 +29,29 @@ public class ServletViaggia extends HttpServlet {
                     "WHERE V.TargaVeicolo='"+targa+"'\n" +
                     "ORDER BY E.OrarioUscita DESC\n" +
                     "LIMIT 1","OrarioUscita"));
-            int check = oggiEntrata.compareTo(ultimo);
-            if(check>0){
+            System.out.println(ultimo);
+            if(ultimo != null)
+            {
+                System.out.println("ciao");
+                int check = oggiEntrata.compareTo(ultimo);
+                if(check>0){
+                    //proviamo ad inserire il record in entra
+                    DatabaseTelepass.getInstance().doInsertEntra(targa,casello1,oggiEntrata);
+                    //proviamo ad inserire il record in esce
+                    DatabaseTelepass.getInstance().doInsertEsci(targa,casello2,oggiUscita, tariffa);
+                    //settiamo un messaggio di viaggio riuscito nella request
+                    request.setAttribute("messageViaggio", "Grazie per aver viaggiato con noi");
+                    //reindirizziamo l'utente alla sua area protetta
+                    request.getRequestDispatcher("/protected_area_utente.jsp").forward(request, response);
+                }
+                else{
+                    request.setAttribute("messageViaggioNonPossibile", "Non puoi iniziare un nuovo viaggio se l'ultimo non è terminato.");
+                    //reindirizziamo l'utente alla sua area protetta
+                    request.getRequestDispatcher("/protected_area_utente.jsp").forward(request, response);
+                }
+            }
+            else{
+                System.out.println("ciao else");
                 //proviamo ad inserire il record in entra
                 DatabaseTelepass.getInstance().doInsertEntra(targa,casello1,oggiEntrata);
                 //proviamo ad inserire il record in esce
@@ -40,12 +61,6 @@ public class ServletViaggia extends HttpServlet {
                 //reindirizziamo l'utente alla sua area protetta
                 request.getRequestDispatcher("/protected_area_utente.jsp").forward(request, response);
             }
-            else{
-                request.setAttribute("messageViaggioNonPossibile", "Non puoi iniziare un nuovo viaggio se l'ultimo non è terminato.");
-                //reindirizziamo l'utente alla sua area protetta
-                request.getRequestDispatcher("/protected_area_utente.jsp").forward(request, response);
-            }
-
         }
         //se vi sono stati errori nell'esecuzione delle query
         catch (Exception e) {

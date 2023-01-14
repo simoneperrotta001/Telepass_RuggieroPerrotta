@@ -34,9 +34,9 @@
                     <select style="width:50%; margin-bottom: 5px; " class="form-select" id="classe" name="classe">
                         <option value="A">A</option>
                         <option value="B">B</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
                         <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                     </select><br>
                     <a href="protected_area_utente.jsp"><button type="button" class="btn btn-outline-primary">Indietro</button></a>
                     <button type="submit" class="btn btn-outline-primary" name="veicolonuovo" id="veicolonuovo">Aggiungi</button>

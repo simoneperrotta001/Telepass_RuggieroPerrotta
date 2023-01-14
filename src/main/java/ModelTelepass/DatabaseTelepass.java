@@ -223,6 +223,7 @@ public class DatabaseTelepass {
         T risultato = null;//prepariamo la lista che conterrà i risultati della query
         createConnection();//crea la connessione
         createStatement();//crea lo statement
+        System.out.println(sql);
         try{
             //prova ad eseguire la query
             resultSet = statement.executeQuery(sql);

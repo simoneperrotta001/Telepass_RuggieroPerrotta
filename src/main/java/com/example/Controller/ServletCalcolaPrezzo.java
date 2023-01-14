@@ -56,20 +56,20 @@ public class ServletCalcolaPrezzo extends HttpServlet {
                 //settiamo il costo come parametro della request
                 request.setAttribute("costokm", classeVeicolo.getCostoKm());
             }
-            else if (classe.equals("1")) {
-                //istanziamo il nostro factory per la classe 1
-                inizializzazioneClasse = new InizializzazioneClasse1();
-                //istanziamo la nostra Classe (generica ma in questo caso il factory creerà una classe 1 grazie al factory)
+            else if (classe.equals("3")) {
+                //istanziamo il nostro factory per la classe 3
+                inizializzazioneClasse = new InizializzazioneClasse3();
+                //istanziamo la nostra Classe (generica ma in questo caso il factory creerà una classe 3 grazie al factory)
                 Classe classeVeicolo = inizializzazioneClasse.creaClasse();
                 //calcoliamo il costo da pagare in base alla distanza e alla classe
                 costo_Tot= classeVeicolo.pagamento(distanza);
                 //settiamo il costo come parametro della request
                 request.setAttribute("costokm", classeVeicolo.getCostoKm());
             }
-            else if (classe.equals("2")) {
-                //istanziamo il nostro factory per la classe 2
-                inizializzazioneClasse = new InizializzazioneClasse2();
-                //istanziamo la nostra Classe (generica ma in questo caso il factory creerà una classe 2 grazie al factory)
+            else if (classe.equals("4")) {
+                //istanziamo il nostro factory per la classe 4
+                inizializzazioneClasse = new InizializzazioneClasse4();
+                //istanziamo la nostra Classe (generica ma in questo caso il factory creerà una classe 4 grazie al factory)
                 Classe classeVeicolo = inizializzazioneClasse.creaClasse();
                 //calcoliamo il costo da pagare in base alla distanza e alla classe
                 costo_Tot= classeVeicolo.pagamento(distanza);
@@ -77,9 +77,9 @@ public class ServletCalcolaPrezzo extends HttpServlet {
                 request.setAttribute("costokm", classeVeicolo.getCostoKm());
             }
             else {
-                //istanziamo il nostro factory per la classe 3
-                inizializzazioneClasse = new InizializzazioneClasse3();
-                //istanziamo la nostra Classe (generica ma in questo caso il factory creerà una classe 3 grazie al factory)
+                //istanziamo il nostro factory per la classe 5
+                inizializzazioneClasse = new InizializzazioneClasse5();
+                //istanziamo la nostra Classe (generica ma in questo caso il factory creerà una classe 5 grazie al factory)
                 Classe classeVeicolo = inizializzazioneClasse.creaClasse();
                 //calcoliamo il costo da pagare in base alla distanza e alla classe
                 costo_Tot= classeVeicolo.pagamento(distanza);
