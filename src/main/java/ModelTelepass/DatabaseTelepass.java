@@ -33,6 +33,7 @@ public class DatabaseTelepass {
         //proviamo ad aprire la connessione
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
+            //bisogna creare l'utente username: ROOT e password:ROOT dal pannello phpmyadmin del db prima di procedere
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/telepass", "ROOT","ROOT");
         }//nel caso in cui non si sia aperta lanciamo l'eccezzione con un messaggio in output
         catch (Exception e){
