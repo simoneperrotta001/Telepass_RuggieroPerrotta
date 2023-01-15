@@ -1,7 +1,6 @@
 package com.example.Controller.ServletUtente;
 
 import com.example.Controller.ClassiVeicoli.Classe;
-import InizializzazioneClassiVeicoli.*;
 import ModelTelepass.DatabaseTelepass;
 import com.example.Controller.InizializzazioneClassiVeicoli.*;
 import jakarta.servlet.*;

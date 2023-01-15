@@ -11,6 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c20c4ea3-3479-436c-be5c-e80ec7a63a20" name="Changes" comment="web app stamm accis">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletUtente/ServletCalcolaPrezzo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Controller/ServletUtente/ServletCalcolaPrezzo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,14 +198,7 @@
       <workItem from="1673365359641" duration="300000" />
       <workItem from="1673692620532" duration="3747000" />
       <workItem from="1673707149616" duration="3606000" />
-      <workItem from="1673776912765" duration="6233000" />
-    </task>
-    <task id="LOCAL-00001" summary="gg">
-      <created>1670315423649</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1670315423649</updated>
+      <workItem from="1673776912765" duration="8418000" />
     </task>
     <task id="LOCAL-00002" summary="file html trasformati in jsp">
       <created>1672049743097</created>
@@ -542,7 +536,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673801240918</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="web app stamm accis">
+      <created>1673804037383</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1673804037384</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
