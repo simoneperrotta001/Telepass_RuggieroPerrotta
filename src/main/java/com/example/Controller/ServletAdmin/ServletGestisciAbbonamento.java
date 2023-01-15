@@ -1,4 +1,4 @@
-package com.example.Controller;
+package com.example.Controller.ServletAdmin;
 
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;

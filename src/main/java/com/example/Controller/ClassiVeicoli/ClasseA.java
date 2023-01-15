@@ -1,6 +1,7 @@
-package com.example.Controller;
+package com.example.Controller.ClassiVeicoli;
+
 //definizione della tipologia di veicoli di classeA
-public class ClasseA implements Classe{
+public class ClasseA implements Classe {
     private double costoKm;//attributo che definisce il costo da pagare al km della classeA
 
     public ClasseA(){costoKm = 0.07;}

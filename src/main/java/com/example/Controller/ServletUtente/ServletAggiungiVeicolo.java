@@ -1,4 +1,4 @@
-package com.example.Controller;
+package com.example.Controller.ServletUtente;
 
 import ModelTelepass.DatabaseTelepass;
 import jakarta.servlet.*;

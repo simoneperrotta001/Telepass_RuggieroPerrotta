@@ -1,4 +1,4 @@
-package com.example.Controller;
+package com.example.Controller.PrivilegioAccessoUtenti;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;

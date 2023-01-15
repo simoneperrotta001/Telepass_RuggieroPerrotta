@@ -1,16 +1,17 @@
-package com.example.Controller;
+package com.example.Controller.PrivilegioAccessoUtenti;
 
 import ModelTelepass.DatabaseTelepass;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.io.IOException;
-/*Questa servlet viene invocata ogni qual volta si ha una pagina a cui possono accedere
-solo gli utenti (all'inizio di ogni pagina jsp ci sarà un invocazione a questa servlet o a quella dell'accesso admin.
-Questa controlla prima se si è loggati, se lo si è allora controlla se si è un admin,
-e se sì reindirizza l'admin alla sua area protetta negando l'acesso alla pagina*/
-@WebServlet(name = "PrivilegiUtentePlus", value = "/PrivilegiUtentePlus")
-public class ServletPrivilegiUtentePlus extends HttpServlet {
+/*Questa servlet viene invocata per proteggere l'accesso alla pagina aggiungi veicoli.
+Ricordiamo che a questa pagina non vi possono accedere:
+-l'admin;
+-un utente non loggato;
+-un utente che ha già due veicoli associati;*/
+@WebServlet(name = "PrivilegiUtenteVeicoli", value = "/PrivilegiUtenteVeicoli")
+public class ServletPrivilegiUtenteVeicoli extends HttpServlet {
     /*Questa servlet ha come metodo di passaggio dati il GET, a differenza delle altre servlet che hanno come metodo il
     POST. Questo perchè questa servlet per settare i dati da mandare a schermo non li invia tramite una form, ma sfrutta
     quelli che sono i parametri di sessione.*/
@@ -26,20 +27,20 @@ public class ServletPrivilegiUtentePlus extends HttpServlet {
         }
         //se si è già loggati e si è un admin
         else if(session.getAttribute("ruolo").equals(1)){
-            //mandiamo allora un messaggio di errore
-            request.setAttribute("messageAdmin", "L'admin non può accedere alle pagine degli utenti");
-            //rimandiamo l'admin alla sua area protetta
-            request.getRequestDispatcher("protected_area_admin.jsp").forward(request, response);
+                //mandiamo allora un messaggio di errore
+                request.setAttribute("messageAdmin", "L'admin non può accedere alle pagine degli utenti");
+                //rimandiamo l'admin alla sua area protetta
+                request.getRequestDispatcher("protected_area_admin.jsp").forward(request, response);
         }
         else{
             try{
-                //proviamo a vedere se l'utente ha già il plus
-                String risultato = DatabaseTelepass.getInstance().getSingoloValore("SELECT Plus FROM CLIENTE WHERE CodiceTransponder='"+session.getAttribute("codice")+"'", "Plus");
-                int plus = Integer.parseInt(risultato);
-                //se lo ha già
-                if (plus==1) {
+                //proviamo a prenderci il valore di quanti veicolo ha già associato l'utente
+                String risultato = DatabaseTelepass.getInstance().getSingoloValore("SELECT COUNT(*) AS QUANTI FROM VEICOLO WHERE CodiceTransponder='"+session.getAttribute("codice")+"'", "QUANTI");
+                int quanti = Integer.parseInt(risultato);
+                //se ha già associato 2 veicoli
+                if (quanti==2) {
                     //mandiamo allora un messaggio di errore
-                    request.setAttribute("messagePlus", "Hai già l'abbonamento plus");
+                    request.setAttribute("messageVeicoli", "Hai già 2 veicoli registrati");
                     //rimandiamo l'utente alla sua area protetta
                     request.getRequestDispatcher("protected_area_utente.jsp").forward(request, response);
                 }
