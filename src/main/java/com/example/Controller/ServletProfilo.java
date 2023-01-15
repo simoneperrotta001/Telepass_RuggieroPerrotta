@@ -9,6 +9,9 @@ Questa si occuperà quindi di prendersi tutti i dati che servono, metterli nella
 e mandarli alla pagina cosicchè possa mostrarli a schermo*/
 @WebServlet("/profilo")
 public class ServletProfilo extends HttpServlet {
+    /*Questa servlet ha come metodo di passaggio dati il GET, a differenza delle altre servlet che hanno come metodo il
+    POST. Questo perchè questa servlet per settare i dati da mandare a schermo non li invia tramite una form, ma sfrutta
+    quelli che sono i parametri di sessione.*/
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response){
         HttpSession session = request.getSession(false);
