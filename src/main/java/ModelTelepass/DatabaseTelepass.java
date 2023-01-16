@@ -265,7 +265,7 @@ public class DatabaseTelepass {
     Es: SELECT NomeCliente, NascitaCliente FROM Cliente. Questo metodo però prenderà solo la prima tupla che restituirà la query,
     restituendolo sottoforma di lista.
     Quindi a noi non interessa quanti utenti risulteranno dalla query, ci interessa sapere se c'è n'è anche solo uno.
-    Ritorna quindi una lista rappresentata da risultati con i parametri della tupla contenuti nei 2 campi.*/
+    Ritorna quindi una lista contenente 2 valori risultanti dai 2 campi specificati.*/
     public List getDoppioValore(String sql, String campo1, String campo2) {
         List risultati = new ArrayList();//crea la lista che conterrà i risultati
         createConnection();//crea la connessione
