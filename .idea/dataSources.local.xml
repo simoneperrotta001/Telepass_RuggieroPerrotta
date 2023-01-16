@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="IU-222.4167.29">
-    <data-source name="telepass@localhost" uuid="89b2ccf9-50d3-49de-843f-ba4faf715fcb">
+    <data-source name="telepass@localhost" uuid="18c5d196-9329-40c2-883e-b23a9fb4d75f">
       <database-info product="MySQL" version="5.5.5-10.4.27-MariaDB" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.25 (Revision: 08be9e9b4cba6aa115f9b27b215887af40b159e0)" dbms="MARIADB" exact-version="10.4.27" exact-driver-version="8.0">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <secret-storage>master_key</secret-storage>
       <user-name>ROOT</user-name>
       <schema-mapping>
         <introspection-scope>

@@ -10,7 +10,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c20c4ea3-3479-436c-be5c-e80ec7a63a20" name="Changes" comment="web app stamm accis">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2023_13_44_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2023_13_44__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2023_13_46_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2023_13_46__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2023_14_14_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2023_14_14__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Telepass_RuggieroPerrotta.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Telepass_RuggieroPerrotta.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ModelTelepass/DatabaseTelepass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ModelTelepass/DatabaseTelepass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/apache-jstl-11.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/apache-jstl-11.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/jakarta.activation-2.0.0-javadoc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jakarta.activation-2.0.0-javadoc.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/jakarta.activation-2.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jakarta.activation-2.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/jakarta.el-api-4.0.0-javadoc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jakarta.el-api-4.0.0-javadoc.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/jakarta.el-api-4.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jakarta.el-api-4.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/jakarta.el-api-5.0.0-javadoc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jakarta.el-api-5.0.0-javadoc.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/jakarta.el-api-5.0.0-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jakarta.el-api-5.0.0-sources.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/jakarta.el-api-5.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jakarta.el-api-5.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/jakarta.servlet-api-5.0.0-javadoc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jakarta.servlet-api-5.0.0-javadoc.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/jakarta.servlet-api-5.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jakarta.servlet-api-5.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/jakarta.servlet-api-6.0.0-javadoc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jakarta.servlet-api-6.0.0-javadoc.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/jakarta.servlet-api-6.0.0-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jakarta.servlet-api-6.0.0-sources.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/jakarta.servlet-api-6.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jakarta.servlet-api-6.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/jakarta.servlet.jsp-api-2.3.6-javadoc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jakarta.servlet.jsp-api-2.3.6-javadoc.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/jakarta.servlet.jsp-api-2.3.6.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jakarta.servlet.jsp-api-2.3.6.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/jakarta.servlet.jsp.jstl-2.0.0-javadoc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jakarta.servlet.jsp.jstl-2.0.0-javadoc.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/jakarta.servlet.jsp.jstl-2.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jakarta.servlet.jsp.jstl-2.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/jakarta.servlet.jsp.jstl-api-2.0.0-javadoc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jakarta.servlet.jsp.jstl-api-2.0.0-javadoc.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/jakarta.servlet.jsp.jstl-api-2.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jakarta.servlet.jsp.jstl-api-2.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/jakarta.servlet.jsp.jstl-api-3.0.0-javadoc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jakarta.servlet.jsp.jstl-api-3.0.0-javadoc.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/jakarta.servlet.jsp.jstl-api-3.0.0-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jakarta.servlet.jsp.jstl-api-3.0.0-sources.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/jakarta.servlet.jsp.jstl-api-3.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jakarta.servlet.jsp.jstl-api-3.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/jakarta.xml.bind-api-3.0.0-javadoc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jakarta.xml.bind-api-3.0.0-javadoc.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/jakarta.xml.bind-api-3.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jakarta.xml.bind-api-3.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/mysql-connector-j-8.0.31.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/mysql-connector-j-8.0.31.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/sqlite-jdbc-3.40.0.0-javadoc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/sqlite-jdbc-3.40.0.0-javadoc.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/sqlite-jdbc-3.40.0.0-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/sqlite-jdbc-3.40.0.0-sources.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/sqlite-jdbc-3.40.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/sqlite-jdbc-3.40.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/taglibs-standard-10.0.0-M10-javadoc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/taglibs-standard-10.0.0-M10-javadoc.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/taglibs-standard-10.0.0-M10.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/taglibs-standard-10.0.0-M10.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/taglibs-standard-impl-1.2.5-javadoc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/taglibs-standard-impl-1.2.5-javadoc.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/taglibs-standard-impl-1.2.5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/taglibs-standard-jstlel-1.2.5-javadoc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/taglibs-standard-jstlel-1.2.5-javadoc.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/taglibs-standard-jstlel-1.2.5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/taglibs-standard-jstlel-1.2.5.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/taglibs-standard-spec-1.2.5-javadoc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/taglibs-standard-spec-1.2.5-javadoc.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/lib/taglibs-standard-spec-1.2.5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewTelepass/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,14 +246,8 @@
       <workItem from="1673692620532" duration="3747000" />
       <workItem from="1673707149616" duration="3606000" />
       <workItem from="1673776912765" duration="10188000" />
-      <workItem from="1673866934701" duration="2149000" />
-    </task>
-    <task id="LOCAL-00004" summary="file html trasformati in jsp">
-      <created>1672053649631</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1672053649631</updated>
+      <workItem from="1673866934701" duration="3040000" />
+      <workItem from="1673886464635" duration="6794000" />
     </task>
     <task id="LOCAL-00005" summary="file html trasformati in jsp">
       <created>1672053666417</created>
@@ -543,7 +585,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673868492335</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="web app stamm accis">
+      <created>1673873854568</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1673873854568</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -11,7 +11,7 @@ statement. Tutte queste eccezzioni saranno gestite con dei catch, che stamperann
 allo sviluppatore quali e dove sono gli errori qualora ci dovessero essere*/
 public class DatabaseTelepass {
     private static DatabaseTelepass instance;//unica istanza del db
-    public static Connection connection =null;//connessione da allocare ogni volta con il db
+    public static Connection connection;//connessione da allocare ogni volta con il db
     private static Statement statement;//statement da allocare ogni volta per eseguire operazioni sul db
     private static PreparedStatement preparedStatement;//prepared statement da allocare ogni volta che serve per eseguire operazioni sul db
     private ResultSet resultSet;//conterrà i risultati delle query fatte dai vari metodi
