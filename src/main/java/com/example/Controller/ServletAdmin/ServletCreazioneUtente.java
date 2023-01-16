@@ -6,7 +6,7 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.Date;
-/*Questa servlet viene invocata per creare gli utenti.
+/**Questa servlet viene invocata per creare gli utenti.
 Ricordiamo che solo l'admin può creare gli utenti (un utente non può registrarsi ma solo loggarsi).
 Questa servlet si occupa di controllare tutti i parametri inseriti dall'admin per la creazione dell'utente.
 Dopo aver superato tutti i controlli l'utente viene effettivamente inserito mandando un messaggio

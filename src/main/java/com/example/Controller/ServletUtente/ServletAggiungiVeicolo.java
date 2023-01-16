@@ -5,7 +5,7 @@ import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.io.IOException;
-/*Questa servlet viene invocata quando si compila il form per aggiungere un veicolo.
+/**Questa servlet viene invocata quando si compila il form per aggiungere un veicolo.
 Ricordiamo che i veicoli possono essere aggiunti solo dagli utenti (l'admin non può aggiungere
 veicoli poichè non ne ha di veicoli associati).
 Quello che fa è controllare se la targa inserita esiste già nel db e se la query non riscontra

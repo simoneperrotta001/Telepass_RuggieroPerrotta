@@ -7,7 +7,7 @@ import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.io.IOException;
-/*Questa servlet viene invocata al fine di calcolare il prezzo della tratta che si vuole percorrere.
+/**Questa servlet viene invocata al fine di calcolare il prezzo della tratta che si vuole percorrere.
 Ricordiamo che solo gli utenti possono accedere a questa funzionalità di calcola prezzo (infatti l'admin
 non può accedervi poichè non può viaggiare).
 Il prezzo oltre che a variare in base a quanti chilometri si devono percorrere varia anche in base alla

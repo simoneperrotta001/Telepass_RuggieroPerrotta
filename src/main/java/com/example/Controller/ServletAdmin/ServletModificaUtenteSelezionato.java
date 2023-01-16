@@ -4,7 +4,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import ModelTelepass.DatabaseTelepass;
 import java.util.List;
-/*Questa servlet viene invocata per modificare i parametri di un utente selezionato.
+/**Questa servlet viene invocata per modificare i parametri di un utente selezionato.
 Ricordiamo che a questa funzionalità può accedervi unicamente l'admin dalla lista utenti.
 Selezionato uno specifico utente dalla lista utenti compariranno le operazioni possibili
 da svolgere su quell'utente (Es: attivare plus, rimuovere abbonamento, ecc.)

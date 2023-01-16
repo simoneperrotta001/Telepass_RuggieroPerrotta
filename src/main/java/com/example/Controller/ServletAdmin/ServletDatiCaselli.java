@@ -5,7 +5,7 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.text.DateFormatSymbols;
-/*Questa servlet viene invocata per mostrare i dati relativi alle entrate/uscite dai caselli
+/**Questa servlet viene invocata per mostrare i dati relativi alle entrate/uscite dai caselli
 in un particolare mese dell'anno corrente.
 Questa si occuperà di controllare quali statistiche si vogliono visionare, se entrata o uscita
 e di recapitare il numero del mese scelto settandolo nella request e inoltrandolo alla

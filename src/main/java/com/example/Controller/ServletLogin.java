@@ -7,7 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.util.List;
-/*Questa servlet viene invocata quando un utente vuole loggarsi.
+/**Questa servlet viene invocata quando un utente vuole loggarsi.
 Dopo aver controllato i parametri necessari affinchè l'utente possa loggarsi,
 settiamo tutti i parametri di sessione e il login avviene con successo.*/
 @WebServlet("/login")

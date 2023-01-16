@@ -3,7 +3,7 @@ package com.example.Controller.ServletUtente;
 import ModelTelepass.DatabaseTelepass;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-/*Questa servlet viene invocata al fine di cambiare username a un utente.
+/**Questa servlet viene invocata al fine di cambiare username a un utente.
 Ricordiamo che gli utenti possono cambiare username solo per il loro account (non può l'admin cambiare username).
 Questa servlet si occupa di controllare se il cambio username è possibile, e se lo è, di inviare un
 messaggio di successo alla jsp chiamante per l'avvenuta modifica allo username.*/

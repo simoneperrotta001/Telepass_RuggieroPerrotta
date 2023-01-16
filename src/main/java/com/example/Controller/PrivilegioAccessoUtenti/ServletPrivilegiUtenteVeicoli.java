@@ -5,14 +5,14 @@ import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.io.IOException;
-/*Questa servlet viene invocata per proteggere l'accesso alla pagina aggiungi veicoli.
+/**Questa servlet viene invocata per proteggere l'accesso alla pagina aggiungi veicoli.
 Ricordiamo che a questa pagina non vi possono accedere:
 -l'admin;
 -un utente non loggato;
 -un utente che ha già due veicoli associati;*/
 @WebServlet(name = "PrivilegiUtenteVeicoli", value = "/PrivilegiUtenteVeicoli")
 public class ServletPrivilegiUtenteVeicoli extends HttpServlet {
-    /*Questa servlet ha come metodo di passaggio dati il GET, a differenza delle altre servlet che hanno come metodo il
+    /**Questa servlet ha come metodo di passaggio dati il GET, a differenza delle altre servlet che hanno come metodo il
     POST. Questo perchè questa servlet per settare i dati da mandare a schermo non li invia tramite una form, ma sfrutta
     quelli che sono i parametri di sessione.*/
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -6,7 +6,7 @@ import jakarta.servlet.annotation.*;
 import java.sql.Timestamp;
 import java.util.Date;
 
-/*Questa servlet viene invocata quando l'utente effettua un viaggio.
+/**Questa servlet viene invocata quando l'utente effettua un viaggio.
 Questa si occupa di prendersi la data corrente, calcolare la data presunta di arrivo al casello di uscita
 e inserire i record nella tabella entra ed esce del db.*/
 @WebServlet("/viaggia")
@@ -68,7 +68,7 @@ public class ServletViaggia extends HttpServlet {
             System.out.println("errore nella connessione");
         }
     }
-    /*Questo metodo si occupa di calcolare, seguendo una media di 100km/h il tempo
+    /**Questo metodo si occupa di calcolare, seguendo una media di 100km/h il tempo
     di percorrenza che ci vorrà tra il casello di entrata e quello di uscita.*/
     public Timestamp aggiungiOreViaggio(Timestamp oggiEntrata, double dist){
         double time = dist / 100.0;//tempo generale

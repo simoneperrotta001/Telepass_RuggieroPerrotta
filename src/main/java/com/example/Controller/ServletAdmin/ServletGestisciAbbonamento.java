@@ -3,7 +3,7 @@ package com.example.Controller.ServletAdmin;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import ModelTelepass.DatabaseTelepass;
-/*Questa servlet viene invocata per effettuare modifiche all'abbonamento di un utente qualsiasi.
+/**Questa servlet viene invocata per effettuare modifiche all'abbonamento di un utente qualsiasi.
 Ricordiamo che in questo caso l'admin può modificare uno qualsiasi dei parametri inerenti all'abbonamento
 di qualsiasi utente, mentre se è l'utente ad accedere a questa funzione potrà modificare solo il
 suo di abbonamento.

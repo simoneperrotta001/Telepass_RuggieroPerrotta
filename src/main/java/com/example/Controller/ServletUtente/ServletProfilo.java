@@ -4,12 +4,12 @@ import ModelTelepass.DatabaseTelepass;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.util.List;
-/*Questa servlet viene invocata quando un utente accede alla pagina del suo profilo.
+/**Questa servlet viene invocata quando un utente accede alla pagina del suo profilo.
 Questa si occuperà quindi di prendersi tutti i dati che servono, metterli nella request
 e mandarli alla pagina cosicchè possa mostrarli a schermo*/
 @WebServlet("/profilo")
 public class ServletProfilo extends HttpServlet {
-    /*Questa servlet ha come metodo di passaggio dati il GET, a differenza delle altre servlet che hanno come metodo il
+    /**Questa servlet ha come metodo di passaggio dati il GET, a differenza delle altre servlet che hanno come metodo il
     POST. Questo perchè questa servlet per settare i dati da mandare a schermo non li invia tramite una form, ma sfrutta
     quelli che sono i parametri di sessione.*/
     @Override
