@@ -39,7 +39,7 @@ public class ServletPrivilegiUtentePlus extends HttpServlet {
                 //se lo ha già
                 if (plus==1) {
                     //mandiamo allora un messaggio di errore
-                    request.setAttribute("messagePlus", "Hai già l'abbonamento plus");
+                    request.setAttribute("messagePlusPosseduto", "Hai già l'abbonamento plus");
                     //rimandiamo l'utente alla sua area protetta
                     request.getRequestDispatcher("protected_area_utente.jsp").forward(request, response);
                 }

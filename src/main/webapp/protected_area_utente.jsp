@@ -132,6 +132,7 @@ a schermo -->
             <strong>${messageVeicoli}</strong>
         </div>
     </c:if>
+
     <!--Questo script serve a far comparire il div per gli alert(successo, fallimento e warning)-->
     <script>
         var close = document.getElementsByClassName("closebtn");

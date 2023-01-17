@@ -39,7 +39,7 @@ a schermo -->
     <div class="main">
         <center>
             <div style="width:50%;">
-                <center><h2 class="h2div">Inserisci il Percorso e la classe dell'auto</h2></center>
+                <center><h2 class="h2div">Inserisci il Percorso e l'auto</h2></center>
                 <form name="calcola" class="rounded" style="width:100%;" method="POST" action="calcolaprezzo">
                   <label style="width:50%; margin-top: 10px; background-color: #0d6efd; color:white" class="input-group-text primary" for="entrata">Casello di Entrata</label>
                   <select style="width:50%; margin-bottom: 5px; " class="form-select" id="caselloEntrata" name="caselloEntrata">
